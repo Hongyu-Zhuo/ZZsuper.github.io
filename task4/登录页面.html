@@ -10,32 +10,99 @@
         	background-color: #eff0f4;
         }
     	.header{
+            position: fixed;left: 0;top: 0;z-index: 5;
+
     		background-color: #5fc0cd;
+            width: 100%;
     		display: flex;
     		justify-content: space-between;
-
-
  
     	}
     	.font{
     		color: white;
     		line-height: 40px;
-    		font-size: 12px;
-    		font-family:黑体 ;
+    		font-size: 16px;
+    		font-family: 黑体  ;
     		margin: 0 10px;
     		
     	}
-    	.input{
+        .icon-iphone{
+            position: absolute;left: 20px;top :67px;z-index: 2;
+            background-image: url(https://zzsuper.github.io/task4/iphone.png);
+            background-size: 15px 24px;
+            background-repeat: no-repeat;/*设置图片不重复*/
+            
+            width: 20px;height: 32px;/*设置图片宽高*/
+          
+        }
+        .icon-locked{
+            position: absolute;left: 20px;top: 132px;z-index:2 ;
+            background-image: url(https://zzsuper.github.io/task4/locked%202.png);
+            background-size: 15px 24px;
+            background-repeat: no-repeat;
+          
+            width: 20px;height: 32px;
+
+
+        }
+        
+    	.input-user{
+            position: absolute;left: 0;top: 45px;z-index: 1;
     		margin:5px 0;
-    		width: 100%;
+    		
     		height: 50px;
+            border:0 ;
+            padding-left: 85px;
+            width: 100%;
+            font-family: 黑体；
+            font-size：16px；
+            color：#eff0f4；
+            text-indent:85px;
+
     	}
+        .input-password{
+            position: absolute;left: 0;top: 110px;z-index: 1;
+            margin:5px 0;
+            width: 100vw;
+            height: 50px;
+            border:0 ;
+            padding-left: 85px;
+        }
     	.submit{
+            position: absolute;left: 0;top: 200px;z-index: 1;
     		width: 100%;
     		height: 45px;
     		background-color: #5fc0cd;
+            border:0 ;
+            color: white;
+            font-family:黑体;
+            font-size: 16px;
 
     	}
+        .line-user{
+            position: absolute;left: 65px;top :64px;z-index: 3;
+            width: 2px;
+            height: 30px;
+            background-color: #eff0f4;
+        }
+        .line-password{
+            position: absolute;left: 65px;top: 128px;z-index: 3;
+            width: 2px;
+            height: 30px;
+            background-color: #eff0f4;
+        }
+        .forgot-password{
+            position: absolute;right: 15px;top: 250px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: ;
+        }
+        .font2{
+            line-height: 0.351 ;
+            font-family: 黑体;
+            font-size: ;
+            color:#5fc0cd;
+        }
     	
     </style>
 </head>
@@ -48,16 +115,30 @@
 	</div>
     <form>
     	<div>
-    		<input class="input" type="text" name="user">
+            <span  class="icon-iphone"></span>
+            <span class="line-user"></span>
+    		<input class="input-user" type="text" name="user"
+             onfocus="if (this.placeholder=='请输入手机号') {this.placeholder=''}"
+             onblur="if (this.placeholder=='') {this.placeholder='请输入手机号'}" 
+             placeholder="请输入手机号">
     	</div>
 
     	<div>
-    		<input class="input" type="text" name="password">
+            <span class="icon-locked"></span>
+            <span class="line-password"></span>
+    		<input class="input-password" type="text" name="password" 
+            onfocus="if(this.placeholder=='请输入密码') {this.placeholder='';}" 
+             onblur="if (this.placeholder=='') {this.placeholder='请输入密码'}" 
+             placeholder="请输入密码">
     	</div>
 
-    	<div>
+    	<div ">
     		<input class="submit" type="submit" value="登陆" >
     	</div>
+
+        <div class="forgot-password">
+            <p class="font2">忘记密码？</p>
+        </div>
     	
     	
     </form>
