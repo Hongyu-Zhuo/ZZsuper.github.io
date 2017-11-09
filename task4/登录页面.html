@@ -13,45 +13,49 @@
         }
     	.header{
             position: fixed;left: 0;top: 0;z-index: 5;
-
     		background-color: #5fc0cd;
             width: 100%;
-    		display: flex;
-    		justify-content: space-between;
- 
+            height: 40px;
+             color: white;
+            line-height: 40px;
+            font-size: 16px;
+            font-family: 黑体  ;
+            display: flex;
+            justify-content: center;
     	}
+        .header-left{
+            position: absolute;left:0;z-index: 6;
+            margin: 0 10px;
+        }
+        
+        .hearder-right{
+            position: absolute;right: 0;z-index: 6;
+            margin: 0 10px;
+        }
     	.font{
     		color: white;
     		line-height: 40px;
     		font-size: 16px;
     		font-family: 黑体  ;
-    		margin: 0 10px;
-    		
+    		margin: 0 10px;	
     	}
         .icon-iphone{
             position: absolute;left: 20px;top :65px;z-index: 2;
             background-image: url(https://zzsuper.github.io/task4/iphone.png);
             background-size: 15px 24px;
             background-repeat: no-repeat;/*设置图片不重复*/
-            
-            width: 20px;height: 32px;/*设置图片宽高*/
-          
+            width: 20px;height: 32px;/*设置图片宽高*/       
         }
         .icon-locked{
             position: absolute;left: 20px;top: 129px;z-index:2 ;
             background-image: url(https://zzsuper.github.io/task4/locked%202.png);
             background-size: 15px 24px;
             background-repeat: no-repeat;
-          
             width: 20px;height: 32px;
-
-
         }
         
     	.input-user{
-            position: absolute;left: 0;top: 50px;z-index: 1;
-    		
-    		
+            position: absolute;left: 0;top: 50px;z-index: 1;   		
     		height: 50px;
             border:0 ;
             padding-left: 85px;
@@ -116,9 +120,9 @@
 </head>
 <body>
 	<div class="header">
-		<span class="font">关闭</span>
-		<span class="font">登陆</span>
-		<span class="font">注册</span>
+		<span class="header-left">关闭</span>
+		<span >登陆</span>
+		<span class="hearder-right">注册</span>
 		
 	</div>
     <form>
