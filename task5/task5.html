@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">
     *{
+    	padding: 0;
+    	margin: 0;
     	box-sizing: border-box;
     	list-style: none;
     }
@@ -16,80 +18,110 @@
         .header{
             position:fixed;top: 0;left: 0;z-index: 99999;
             width: 100%;
-            height: 60px;
+            padding: 15px;
             background-color:  #5fc0cd;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
         }
-        .img-back{
+        .icon-back{
             position: fixed;left: 0;
             margin-left: 10px;
         }
         .background{
+            display: flex; justify-content: flex-start; align-items: center;
         	width: 100%;    
-            height: 136px;
-            margin-top: 39px;
-        	background: url(https://zzsuper.github.io/task5/%E5%8C%BB%E7%94%9F%E8%83%8C%E6%99%AF.png) no-repeat;
-        	background-size: 100% ;       	       		
+            height: 165px;
+            
+        	background: url(https://zzsuper.github.io/task5/%E5%8C%BB%E7%94%9F%E8%83%8C%E6%99%AF.png) no-repeat center;
+        	background-size: cover;
+        	color: #fff; 
+        	line-height: 30px;
         }
+        .user-name{
+        	font-size: 20px;
+        }
+        .user-pos{
+        	font-size: 14px;
+        }
+    	.icon-location{
+    		vertical-align: text-bottom;
+    	}
+    	.icon-star{
+    		vertical-align: middle;
+    	}
 
-        .opacity{
+       /*.opacity{
         	position: absolute;top: 60PX;
         	width: 100%;
-        	padding-top: 136px;     
+        	/*padding-top: 136px;     
         	background-color: #000;
         	opacity: .2;
+        	
+        }*/
+        main{
+        	position: absolute;top:50px;bottom: 50px;
+        	width: 100%; 
+        	font-family: STHeiti;
+        	overflow: auto;
         }
-
-        .box{
+        .img-head{       	
         	width: 85px;
+        	margin: 15px;
         	padding-bottom: 85px; 
-        	background-color: #efefef;
+        	background-image: url(https://zzsuper.github.io/task5/%E6%A4%AD%E5%9C%86%201%E5%A4%B4%E5%83%8F.png) ; 
+        	background-size:100%; 
         	border-radius: 42.5px;
+        	
         }
         .title{
+        	display: flex;
+       		justify-content: flex-start;
+       		align-items: center;
         	width: 100%;
         	height: 50px;
         	border-bottom: 1px solid #e1e5e7;
-        	display: flex;
-       	justify-content: flex-start;
-       	align-items: center;
+        	font-family: STHeiti;
         }
        
-       .line1{
-       	
+       .line1{       	
        	width: 2px;
        	border:1px solid #5fc0cd ;
        	height: 14px;
-       	margin: 17px 15px;
-       	
-       	
+       	margin: 17px 15px;       	
        }
        li{
        	display: flex;
        	align-items: center;
-       	width: calc(100%-15px);
-       	height: 50px;
-       	
-       	margin-left: 15px;
+       	padding: 15px;      	     
+       	margin:0 15px;
        	border-bottom:1px solid #e1e5e7 ;
-       	text-indent: 15px;
-       	
+       	font-size: 18px;
        }
        li p{
-       	
-       	width: 100px;
-       
+       	position: absolute;left: 30px;     
        	color: #e1e5e7 ;
       	padding-right: 15px;
       	margin-right: 15px;
        	border-right: 1px solid #e1e5e7 ;
        	
        }
-       
-        .footer{
+       .user-items{
+       	margin-left: 100px;
+       	font-size: 20px;
+       }
+       .user-introduce{
+       	margin-left: 100px;
+       	font-size: 16px;
+       }
+       .user-price{
+       	margin-left: 100px;
+       	font-size: 20px;
+       	color: #e26163;
+       }
+
+      .footer{
         	position: fixed;bottom: 0;left: 0;
         	width: 100%;
         	display: flex;
@@ -126,48 +158,59 @@
 
  <body>
     <header class="header">
-        <img class="img-back" src="https://zzsuper.github.io/task5/%E8%BF%94%E5%9B%9E.png" height="2%">
+        <img class="icon-back" src="https://zzsuper.github.io/task5/%E8%BF%94%E5%9B%9E.png" height="2%">
         <p>个人主页</p>
     </header>
 
-   
-    <div class="background">
-    	<!--<img src="https://zzsuper.github.io/task5/%E6%A4%AD%E5%9C%86%201%E5%A4%B4%E5%83%8F.png" width="85px">-->
-    	<div class="box"></div>
-    </div>
+   	<main>
+    	<div class="background">
+    	
+    		<div class="img-head"></div>
+    		<div>
+    			<p class="user-name">高素雅 51岁</p>
+    			
+    			<p class="user-pos"><img class="icon-location" src="https://zzsuper.github.io/task5/%E8%93%9D%E8%89%B2%E4%BD%8D%E7%BD%AE%E5%B0%8F%E5%9B%BE%E6%A0%87.png" width="9%"> 京城 · 四方 · 报纸林</p>
+    		</div>	
+    	</div>
+    
+    	<div class="title">
+        	<span class="line1"></span>
+    		<p >专业技能</p>
+    	</div>
 
-    <div class="opacity"></div>
-    <div class="title">
-        <span class="line1"></span>
-    	  <p >专业技能</p>
-    </div>
-
-  
+  		<ul>
     	<li>
-    		<span></span>
-    		住家 
-    		<span></span>
+    		<div >
+    			<img class="icon-star" src="https://zzsuper.github.io/task5/%E4%BA%94%E8%A7%92%E6%98%9F.png" width="16px">
+    		住家 &nbsp;
+    		    <img class="icon-star" src="https://zzsuper.github.io/task5/%E4%BA%94%E8%A7%92%E6%98%9F.png" width="16px">    		
     		不含餐
-    	</li>
-    	<li>
-    		<p>从业年限</p> 0~3年
-    	</li>
-    	<li>
-    		<p> 工作时间</p>全天
-    	</li>
-    	<li>
-    		<p>服务价格</p>25元/小时 
-    	</li>
-    	<li>
-    		<p>自我介绍</p> 可以洗衣、做饭照顾老人。在护工方面有5年经验，经验丰富。
-    	</li>
-   
+    			</div>
+    		</li>
+    		<li>
+    			<p>从业年限</p> 
+    			<div class="user-items">0~3年</div>
+    		</li>
+    		<li>
+    			<p> 工作时间</p>
+    			<div class="user-items">全天</div>
+    		</li>
+    		<li>
+    			<p>服务价格</p>
+    			<div class="user-price">25元/小时</div> 
+    		</li>
+    		<li class="li-last">
+    			<p >自我介绍</p>
+    			<div class="user-introduce">可以洗衣、做饭照顾老人。在护工方面有5年经验，经验丰富。</div>
+    		</li>
+    	</ul>	
+    </main>
 
 
 
 
     <footer class="footer">
-    	<button class="button-left">查看</button>
+    	<button class="button-left">留言</button>
     	<button class="button-right">电话联系</button>
     </footer>
 </body>
