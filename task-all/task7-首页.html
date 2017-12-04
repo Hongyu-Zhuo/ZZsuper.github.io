@@ -47,10 +47,8 @@
   	position: absolute;
   	top: 45px;
   	bottom: 0px;
-  	display: flex;
-  	justify-content: center;
-  	align-items: center;
   	width: 100%;
+    padding: 0 20px;
   }
 
 /*上次游戏*/
@@ -59,12 +57,14 @@
   	display: flex;
   	justify-content: center;
   	align-items: center;
+    width: 100%;
   	height: 60px;
   	border: 1px solid #9a9999;
-  	margin: 15px 20px;
+  	margin: 15px 0;
   	font-size: 16px;
   	color: #9a9999;
   	background-color: #fff;
+    outline: none;
   }
   .icon-aheard {
     position: absolute;
@@ -84,8 +84,8 @@
   	bottom: 0px;
   	height: auto;
     border: 1px solid #c1c0c0;
-    margin: 0 20px 40px;
     background-color: #fff;
+    box-sizing: border-box;
   }
   .gamechoice-title {
   	display: flex;
@@ -97,21 +97,26 @@
   	font-size: 16px;
   	color: #fbb435;
   }
-  .div {
-  	width: calc(100%-60px);
+  .game-form {
+    width: 100%;
   }
   .gamevision {
   	display: flex;
   	justify-content: center;
   	align-items: center;
+    display: block;
     width: 100%;
   	height: 100px;
+    padding: 0;
     border: 0;
-  	margin: 15px 30px;
   	font-size: 16px;
   	background-color: #29bde0;
   	color: #fff;
     outline: none;
+  }
+  .btn-gamevision {
+    width: 100%;
+    padding: 15px 30px;
   }
   .triangle {
   	position: absolute;
@@ -163,27 +168,27 @@
   </header>
   	
   <main>
-  	<div style="width:100%">
-  	<span class="lastgame">
+  	
+  	<button class="lastgame" onclick="location.href='https://ZZsuper.github.io/task-all/task7-投票.html'">
   		<p>上次游戏：捉鬼猜词版</p>
   		<span class="icon-aheard"></span>
-  	</span>
+  	</button>
   	<div class="gamechoice">
       <div class="triangle"></div>
-      <div>
+      
        
   		  <div class="gamechoice-title">捉鬼游戏</div>
-  		  <div class="div">
-  		    <button class="gamevision" onclick="">简化版</button>
+  		  <div class="btn-gamevision">
+  		    <button class="gamevision" onclick="location.href=''">简化版</button>
   		    <p>有1133个用户正在玩此款游戏</p>
   		  </div>
-  		  <div>
-  		    <div class="gamevision">猜词版</div>
+  		  <div class="btn-gamevision">
+  		    <button class="gamevision" onclick="location.href='https://ZZsuper.github.io/task-all/task7-投票.html'">猜词版</button>
   		    <p>有1133个用户正在玩此款游戏</p>
   		  </div>
   		  
-  		  <div>
-  		    <div class="gamevision">白痴版</div>
+  		  <div class="btn-gamevision">
+  		    <button class="gamevision" onclick="location.href=''">白痴版</button>
   		    <p>有1133个用户正在玩此款游戏</p>
   		  </div>
   		  <div class="slide-dot">
@@ -194,8 +199,6 @@
   	    </div>
 
       </div>
-
-  	</div>
   </div>
   </main>
 
