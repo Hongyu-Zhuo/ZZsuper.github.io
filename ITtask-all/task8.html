@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>技能树</title>
+	<meta charset="UTF-8">
+  
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://zzsuper.github.io/task-all/css/bootstrap.min.css">    
+    <style type="text/css">
+    * {
+      box-sizing: border-box;
+      list-style: none;
+    }
+    body {background-color: #f5f5f5ab;}
+    p {margin-bottom: 0;}
+    header {
+    	width: 100%;
+    }
+    .tell-word {
+      float: left;
+      display: inline-block;
+    	font-size: 12px;
+    	color: #29b078;
+      line-height: 30px;
+    }
+    a:hover {
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    .icon-wrap {
+      position: relative;
+      top: 2.55px;
+      text-align: right;
+    }
+    .icon-wechat {
+      display: inline-block;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
+    	margin-right: 5px;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat center;
+      background-position: 3px 4px; 
+    }
+    .icon-qq {
+      display: inline-block;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
+    	margin-right: 5px;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat center;
+      background-position: 4px -60px;
+    }
+    .icon-sina {
+      display: inline-block;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
+      margin-right: 5px;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat center;
+      background-position: 4px -25px;
+    }
+    .header-nav {
+      width: 100%;
+      height: 50px;
+      color: #fff;
+      background-color: #29b078;
+    }
+    .header-nav-wrap { 
+      padding-right: -5px;
+      margin-bottom: 0;
+      text-align: right;
+      list-style: none;
+    }
+    .header-nav-wrap li {
+      position: relative;
+      float: right;
+      padding: 0 20px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      line-height: 50px;
+    }
+    .header-nav-wrap a {color: #fff;}
+    .line {
+      display: none;
+    }
+    .header-nav-wrap li:hover .line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 68px;
+      border: 1.5px solid #fff;
+    }
+
+    .banner {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 500px;
+      padding: 0 150px;
+      background: url(https://zzsuper.github.io/task-all/banner-Image.png)
+      no-repeat;
+      background-size: 100% 500px;
+    }
+    .banner-font-top {
+      position: absolute;
+      top: 43%;
+      right: 20%;
+      width: 40%;
+    }
+    .banner-font-bottom {
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      width: 60%;
+    }
+    .col-sm-25 {
+      width: 25%;
+      margin-top: 100px;
+      color: #999;
+      text-align: center;
+    }
+    .icon-rocket {
+      width: 51px;
+      height: 62px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat center;
+      background-position: 4px -436px;
+    }
+    .icon-archive {
+      width: 67px;
+      height: 62px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat;
+      background-position: 4px -224px;
+      }
+    .icon-connection {
+      width: 57px;
+      height: 62px;
+      margin-left: auto;
+      margin-right: auto;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat center;
+      background-position: 4px -319px;
+    }
+    h6 {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+      font-family: "Microsoft YaHei";
+      color: #000;
+    }
+    .font {
+      text-align: left;
+      color: #999;
+      letter-spacing: 1px;
+    }
+
+    .number-of-people {
+      padding-left: 30px;
+      margin-top: 15px;
+      text-align: left;
+      font-size: 18px;
+      color: #26a26f;
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat;
+      background-position: -50px 5px;
+    }
+    .col-sm-13 {
+      padding-top: 42px;
+      padding-left: 30px;
+      border-left: 1px dashed #cac7c7;
+    }
+
+    /*
+    *如何学习
+    *使箭头垂直居中
+    */
+    .learning-steps-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    .learning-title {
+      margin-top: 60px;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+    .learning-steps {
+      width: 23%;
+    }
+    .study-number {
+      float: left;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px 0 rgba(8,1,3,.15);
+      margin-right: 10px;
+      text-align: center;
+      line-height: 70px;
+      font-size: 18px;
+      color: #26a26f;
+      background-color: #fff;
+    }
+    .learning-steps-font {
+      display: flex;
+      align-items: center;
+      height: 70px;
+      color: #999;
+      letter-spacing: 1px;
+    }
+
+    .icon-arrow {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      padding-top: 5px;
+      padding-left: 5px;
+
+      background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+      no-repeat;
+      background-position: 0 -127px;
+    }
+
+    /*优秀学员展示*/
+    .layout {
+
+      justify-content: space-between;
+      padding-top: 15px;
+      padding-left: 0;
+    }
+    .trainee-wrap {
+      width: 20%;
+      height: 300px;
+      padding-top: 15px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px 0 rgba(8, 1, 3, .15);
+      background-color: #fff;
+      overflow: auto;
+    }
+    .trainee-wrap:nth-child(2) {
+      margin-left: 6.66666666667%;
+      margin-right: 3.33333333333%;
+    }
+    .trainee-wrap:nth-child(3) {
+      margin-left: 3.33333333333%;
+      margin-right: 6.66666666667%;
+    }
+    .heard-portrait {
+      text-align: center;
+    }
+
+    .slide-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .slide-dot-1 {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      margin: 5px;
+      background-color: #26a26f;
+    }
+  .slide-dot-2 {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(8, 1, 3, .15);
+    background-color: #fff;
+  }
+
+  /*战略合作企业*/
+  .com-title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+  }
+  .com-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20% ;
+    height: 180px;
+ 
+    box-shadow: 0 1px 3px 0 rgba(8, 1, 3, 0.15);
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .com-layout:hover {
+    box-shadow: 0px 1px 13px 0px rgba(8, 1, 3, 0.1);
+  }
+
+  /*友情链接*/
+  .friendlink-wrap {
+    width: 100
+  }
+  .friendlink-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  .link-layout {
+    width: 10%;
+    padding-bottom: 5px;
+    line-height: 20px;
+    color: #999;
+    
+   }
+    .link-layout li {list-style-type: disc;}
+    .link-layout:hover li {
+      text-decoration: underline;
+      color: #29b078;
+
+    }
+    footer {
+      position: relative;
+    	width: 100%;
+      height: 200px;
+      padding-top: 35px;
+      font-size: 16px;
+      letter-spacing: 1px;
+      color: #fff;
+      background-color: #29b078;
+    }
+    footer a {color: #fff}
+    footer .col-sm-12:nth-child(1) {
+      width: 30%;
+      padding-right: 50px;
+    }
+    .jinengshu {
+      margin-bottom: 60px;
+    }
+    footer .col-sm-12:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+      height: 102px;
+    }
+
+    footer .col-sm-12:nth-child(3) {
+      float: right;
+      width: 12%;
+      font-size: 13px;
+      text-align: center;
+    }
+    footer .col-sm-12:nth-child(3) img {margin-left: 2px}
+    .copyright {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 999999;
+      width: 100%;
+      border-top: 1px solid #32c086;
+      font-size: 14px;
+      line-height: 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    </style>
+</head>
+<body>
+  <header>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-4 ">
+  				<p class="tell-word">咨询电话：010-594-78634</p>
+  			</div>
+  			<div class="col-md-8 ">
+          <div class="icon-wrap">
+  				  <a href="">
+  				    <span class="icon-wechat"></span>
+  				  </a>
+  				  <a href="">
+  				    <span class="icon-qq"></span>
+  				  </a>
+  				  <a href="">
+  					  <span class="icon-sina"></span>
+  				  </a>
+          </div>
+  			</div>
+  		</div>
+    </div>
+
+    <div class="header-nav">
+      <div class="container">
+        <ul class="header-nav-wrap row">
+          <a href="">
+            <li>
+              <p>关于</p>
+              <div class="line"></div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <p>推荐</p>
+              <div class="line"></div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <p>职业</p>
+              <div class="line"></div>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <p>首页</p>
+              <div class="line"></div>
+            </li>
+          </a>
+         
+        </ul>
+          </div>    
+        </div>  
+  </header>
+  <main>
+    <!--轮播图-->
+    <div class="banner">
+    <img src="https://ZZsuper.github.io/ITtask-all/sprite/banner-left-arrow.png">
+    <img class="banner-font-top" src="https://ZZsuper.github.io/ITtask-all/sprite/初级菜鸟.png">
+    <img class="banner-font-bottom" src="https://ZZsuper.github.io/ITtask-all/sprite/50万年薪的程序员.png">
+    <img  src="https://ZZsuper.github.io/ITtask-all/sprite/banner-right-arrow.png">   
+    </div>
+
+    <!--高效 规范 人脉-->
+    <div class="container">      
+      <ul class="row">
+        <li class="col-sm-25 col-sm-12">
+          <div class="icon-rocket" ></div>
+          <h6>高效</h6>
+          <p class="font">将五到七年的成长时间，缩短到一年到三年。</p>
+        </li>
+        <li class="col-sm-25 col-sm-12">
+          <div class="icon-archive" ></div>
+          <h6>规范</h6>
+          <p class="font">标准的实战教程，不会走弯路</p>
+        </li>
+        <li class="col-sm-25 col-sm-12">
+          <div class="icon-connection" ></div>
+          <h6>人脉</h6>
+          <p class="font">同班好友，同院学长，技术大师，入学就混入职脉圈</p>
+        </li>
+        <li class="col-sm-25 col-sm-12 col-sm-13" >
+          <div class="number-of-people">12400</div>
+          <p class="font">累计在线学习人数</p>          
+          <div class="number-of-people">12400</div>
+          <p class="font">学员已经找到满意工作</p>          
+        </li>
+      </ul>   
+    </div>
+
+    <!--如何学习-->
+    <div class="container">
+      <h6 class="learning-title">如何学习</h6>
+      <ul class="row learning-steps-wrap">
+        
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>1</p>
+          </span>
+          
+          <p class="learning-steps-font">
+          匹配你现在的个人情况寻找适合自己的岗位
+          </p>
+          
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>2</p>
+          </span>
+          <p class="learning-steps-font">
+          了解职业前景酬金待遇、竞争压力等
+          </p>
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>3</p>
+          </span>
+          <p class="learning-steps-font">
+          掌握行业内顶级技能
+          </p>
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+     
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>4</p>
+          </span>
+          <p class="learning-steps-font">
+          查看职业目标任务
+          </p>
+        </li>
+      </ul>
+      <ul class="row learning-steps-wrap">
+        
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>5</p>
+          </span>
+          
+          <p class="learning-steps-font">
+          参考学习资源，掌握技能点，逐个完成任务
+          </p>
+          
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>6</p>
+          </span>
+          <p class="learning-steps-font">
+          加入班级，和小伙伴们互帮互助，一块学习
+          </p>
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>7</p>
+          </span>
+          <p class="learning-steps-font">
+          选择导师，一路引导，加速自己成长
+          </p>
+        </li>
+        <span class="icon-arrow">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+        </span>
+     
+        <li class="col-sm-12 learning-steps"> 
+          <span class="study-number">
+            <p>8</p>
+          </span>
+          <p class="learning-steps-font">
+          完成职业技能，升级业界大能
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!--优秀学员展示-->
+    <div class="container">
+      <h6 class="learning-title">优秀学员展示</h6>
+      <ul class="row layout">
+        <li class="col-sm-12 trainee-wrap">
+          <div class="heard-portrait">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar-1.png">
+          </div>
+          <h6>技术顾问：罗大佑</h6>
+          <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+        </li>
+      
+        <li class="col-sm-12 trainee-wrap">
+          <div class="heard-portrait">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar-2.png">
+          </div>
+          <h6>技术顾问：罗大佑</h6>
+          <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+        </li>
+      
+        <li class="col-sm-12 trainee-wrap">
+          <div class="heard-portrait">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar.png">
+          </div>
+          <h6>技术顾问：罗大佑</h6>
+          <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+        </li>
+
+        <li class="col-sm-12 trainee-wrap">
+          <div class="heard-portrait">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/pic-罗大佑.png">
+          </div>
+          <h6>技术顾问：罗大佑</h6>
+          <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+        </li>
+      </ul> 
+        <div class="slide-dot">
+          <div class="slide-dot-1"></div>
+          <div class="slide-dot-2"></div>
+          <div class="slide-dot-2"></div>
+          <div class="slide-dot-2"></div>
+        </div>      
+    </div>
+
+    <!--战略合作企业-->
+    <div class="container">
+      <h6 class="com-title">战略合作企业</h6>
+      <div class="row">
+        <a href="" class="col-sm-12 com-layout">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/alibaba.png">
+        </a>
+        <a href="" class="col-sm-12 com-layout">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/金山云.png">
+        </a>
+        <a href="" class="col-sm-12 com-layout">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/环信.png">
+        </a>
+        <a href="" class="col-sm-12 com-layout">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/容联云通讯.png">
+        </a>
+        <a href="" class="col-sm-12 com-layout">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/7牛.jpg">
+        </a>
+      </div>
+    </div>
+
+    <!--友情链接-->
+    <div class="friendlink-wrap">
+      <div class="container">
+        <h6 class="friendlink-title">友情链接</h6>
+        <div class="row">
+          
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+          
+        </div>
+        <div class="row">
+          
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="link-layout col-sm-12" href="">
+              <li>手机软件</li>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 ">
+          <p class="jinengshu">技能树 — 改变你我</p>
+          <a href="">
+            <span>关于我们</span> 
+          </a> | 
+          <a href="">
+            <span>联系我们</span>
+          </a> |
+          <a href=""> 
+            <span>合作企业</span>
+          </a>
+        </div>
+        <div class="col-sm-12">
+          <p>旗下网站</p>
+          <div>
+            <a href="">草船云孵化器</a>&emsp;&nbsp;
+            <a href="">最强IT特训营</a>
+          </div>
+          <div>
+            <a href="">葡萄藤轻游戏</a>&emsp;&nbsp;
+            <a href="">桌游精灵</a>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <p>微信公众平台</p>
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/微信公众平台-二维码.png">
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号
+    </div>
+  </footer>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
