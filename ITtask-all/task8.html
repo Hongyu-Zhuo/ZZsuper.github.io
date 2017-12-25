@@ -3,9 +3,7 @@
 <head>
 	<title>技能树</title>
 	<meta charset="UTF-8">
-  
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://zzsuper.github.io/task-all/css/bootstrap.min.css">    
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <style type="text/css">
     * {
       box-sizing: border-box;
@@ -123,11 +121,14 @@
       right: 20%;
       width: 60%;
     }
+
+    ul {padding: 0;}
     .col-sm-25 {
-      width: 25%;
       margin-top: 100px;
       color: #999;
-      text-align: center;
+    }
+    @media (max-width: 992px){
+      .col-sm-25 p {text-align: center;}
     }
     .icon-rocket {
       width: 51px;
@@ -190,8 +191,7 @@
     *使箭头垂直居中
     */
     .learning-steps-wrap {
-      display: flex;
-      align-items: center;
+
       margin-bottom: 60px;
     }
     .learning-title {
@@ -199,9 +199,7 @@
       margin-bottom: 40px;
       letter-spacing: 1px;
     }
-    .learning-steps {
-      width: 23%;
-    }
+  
     .study-number {
       float: left;
       width: 70px;
@@ -215,12 +213,18 @@
       color: #26a26f;
       background-color: #fff;
     }
+    @media (min-width: 1440) {
+      .learning-steps1 {
+        width: 150px;
+      }
+    }
     .learning-steps-font {
       display: flex;
       align-items: center;
       height: 70px;
       color: #999;
       letter-spacing: 1px;
+      word-wrap: break-word;
     }
 
     .icon-arrow {
@@ -237,28 +241,18 @@
 
     /*优秀学员展示*/
     .layout {
-
-      justify-content: space-between;
       padding-top: 15px;
-      padding-left: 0;
     }
     .trainee-wrap {
-      width: 20%;
-      height: 300px;
-      padding-top: 15px;
+      min-height: 300px;
+      padding: 15px;
+      margin-top: 30px;
       border-radius: 4px;
       box-shadow: 0 1px 3px 0 rgba(8, 1, 3, .15);
       background-color: #fff;
       overflow: auto;
     }
-    .trainee-wrap:nth-child(2) {
-      margin-left: 6.66666666667%;
-      margin-right: 3.33333333333%;
-    }
-    .trainee-wrap:nth-child(3) {
-      margin-left: 3.33333333333%;
-      margin-right: 6.66666666667%;
-    }
+  
     .heard-portrait {
       text-align: center;
     }
@@ -325,55 +319,35 @@
     .link-layout:hover li {
       text-decoration: underline;
       color: #29b078;
-
     }
+
     footer {
-      position: relative;
     	width: 100%;
-      height: 200px;
-      padding-top: 35px;
       font-size: 16px;
       letter-spacing: 1px;
       color: #fff;
       background-color: #29b078;
     }
-    footer a {color: #fff}
-    footer a:hover {text-decoration: underline;}
-    footer .col-sm-12:nth-child(1) {
-      width: 30%;
-      padding-right: 50px;
-    }
     .jinengshu {
-      margin-bottom: 60px;
+      margin-top: 40px;
     }
-    footer .col-sm-12:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 50%;
-      height: 102px;
-    }
-
-    footer .col-sm-12:nth-child(3) {
-      float: right;
-      width: 12%;
-      font-size: 13px;
-      text-align: center;
-    }
-    footer .col-sm-12:nth-child(3) img {margin-left: 2px}
+    footer a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #fff}
+    footer a:hover {text-decoration: underline;}
     .copyright {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 999999;
       width: 100%;
       border-top: 1px solid #32c086;
+      margin-top: 15px;
       font-size: 14px;
       line-height: 30px;
       text-align: center;
-      color: #fff;
     }
-
+    @media (min-width: 768px) {
+      .bar-code {float: right;}
+    }
+    
     </style>
 </head>
 <body>
@@ -443,25 +417,25 @@
     <!--高效 规范 人脉-->
     <div class="container">      
       <ul class="row">
-        <li class="col-sm-25 col-sm-12">
+        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
           <div class="icon-rocket" ></div>
           <h6>高效</h6>
           <p class="font">将五到七年的成长时间，缩短到一年到三年。</p>
         </li>
-        <li class="col-sm-25 col-sm-12">
+        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
           <div class="icon-archive" ></div>
           <h6>规范</h6>
           <p class="font">标准的实战教程，不会走弯路</p>
         </li>
-        <li class="col-sm-25 col-sm-12">
+        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
           <div class="icon-connection" ></div>
           <h6>人脉</h6>
           <p class="font">同班好友，同院学长，技术大师，入学就混入职脉圈</p>
         </li>
-        <li class="col-sm-25 col-sm-12 col-sm-13" >
-          <div class="number-of-people">12400</div>
+        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3 col-sm-13" >
+          <p class="number-of-people">12400</p>
           <p class="font">累计在线学习人数</p>          
-          <div class="number-of-people">12400</div>
+          <p class="number-of-people">12400</p>
           <p class="font">学员已经找到满意工作</p>          
         </li>
       </ul>   
@@ -472,21 +446,23 @@
       <h6 class="learning-title">如何学习</h6>
       <ul class="row learning-steps-wrap">
         
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>1</p>
           </span>
-          
-          <p class="learning-steps-font">
+          <span class="" style="float: left">
+          <p class="learning-steps1 learning-steps-font">
           匹配你现在的个人情况寻找适合自己的岗位
           </p>
+          </span>
           
+          <span style="float:right" class="icon-arrow">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+          </span>
+ 
         </li>
-        <span class="icon-arrow">
-          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
-        </span>
-
-        <li class="col-sm-12 learning-steps"> 
+       
+       <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>2</p>
           </span>
@@ -498,7 +474,7 @@
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
 
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps">  
           <span class="study-number">
             <p>3</p>
           </span>
@@ -510,7 +486,7 @@
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
      
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps">  
           <span class="study-number">
             <p>4</p>
           </span>
@@ -574,44 +550,57 @@
     <div class="container">
       <h6 class="learning-title">优秀学员展示</h6>
       <ul class="row layout">
-        <li class="col-sm-12 trainee-wrap">
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <div class="trainee-wrap">
           <div class="heard-portrait">
             <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar-1.png">
           </div>
           <h6>技术顾问：罗大佑</h6>
           <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+          </div>
         </li>
       
-        <li class="col-sm-12 trainee-wrap">
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <div class="trainee-wrap">
           <div class="heard-portrait">
             <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar-2.png">
           </div>
           <h6>技术顾问：罗大佑</h6>
           <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+          </div>
         </li>
       
-        <li class="col-sm-12 trainee-wrap">
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <div class="trainee-wrap">
           <div class="heard-portrait">
             <img src="https://ZZsuper.github.io/ITtask-all/sprite/Avatar.png">
           </div>
           <h6>技术顾问：罗大佑</h6>
           <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+          </div>
         </li>
 
-        <li class="col-sm-12 trainee-wrap">
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+          <div class="trainee-wrap">
           <div class="heard-portrait">
             <img src="https://ZZsuper.github.io/ITtask-all/sprite/pic-罗大佑.png">
           </div>
           <h6>技术顾问：罗大佑</h6>
           <p class="font">百度技术总监：互联网基础服务领域，从事虚拟主机云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</p>
+          </div>
         </li>
       </ul> 
-        <div class="slide-dot">
+      <div class="container">
+        <div class="row">
+          <div class="slide-dot">
           <div class="slide-dot-1"></div>
           <div class="slide-dot-2"></div>
           <div class="slide-dot-2"></div>
           <div class="slide-dot-2"></div>
-        </div>      
+        </div> 
+        </div>
+      </div>
+             
     </div>
 
     <!--战略合作企业-->
@@ -715,7 +704,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 ">
+        <div class="col-xs-12 col-sm-5">
           <p class="jinengshu">技能树 — 改变你我</p>
           <a href="">
             <span>关于我们</span> 
@@ -727,8 +716,8 @@
             <span>合作企业</span>
           </a>
         </div>
-        <div class="col-sm-12">
-          <p>旗下网站</p>
+        <div class="col-xs-12 col-sm-5">
+          <p class="jinengshu">旗下网站</p>
           <div>
             <a href="">草船云孵化器</a>&emsp;&nbsp;
             <a href="">最强IT特训营</a>
@@ -738,9 +727,11 @@
             <a href="">桌游精灵</a>
           </div>
         </div>
-        <div class="col-sm-12">
-          <p>微信公众平台</p>
-          <img src="https://ZZsuper.github.io/ITtask-all/sprite/微信公众平台-二维码.png">
+        <div class="col-xs-12 col-sm-2">
+          <div class="bar-code">
+            <p>微信公众平台</p>
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/微信公众平台-二维码.png">
+          </div>
         </div>
       </div>
     </div>
@@ -748,6 +739,8 @@
       Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号
     </div>
   </footer>
+    
+  
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 	 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
