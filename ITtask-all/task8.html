@@ -194,6 +194,15 @@
 
       margin-bottom: 60px;
     }
+    .learning-steps {
+      position: relative;
+      height: 72px;
+      padding-left: 80px;
+      padding-right: 33px;
+      margin-bottom: 15px;
+      background: url(https://ZZsuper.github.io/ITtask-all/sprite/圆形.png)
+      no-repeat;
+    }
     .learning-title {
       margin-top: 60px;
       margin-bottom: 40px;
@@ -201,17 +210,12 @@
     }
   
     .study-number {
-      float: left;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      box-shadow: 0 1px 3px 0 rgba(8,1,3,.15);
-      margin-right: 10px;
-      text-align: center;
-      line-height: 70px;
+      position: absolute;
+      top: 25px;
+      left: 31px;
       font-size: 18px;
       color: #26a26f;
-      background-color: #fff;
+
     }
     @media (min-width: 1440) {
       .learning-steps1 {
@@ -228,6 +232,9 @@
     }
 
     .icon-arrow {
+      position: absolute;
+      top: 20px;
+      right: 1px;
       display: inline-block;
       width: 32px;
       height: 32px;
@@ -284,16 +291,18 @@
     margin-bottom: 50px;
     letter-spacing: 1px;
   }
+
   .com-layout {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20% ;
     height: 180px;
- 
     box-shadow: 0 1px 3px 0 rgba(8, 1, 3, 0.15);
     background-color: #fff;
     overflow: hidden;
+  }
+  @media (min-width: 992px) {
+    .com-layout2 {width: 20%;}
   }
   .com-layout:hover {
     box-shadow: 0px 1px 13px 0px rgba(8, 1, 3, 0.1);
@@ -309,13 +318,16 @@
     letter-spacing: 1px;
   }
   .link-layout {
-    width: 10%;
+    float: left;
     padding-bottom: 5px;
     line-height: 20px;
     color: #999;
     
    }
-    .link-layout li {list-style-type: disc;}
+    .link-layout li {
+      padding: 0 5px;
+      list-style-type: disc;
+    }
     .link-layout:hover li {
       text-decoration: underline;
       color: #29b078;
@@ -345,7 +357,10 @@
       text-align: center;
     }
     @media (min-width: 768px) {
-      .bar-code {float: right;}
+      .bar-code {
+        float: right;
+        margin-top: 40px;
+      }
     }
     
     </style>
@@ -469,10 +484,11 @@
           <p class="learning-steps-font">
           了解职业前景酬金待遇、竞争压力等
           </p>
-        </li>
-        <span class="icon-arrow">
+          <span class="icon-arrow">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
+        </li>
+        
 
         <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps">  
           <span class="study-number">
@@ -481,10 +497,11 @@
           <p class="learning-steps-font">
           掌握行业内顶级技能
           </p>
+          <span class="icon-arrow">
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
+          </span>
         </li>
-        <span class="icon-arrow">
-          <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
-        </span>
+        
      
         <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps">  
           <span class="study-number">
@@ -497,7 +514,7 @@
       </ul>
       <ul class="row learning-steps-wrap">
         
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>5</p>
           </span>
@@ -505,37 +522,39 @@
           <p class="learning-steps-font">
           参考学习资源，掌握技能点，逐个完成任务
           </p>
-          
-        </li>
-        <span class="icon-arrow">
+          <span class="icon-arrow">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
+        </li>
+        
 
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>6</p>
           </span>
           <p class="learning-steps-font">
           加入班级，和小伙伴们互帮互助，一块学习
           </p>
-        </li>
-        <span class="icon-arrow">
+          <span class="icon-arrow">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
+        </li>
+        
 
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>7</p>
           </span>
           <p class="learning-steps-font">
           选择导师，一路引导，加速自己成长
           </p>
-        </li>
-        <span class="icon-arrow">
+          <span class="icon-arrow">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
         </span>
+        </li>
+        
      
-        <li class="col-sm-12 learning-steps"> 
+        <li class="col-xs-12 col-sm-6 col-md-3 col-lg-3 learning-steps"> 
           <span class="study-number">
             <p>8</p>
           </span>
@@ -590,14 +609,14 @@
           </div>
         </li>
       </ul> 
-      <div class="container">
         <div class="row">
+          <div class="col-sm-12">
           <div class="slide-dot">
           <div class="slide-dot-1"></div>
           <div class="slide-dot-2"></div>
           <div class="slide-dot-2"></div>
           <div class="slide-dot-2"></div>
-        </div> 
+        </div>
         </div>
       </div>
              
@@ -607,19 +626,19 @@
     <div class="container">
       <h6 class="com-title">战略合作企业</h6>
       <div class="row">
-        <a href="" class="col-sm-12 com-layout">
+        <a href="" class="col-xs-12 col-sm-6  com-layout com-layout2">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/alibaba.png">
         </a>
-        <a href="" class="col-sm-12 com-layout">
+        <a href="" class="col-xs-12 col-sm-6  com-layout com-layout2">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/金山云.png">
         </a>
-        <a href="" class="col-sm-12 com-layout">
-          <img src="https://ZZsuper.github.io/ITtask-all/sprite/环信.png">
+        <a href="" class="col-xs-12 col-sm-6  com-layout com-layout2">
+          <img src="https://ZZsuper.github.io/ITtask-all/sprite/环信-替换.png">
         </a>
-        <a href="" class="col-sm-12 com-layout">
+        <a href="" class="col-xs-12 col-sm-6  com-layout com-layout2">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/容联云通讯.png">
         </a>
-        <a href="" class="col-sm-12 com-layout">
+        <a href="" class="col-xs-12 col-sm-6 com-layout com-layout2">
           <img src="https://ZZsuper.github.io/ITtask-all/sprite/7牛.jpg">
         </a>
       </div>
@@ -630,72 +649,98 @@
       <div class="container">
         <h6 class="friendlink-title">友情链接</h6>
         <div class="row">
-          
-            <a class="link-layout col-sm-12" href="">
+          <div class="col-md-6">
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-          
-        </div>
-        <div class="row">
-          
-            <a class="link-layout col-sm-12" href="">
+          </div>
+          </div>
+
+          <div class="col-md-6">
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+          </div>
+
+          <div class="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout col-sm-12" href="">
+            <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
-          
+          </div>
+          </div>
         </div>
       </div>
     </div>
