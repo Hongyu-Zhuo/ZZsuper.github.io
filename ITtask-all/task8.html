@@ -3,6 +3,8 @@
 <head>
 	<title>技能树</title>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">    
     <style type="text/css">
     * {
@@ -103,32 +105,41 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      height: 500px;
-      padding: 0 150px;
-      background: url(https://zzsuper.github.io/task-all/banner-Image.png)
-      no-repeat;
-      background-size: 100% 500px;
+      height: 31.25vw;
     }
-    .banner-font-top {
-      position: absolute;
-      top: 43%;
-      right: 20%;
-      width: 40%;
+    .banner-bg {
+      width: 100%;
+      height: 31.25vw;
     }
-    .banner-font-bottom {
+    .banner-arrow-left {
       position: absolute;
-      top: 50%;
-      right: 20%;
-      width: 60%;
+      top: calc(50% - 10px);
+      left: calc(50% - 10px);
+      width: 20px;
+    }
+    .banner-arrow-right {
+      position: absolute;
+      top: calc(50% - 10px);
+      right: calc(50% - 10px);
+      width: 20px;
     }
 
     ul {padding: 0;}
-    .col-sm-25 {
+    .center-text {
       margin-top: 100px;
       color: #999;
     }
     @media (max-width: 992px){
-      .col-sm-25 p {text-align: center;}
+      .center-text p {text-align: center;}
+      .number-of-people-layout {
+        display: flex;
+        justify-content: center;
+      } 
+      .number-of-people-wrap {
+      padding-top: 42px;
+      padding-left: 30px;
+      border-left: 0;
+    }
     }
     .icon-rocket {
       width: 51px;
@@ -171,6 +182,7 @@
     }
 
     .number-of-people {
+      display: inline-block;
       padding-left: 30px;
       margin-top: 15px;
       text-align: left;
@@ -180,12 +192,18 @@
       no-repeat;
       background-position: -50px 5px;
     }
-    .col-sm-13 {
+    .number-of-people-wrap {
       padding-top: 42px;
       padding-left: 30px;
       border-left: 1px dashed #cac7c7;
     }
-
+    @media (max-width: 992px) {
+      .number-of-people-wrap {
+        padding-top: 42px;
+        padding-left: 30px;
+        border-left: 0;
+      }
+    }
     /*
     *如何学习
     *使箭头垂直居中
@@ -217,11 +235,8 @@
       color: #26a26f;
 
     }
-    @media (min-width: 1440) {
-      .learning-steps1 {
-        width: 150px;
-      }
-    }
+  
+
     .learning-steps-font {
       display: flex;
       align-items: center;
@@ -422,36 +437,84 @@
   </header>
   <main>
     <!--轮播图-->
+    <!--
     <div class="banner">
-    <img src="https://ZZsuper.github.io/ITtask-all/sprite/banner-left-arrow.png">
+      <img class="banner-bg" src="https://ZZsuper.github.io/ITtask-all/sprite/banner-替换_02.png">
+  
+      <a class="carousel-control left" href="">
+        <img class="banner-arrow-left" src="https://ZZsuper.github.io/ITtask-all/sprite/banner-left-arrow.png">
+      </a>
+    
     <img class="banner-font-top" src="https://ZZsuper.github.io/ITtask-all/sprite/初级菜鸟.png">
     <img class="banner-font-bottom" src="https://ZZsuper.github.io/ITtask-all/sprite/50万年薪的程序员.png">
-    <img  src="https://ZZsuper.github.io/ITtask-all/sprite/banner-right-arrow.png">   
+    
+      <div >
+        <a href="">
+        <img class="carousel-control right" class="banner-arrow-right"  src="https://ZZsuper.github.io/ITtask-all/sprite/banner-right-arrow.png"> 
+      </a>
+      </div>
+
+    -->
+
+  <div id="myCarousel" class="carousel slide">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>   
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://ZZsuper.github.io/ITtask-all/sprite/banner-替换_02.png" alt="First slide">
+      </div>
+      <div class="item">
+        <img src="https://ZZsuper.github.io/ITtask-all/sprite/banner-替换_02.png" alt="Second slide">
+      </div>
+      <div class="item">
+        <img src="https://ZZsuper.github.io/ITtask-all/sprite/banner-替换_02.png" alt="Third slide">
+      </div>
     </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" 
+     data-slide="prev">
+      <img class="banner-arrow-left" src="https://ZZsuper.github.io/ITtask-all/sprite/banner-left-arrow.png">
+    </a>
+    <a class="carousel-control right" href="#myCarousel" 
+     data-slide="next">
+      <img class="banner-arrow-right"  src="https://ZZsuper.github.io/ITtask-all/sprite/banner-right-arrow.png">
+     </a>
+  </div> 
 
     <!--高效 规范 人脉-->
     <div class="container">      
       <ul class="row">
-        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
+        <li class="center-text col-xs-12 col-sm-6 col-md-3">
           <div class="icon-rocket" ></div>
           <h6>高效</h6>
           <p class="font">将五到七年的成长时间，缩短到一年到三年。</p>
         </li>
-        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
+        <li class="center-text col-xs-12 col-sm-6 col-md-3">
           <div class="icon-archive" ></div>
           <h6>规范</h6>
           <p class="font">标准的实战教程，不会走弯路</p>
         </li>
-        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3">
+        <li class="center-text col-xs-12 col-sm-6 col-md-3">
           <div class="icon-connection" ></div>
           <h6>人脉</h6>
           <p class="font">同班好友，同院学长，技术大师，入学就混入职脉圈</p>
         </li>
-        <li class="col-sm-25 col-xs-12 col-sm-6 col-md-3 col-sm-13" >
-          <p class="number-of-people">12400</p>
-          <p class="font">累计在线学习人数</p>          
-          <p class="number-of-people">12400</p>
-          <p class="font">学员已经找到满意工作</p>          
+        <li class="center-text col-xs-12 col-sm-6 col-md-3 number-of-people-wrap" >
+          <div class="number-of-people-layout">
+            <p class="number-of-people">12400</p>
+          </div>
+            <p class="font">累计在线学习人数</p> 
+           
+          <div class="number-of-people-layout">        
+            <p class="number-of-people">12400</p>
+          </div>
+            <p class="font">学员已经找到满意工作</p> 
+                   
         </li>
       </ul>   
     </div>
@@ -465,13 +528,13 @@
           <span class="study-number">
             <p>1</p>
           </span>
-          <span class="" style="float: left">
+          <span class="" >
           <p class="learning-steps1 learning-steps-font">
           匹配你现在的个人情况寻找适合自己的岗位
           </p>
           </span>
           
-          <span style="float:right" class="icon-arrow">
+          <span class="icon-arrow">
             <img src="https://ZZsuper.github.io/ITtask-all/sprite/绿色箭头.png">
           </span>
  
@@ -650,7 +713,7 @@
         <h6 class="friendlink-title">友情链接</h6>
         <div class="row">
           <div class="col-md-6">
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -658,7 +721,7 @@
               <li>手机软件</li>
             </a>
           </div>
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -667,7 +730,7 @@
             </a>
             </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -676,7 +739,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -685,7 +748,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -696,7 +759,7 @@
           </div>
 
           <div class="col-md-6">
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -705,7 +768,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -714,7 +777,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -723,7 +786,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
@@ -732,7 +795,7 @@
             </a>
           </div>
 
-          <div class="">
+          <div>
             <a class="link-layout " href="">
               <li>手机软件</li>
             </a>
