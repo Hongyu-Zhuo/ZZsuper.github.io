@@ -73,7 +73,7 @@
       background-color: #29b078;
     }
     .header-nav-wrap { 
-      padding-right: -5px;
+      position: relative;
       margin-bottom: 0;
       text-align: right;
       list-style: none;
@@ -85,6 +85,15 @@
       font-size: 12px;
       letter-spacing: 2px;
       line-height: 50px;
+    }
+    .nav-icon-jinengshu {
+      position: absolute;
+      top: 15%;
+      left: 15px;
+      float: left;
+      width: 80px;
+      margin-top: auto;
+      margin-bottom: auto;
     }
     .header-nav-wrap a {color: #fff;}
     .line {
@@ -332,7 +341,7 @@
     letter-spacing: 1px;
   }
   .link-layout {
-    float: left;
+    display: inline-block;
     padding-bottom: 5px;
     line-height: 20px;
     color: #999;
@@ -340,9 +349,10 @@
    }
     .link-layout li {
       padding: 0 5px;
+      color: #999;
       list-style-type: disc;
     }
-    .link-layout:hover li {
+    .link-layout a:hover li {
       text-decoration: underline;
       color: #29b078;
     }
@@ -383,7 +393,7 @@
   <header>
   	<div class="container">
   		<div class="row">
-  			<div class="col-md-4 ">
+  			<div class="col-md-4 hidden-xs">
   				<p class="tell-word">咨询电话：010-594-78634</p>
   			</div>
   			<div class="col-md-8 ">
@@ -405,6 +415,9 @@
     <div class="header-nav">
       <div class="container">
         <ul class="header-nav-wrap row">
+          <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
+            <img class="nav-icon-jinengshu" src="https://ZZsuper.github.io/ITtask-all/sprite/技能树.png">
+          </a>
           <a href="">
             <li>
               <p>关于</p>
@@ -693,97 +706,96 @@
       <div class="container">
         <h6 class="friendlink-title">友情链接</h6>
         <div class="row">
-          <div class="col-md-6">
-          <div>
-            <a class="link-layout " href="">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
-          <div>
-            <a class="link-layout " href="">
+          </span>
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            </div>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
-          </div>
-
-          <div class="col-md-6">
-          <div>
-            <a class="link-layout " href="">
-              <li>手机软件</li>
-            </a>
-            <a class="link-layout " href="">
-              <li>手机软件</li>
-            </a>
+          </span>
           </div>
 
-          <div>
-            <a class="link-layout " href="">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
+          <span class="link-layout">
+            <a class="" href="">
+              <li>手机软件</li>
+            </a>
+            <a class="" href="">
+              <li>手机软件</li>
+            </a>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
 
-          <div>
-            <a class="link-layout " href="">
+          <span class="link-layout">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-            <a class="link-layout " href="">
+            <a class="" href="">
               <li>手机软件</li>
             </a>
-          </div>
+          </span>
           </div>
         </div>
       </div>
@@ -830,7 +842,7 @@
   </footer>
     
   
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 	 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
