@@ -3,7 +3,6 @@
 <head>
 	<title>战略合作企业</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://zzsuper.github.io/task-all/css/bootstrap.min.css">    
     <style type="text/css">
      * {
@@ -67,7 +66,7 @@
     }
     .header-nav {
       width: 100%;
-      height: 50px;
+      height: auto;
       color: #fff;
       background-color: #29b078;
     }
@@ -80,12 +79,10 @@
     }
     .nav-icon-jinengshu {
       position: absolute;
-      top: 15%;
       left: 15px;
       float: left;
       width: 80px;
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-top: 6px;
     }
     .header-nav-wrap li {
       position: relative;
@@ -95,6 +92,51 @@
       letter-spacing: 2px;
       line-height: 50px;
     }
+
+    .navbar {
+      margin-bottom: 0;
+      border: 0;
+      background-color: #29b078;
+    }
+    .navbar-default {background-color: #29b078;}
+    .navbar-toggle {
+      margin: 10px;
+      border: 0;
+    }
+    
+    .navbar-toggle:hover, .navbar-toggle:focus,  .navbar-toggle:active {background-color: rgba(0, 0, 0, .2)!important;
+    }
+    @media only screen and (max-width: 767px) {
+      .navbar-nav {
+        float: none;
+        width: 100%;
+        height:165px;
+        margin: 0;
+        background-color: #29b078;
+        border-top: 1px solid #999;
+      }
+    }
+    @media (min-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+    }   
+    .navbar-nav li {
+      float:none;
+      text-align: center;
+    }
+    .navbar-nav>li a {
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 40px;
+      color: #fff !important;
+      background-color: #29b078 !important;
+      z-index: 999999;
+    }
+    .navbar-nav li:hover {border-bottom: 1px solid #fff;}
+
     .header-nav-wrap a {color: #fff;}
     .line {
       display: none;
@@ -107,7 +149,14 @@
       width: 68px;
       border: 1.5px solid #fff;
     }
-
+    .line-visible {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 68px;
+      border: 1.5px solid #fff;
+    }
  
 
     /*banner 开始*/
@@ -205,50 +254,33 @@
     } 
 
     footer {
-      position: relative;
       width: 100%;
-      height: 200px;
-      padding-top: 35px;
       font-size: 16px;
       letter-spacing: 1px;
       color: #fff;
       background-color: #29b078;
     }
-    footer a {color: #fff;}
-    footer a:hover {text-decoration: underline;}
-    footer .col-sm-12:nth-child(1) {
-      width: 30%;
-      padding-right: 50px;
-    }
     .jinengshu {
-      margin-bottom: 60px;
+      margin-top: 40px;
     }
-    footer .col-sm-12:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 50%;
-      height: 102px;
-    }
-
-    footer .col-sm-12:nth-child(3) {
-      float: right;
-      width: 12%;
-      font-size: 13px;
-      text-align: center;
-    }
-    footer .col-sm-12:nth-child(3) img {margin-left: 2px}
+    footer a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #fff}
+    footer a:hover {text-decoration: underline;}
     .copyright {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 999999;
       width: 100%;
       border-top: 1px solid #32c086;
+      margin-top: 15px;
       font-size: 14px;
       line-height: 30px;
       text-align: center;
-      color: #fff;
+    }
+    @media (min-width: 768px) {
+      .bar-code {
+        float: right;
+        margin-top: 40px;
+      }
     }
   </style>
 </head>
@@ -276,21 +308,50 @@
     </div>
 
     <div class="header-nav">
-      <div class="container">
+      <nav class="navbar navbar-default container">
         <ul class="header-nav-wrap row">
-          <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
-            <img class="nav-icon-jinengshu" src="https://ZZsuper.github.io/ITtask-all/sprite/技能树.png">
-          </a>
+
+          <div class="navbar-header">
+            <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
+              <img class="nav-icon-jinengshu" src="https://ZZsuper.github.io/ITtask-all/sprite/技能树.png">
+            </a>
+        
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+              <span class="sr-only">切换导航</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          
+          <div class="navbar-collpase collapse in" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#">首页</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-职位列表.html">职业</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-战略合作企业.html">推荐</a>
+              </li>
+              <li class="active">
+                <a href="#">关于</a>
+              </li>
+            </ul>
+          </div>
+
+        <div class="hidden-xs">
           <a href="">
             <li>
               <p>关于</p>
               <div class="line"></div>
             </li>
           </a>
-          <a href="">
+          <a href="https://ZZsuper.github.io/ITtask-all/task8-战略合作企业.html">
             <li>
               <p>推荐</p>
-              <div class="line"></div>
+              <div class="line line-visible"></div>
             </li>
           </a>
           <a href="https://ZZsuper.github.io/ITtask-all/task8-职位列表.html">
@@ -305,10 +366,10 @@
               <div class="line"></div>
             </li>
           </a>
-         
+        </div>
         </ul>
           </div>    
-        </div>  
+      </nav> 
   </header>
   <main>
     <div class="banner"></div>
@@ -419,7 +480,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-sm-12 ">
+        <div class="col-xs-12 col-sm-5">
           <p class="jinengshu">技能树 — 改变你我</p>
           <a href="">
             <span>关于我们</span> 
@@ -431,8 +492,8 @@
             <span>合作企业</span>
           </a>
         </div>
-        <div class="col-sm-12">
-          <p>旗下网站</p>
+        <div class="col-xs-12 col-sm-5">
+          <p class="jinengshu">旗下网站</p>
           <div>
             <a href="">草船云孵化器</a>&emsp;&nbsp;
             <a href="">最强IT特训营</a>
@@ -442,9 +503,11 @@
             <a href="">桌游精灵</a>
           </div>
         </div>
-        <div class="col-sm-12">
-          <p>微信公众平台</p>
-          <img src="https://ZZsuper.github.io/ITtask-all/sprite/微信公众平台-二维码.png">
+        <div class="col-xs-12 col-sm-2">
+          <div class="bar-code">
+            <p>微信公众平台</p>
+            <img src="https://ZZsuper.github.io/ITtask-all/sprite/微信公众平台-二维码.png">
+          </div>
         </div>
       </div>
     </div>

@@ -68,7 +68,7 @@
     }
     .header-nav {
       width: 100%;
-      height: 50px;
+      height: auto;
       color: #fff;
       background-color: #29b078;
     }
@@ -88,18 +88,70 @@
     }
     .nav-icon-jinengshu {
       position: absolute;
-      top: 15%;
       left: 15px;
       float: left;
       width: 80px;
-      margin-top: auto;
-      margin-bottom: auto;
+      margin-top: 6px;
     }
+
+    .navbar {
+      margin-bottom: 0;
+      border: 0;
+      background-color: #29b078;
+    }
+    .navbar-default {background-color: #29b078;}
+    .navbar-toggle {
+      margin: 10px;
+      border: 0;
+    }
+    
+    .navbar-toggle:hover, .navbar-toggle:focus,  .navbar-toggle:active {background-color: rgba(0, 0, 0, .2)!important;
+    }
+    @media only screen and (max-width: 767px) {
+      .navbar-nav {
+        float: none;
+        width: 100%;
+        height:165px;
+        margin: 0;
+        background-color: #29b078;
+        border-top: 1px solid #999;
+      }
+    }
+    @media (min-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+    }   
+    .navbar-nav li {
+      float:none;
+      text-align: center;
+    }
+    .navbar-nav>li a {
+      height: 40px;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      line-height: 40px;
+      color: #fff !important;
+      background-color: #29b078 !important;
+      z-index: 999999;
+    }
+    .navbar-nav li:hover {border-bottom: 1px solid #fff;}
+
+
     .header-nav-wrap a {color: #fff;}
     .line {
       display: none;
     }
     .header-nav-wrap li:hover .line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 68px;
+      border: 1.5px solid #fff;
+    }
+    .line-visible {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -153,7 +205,7 @@
     .icon-rocket {
       width: 51px;
       height: 62px;
-      margin-left: auto;
+      margin-left: auto; 
       margin-right: auto;
       background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
       no-repeat center;
@@ -413,11 +465,40 @@
     </div>
 
     <div class="header-nav">
-      <div class="container">
+      <nav class="navbar navbar-default container">
         <ul class="header-nav-wrap row">
-          <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
-            <img class="nav-icon-jinengshu" src="https://ZZsuper.github.io/ITtask-all/sprite/技能树.png">
-          </a>
+
+          <div class="navbar-header">
+            <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
+              <img class="nav-icon-jinengshu" src="https://ZZsuper.github.io/ITtask-all/sprite/技能树.png">
+            </a>
+        
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+              <span class="sr-only">切换导航</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          
+          <div class="navbar-collpase collapse in" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                <a href="#">首页</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-职位列表.html">职业</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-战略合作企业.html">推荐</a>
+              </li>
+              <li class="active">
+                <a href="#">关于</a>
+              </li>
+            </ul>
+          </div>
+
+        <div class="hidden-xs">
           <a href="">
             <li>
               <p>关于</p>
@@ -439,13 +520,13 @@
           <a href="https://ZZsuper.github.io/ITtask-all/task8.html">
             <li>
               <p>首页</p>
-              <div class="line"></div>
+              <div class="line-visible"></div>
             </li>
           </a>
-         
+        </div>
         </ul>
           </div>    
-        </div>  
+      </nav> 
   </header>
   <main>
     <!--轮播图-->
