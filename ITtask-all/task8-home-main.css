@@ -232,6 +232,7 @@
   }
   .link-layout {
     display: inline-block;
+    width: 85px;
     padding-bottom: 5px;
     line-height: 20px;
     color: #999;
