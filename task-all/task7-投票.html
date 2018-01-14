@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>投票</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1,max-scale=1,min-scale=1,user-scalable=yes">
+	<link rel="stylesheet" href="https://zzsuper.github.io/task-all/css/bootstrap.min.css">
+	<style type="text/css">
+    *{
+      border: 0;
+      box-sizing: border-box;
+      list-style: none;
+    }
+    p {
+      margin: 0;
+    }
+    body {
+      padding: 0;
+      background-color: #29bde0;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+      /*
+      *padding: 15px;
+      *这样不好，因为字号变化的话header会被拉宽，如果main设置absolute的话就会出现问题，改为设置height
+      */
+      font-size: 20px; 
+      color: #fff;
+      background-color: #29bde0;
+    }
+
+    .icon-menu {      
+      width: 30px;
+      height: 30px;/*预设*/
+      margin-left: 15px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-size: 200px;
+      background-position: 0 -224px;
+    }
+    .icon-× {     
+      width: 30px;
+      height: 30px;/*预设*/
+      border: 0;
+      margin-right: 15px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-position: 8px -176px;
+      background-size: 200px; 
+      outline: none;  
+    }
+
+    /*游戏提示*/
+    .game-guide {
+      position: fixed;
+      top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 40px;
+      padding-left: 30px;
+      padding-right: 15PX;
+      background-color: #b9e9f5;
+    }
+    /*倒三角形*/
+    .tri-guide {
+      position: fixed;
+      top: 82px;
+      bottom: 8px;
+    }
+
+    main {
+      position: absolute;
+      top: 130px;
+      bottom: 95px;
+      width: 100%;
+      overflow: auto;
+    }
+    /*发言讨论结束，大家请投票*/
+    
+    .player {
+      width: 26px;
+      height: 26px;
+      border-radius: 13px;
+      background-color: #fbb435 ;
+    }
+    .player-tri {
+      width: 26px;
+      height: 26px;      
+      background:  url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png) 
+      no-repeat center;
+      background-position: 6px 3px;
+      background-size: 200px;
+    }
+
+    
+    
+    .triangle {
+      position: relative;
+      left: 45px;
+      margin: 0;
+      display: inline-block;
+      border-top: 7px solid #b9e9f5;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    .guide {
+      padding-left: 40px;
+      color: #b9e9f5;
+    }
+
+    /*游戏角色*/
+    
+    .form {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 35vw;
+      padding: 0 30px;
+      margin-bottom: 10px;
+    }
+    .user-operate {
+      width: 25vw;
+      height: 100%;
+    }
+    .character {
+        position: relative;
+        width: 25vw;
+        height: 25vw;
+        border: 2px solid #fff;
+        text-align: center;
+        background-color: #f5c97b;
+      }
+    .user-operate:hover .option{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      }
+
+    li:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80%;
+      font-size: 16px;
+    }
+    li:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+    }
+    .user-number {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 12px;
+      color: #fff;
+      background-color: #83b09a;
+    }
+    .option {      
+      display: none;
+    }
+    .icon-knife {     
+      width: 20px;
+      padding-top: 20px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-position: 0 -37px;
+      background-size: 200px;
+    }
+    .icon-look {    
+      width: 20px;
+      padding-top: 20px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-position: 0 -111px;
+      background-size: 200px;
+    }
+    .icon-kill {     
+      width: 20px;
+      padding-top: 20px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-position: -1px -75px;
+      background-size: 200px;
+    }
+    .icon-treat {
+      width: 20px;
+      padding-top: 20px;
+      background: url(https://zzsuper.github.io/task-all/sprite/imgs/task7%E9%9B%AA%E7%A2%A7%E5%9B%BE.png);
+      background-position: 2px -148px;
+      background-size: 200px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 30px;
+      left: 0;
+      width: 100%;
+      font-size: 20px; 
+      color: #fff;
+    }
+		.footer-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 45px;
+      margin-top: 20px; 
+      background-color: #fbb435;
+    }
+	</style>
+</head>
+<body>
+  <header>
+    <span class="icon-menu"></span><!--未设置图片链接-->
+    <p>投票</p>
+    <button class="icon-×" onclick="location.href='https://ZZsuper.github.io/task-all/task7-首页.html'"></button>
+  </header>
+  <audio src="https://zzsuper.github.io/task-all/%E8%B4%A2%E5%AF%8C%E8%87%AA%E7%94%B1.mp3" autoplay="autoplay"></audio>
+  
+  <div class="game-guide">
+        <p>发言讨论结束，大家请投票</p>
+        <div class="player">
+          <div class="player-tri"></div>
+        </div>
+      </div>
+      <div class="tri-guide">
+        <span class="triangle"></span>
+        <p class="guide">点击得票数最多人的头像</p>
+      </div>
+
+  <main>
+    
+      <!--文字与三角的间距过大,因为倒三角左右border默认很长，不知道原因-->
+
+      <div class="form">
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">1 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">2 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>警察</li>
+            <li class="user-number">3 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+      </div><!--这样做的话需要把div撑起来，如果固定宽度用flex那就不能自适应了-->
+
+      <div class="form">
+        <div class="user-operate">
+          <div class="character">
+            <li>法官</li>
+            <li class="user-number">4 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>狙击手</li>
+            <li class="user-number">5 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>医生</li>
+            <li class="user-number">6 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form">
+        <div class="user-operate">
+          <div class="character">
+            <li>杀手</li>
+            <li class="user-number">7 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">8 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">9 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form">
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">10 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">11 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+        <div class="user-operate">
+          <div class="character">
+            <li>水民</li>
+            <li class="user-number">12 号</li>
+          </div>
+          <div class="option">
+            <span class="icon-knife"></span>
+            <span class="icon-look"></span>
+            <span class="icon-kill"></span>
+            <span class="icon-treat"></span>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+
+  <footer>
+    <button class="footer-btn" onclick="location.href='https://ZZsuper.github.io/task-all/task7-结果.html'">投死</button>
+  </footer>
+
+
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
