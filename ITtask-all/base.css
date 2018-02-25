@@ -65,10 +65,12 @@
     }
     .header-nav-wrap { 
       position: relative;
+      padding-left: 0;
       margin-bottom: 0;
       text-align: right;
       list-style: none;
     }
+
     .header-nav-wrap li {
       position: relative;
       float: right;
