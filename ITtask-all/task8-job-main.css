@@ -14,13 +14,12 @@
     }
 
     .research-area {
-      display: flex;
       padding: 0;
       margin: 0 15px;
       border-bottom: 1px solid #c8c8c8;
       align-items: center;
-      min-height: 60PX;
       color: #999;
+      overflow: hidden;
     }
     .research-area p {
       float: left;
