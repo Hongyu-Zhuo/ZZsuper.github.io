@@ -185,6 +185,7 @@
       line-height: 30px;
       text-align: center;
     }
+    .code-txt {font-size: 14px;}
     @media (min-width: 768px) {
       .bar-code {
         float: right;
