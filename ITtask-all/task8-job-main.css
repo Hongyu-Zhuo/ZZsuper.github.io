@@ -19,12 +19,12 @@
       margin: 0 15px;
       border-bottom: 1px solid #c8c8c8;
       align-items: center;
-      height: 60PX;
+      min-height: 60PX;
       color: #999;
     }
     .research-area a:nth-child(n+2) {
       padding: 0 5px;
-      margin: 0 15px;
+      margin: 15 15px;
       color: #000;
     }
     .research-area a:nth-child(2) {
