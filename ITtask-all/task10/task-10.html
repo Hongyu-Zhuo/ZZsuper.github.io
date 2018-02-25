@@ -125,7 +125,7 @@
       .step {margin: 0;}
       .flowsheet-wrap {
         padding-left: 15px;
-        text-align: left;
+        
       }
     }
     /*流程图结束*/
@@ -176,6 +176,24 @@
          -moz-appearance: none;
           -ms-appearance: none;
        -moz-padding-left: 5px!important;
+    }
+    @media (max-width: 425px) {
+      
+      .input-wrap, .box-size, .box-material {
+        padding-right: 15px !important;
+        padding-top: 60px !important;
+      }
+      .material-wrap {
+        float: none !important;
+        margin-right: 0!important;
+      }
+      select {
+        right: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+    @media (max-width: 375px) {
+      .flowsheet-wrap {text-align: left !important;}
     }
     .arrow {
       display: inline-block;
@@ -243,10 +261,15 @@
       .radio-layout {
         display: block;
         padding: 10px 0;
+        text-align: center;
       }
       .input-layout {
         display: block;
-        margin-left: 25px;
+
+        text-align: center;
+      }
+      .box-material {
+        text-align: center;
       }
       .size {
         display: inline-block;
@@ -270,6 +293,10 @@
       float: left;
       margin: 10px 0;
       margin-right: 30px;
+    }
+    .material-wrap span {
+      padding-left: 5px;
+      padding-right: 10px;
     }
     .form-submit-wrap {
       padding-top: 100PX;
@@ -502,32 +529,32 @@
           <div class="material-wrap">
             <input id="material1" type="radio" name="material" checked="checked">
             <label for="material1"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div> 
           <div class="material-wrap">         
             <input id="material2" type="radio" name="material">
             <label for="material2"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div>
           <div class="material-wrap">
             <input id="material3" type="radio" name="material">
             <label for="material3"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div>
           <div class="material-wrap">
             <input id="material4" type="radio" name="material">
             <label for="material4"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div>
           <div class="material-wrap">
             <input id="material5" type="radio" name="material">
             <label for="material5"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div>
           <div class="material-wrap">
             <input id="material6" type="radio" name="material">
             <label for="material6"></label>
-            <span>&nbsp;三层A瓦优质&emsp;</span>
+            <span>三层A瓦优质</span>
           </div>
           <select>
             <option class="mark-word"  value="" disabled selected>
