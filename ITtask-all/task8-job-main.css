@@ -29,7 +29,7 @@
     .research-area a:nth-child(n+2) {
       display: inline-block;
       padding: 0 5px;
-      margin: 15 15px;
+      margin: 15px 15px;
       color: #000;
     }
     .research-area a:nth-child(2) {
