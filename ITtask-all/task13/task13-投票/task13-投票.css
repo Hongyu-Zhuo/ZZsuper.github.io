@@ -1,0 +1,29 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+body {
+  padding: 0;
+  background-color: #29bde0; }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #29bde0; }
+
+.icon-menu {
+  width: 30px;
+  height: 30px;
+  margin: 0 0 0 15px;
+  background: url(https://ZZsuper.github.io/task-all/sprite/imgs/task7-sprite.png);
+  background-size: 200px;
+  background-position: 0 -224px;
+  background-outline: none; }
+
+/*# sourceMappingURL=task13-%E6%8A%95%E7%A5%A8.css.map */

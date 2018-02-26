@@ -26,11 +26,11 @@ $color: (
   border: $border;
   margin: $margin;
 }
-@mixin bg($size, $pos, $outline:none) {
-    background: url(https://ZZsuper.github.io/task-all/sprite/imgs/task7-sprite.png) no-repeat;
-    background: {
-        size: $size;
-        position: $pos;
-        outline: $outline;
-    }
-}
+@mixin bg($size, $pos, $outline: none) {
+  background: url(https://ZZsuper.github.io/task-all/sprite/imgs/task7-sprite.png);
+  background: {
+    size: $size;
+    position: $pos;
+  }
+  outline: $outline;
+} 
