@@ -40,33 +40,23 @@ form span {
   font-size: 16px;
   color: #eceaea; }
 
-.user {
+.user, .password {
   width: 100%;
   margin-top: 10px;
   height: 60px;
   padding-left: 60px;
   border: 0;
   outline: none;
-  background: #fff url(https://ZZsuper.github.io/task4/iphone.png) no-repeat;
+  background: url(https://ZZsuper.github.io/task4/iphone.png);
   background-size: 15px;
-  background-position: 16px 20px;
-  background-color: #fff; }
+  background-position: 16px 20px; }
 
 .user-line {
   top: 20px;
   left: 50px; }
 
 .password {
-  width: 100%;
-  margin-top: 10px;
-  height: 60px;
-  padding-left: 60px;
-  border: 0;
-  outline: none;
-  background: #fff url(https://ZZsuper.github.io/task4/locked.png) no-repeat;
-  background-size: 15px;
-  background-position: 16px 20px;
-  background-color: #fff; }
+  background: url(https://ZZsuper.github.io/task4/locked.png); }
 
 .password-line {
   top: 90px;
@@ -79,9 +69,9 @@ form span {
   padding-left: 0;
   border: 0;
   outline: none;
-  background-color: #5fc0cd;
   font-size: 16px;
-  color: #fff; }
+  color: #fff;
+  background-color: #5fc0cd; }
   .submit:hover {
     cursor: pointer; }
 
