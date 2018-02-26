@@ -47,7 +47,7 @@ form span {
   padding-left: 60px;
   border: 0;
   outline: none;
-  background: url(https://ZZsuper.github.io/task4/iphone.png);
+  background: url(https://ZZsuper.github.io/task4/iphone.png) no-repeat;
   background-size: 15px;
   background-position: 16px 20px; }
 
@@ -56,7 +56,7 @@ form span {
   left: 50px; }
 
 .password {
-  background: url(https://ZZsuper.github.io/task4/locked.png); }
+  background: url(https://ZZsuper.github.io/task4/locked.png) no-repeat; }
 
 .password-line {
   top: 90px;
