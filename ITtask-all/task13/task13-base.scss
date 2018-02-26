@@ -1,0 +1,28 @@
+$color: (
+    body: #f0f0f0,
+    white: #fff,
+    blue: #29bde0,
+    header: #29bde0,
+    footer: #29bde0,
+    blue-light: #b9e9f5,
+    dark-border: #9a9999,
+    f-gray: #9a9999,
+    bright-border: #c1c0c0,
+    dark-yellow: #f5c97b,
+    bright-yellow: #fbb435,
+    num-bg: #83b09a
+    );
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin box($width, $heigth, $padding, $border, $margin) {
+  width: $width;
+  height: $heigth;
+  padding: $padding;
+  border: $border;
+  margin: $margin;
+}
