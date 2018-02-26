@@ -1,0 +1,185 @@
+$w100: 100%;
+$header-color: #5fc0cd;
+$footer-color: #fff;
+$white-color: #fff;
+$gray-color: #9c9c9e;
+$red-color: #e26163;
+$pd10: 10px;
+$txt-center: center;
+* {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+  
+  header {
+  position: relative;
+  
+  padding: $pd10;
+	color: #fff;
+	background-color: $header-color;
+	p {
+    -ms-line-height: 40px;
+		text-align: $txt-center;
+	}
+	img {
+    position: absolute;
+    top:12px;
+    left: 15px;
+    width: 10px;
+  }
+}
+
+  main {
+    position: absolute;
+    top:40px;
+    bottom:50px;
+    width: $w100;
+    overflow: auto;
+  }
+  .user {
+    position: absolute;
+    top: 0;
+    z-index: -999999;
+    width: $w100;
+    height: 165px;
+    overflow: hidden;
+    img {
+      width: $w100;
+      min-height: 165px;
+      filter: blur(1.5px);
+      transform: scale(1.1);
+    }
+  }
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: $w100;
+    height: 165px;
+    color: $white-color;
+  }
+  .user-thumb {
+    $value85: 85px;
+    width: $value85;
+    padding-bottom: $value85;
+    border-radius: 50%;
+    margin: 15px;
+    background: #fff url(https://zzsuper.github.io/task5/护工头像.png) 
+    no-repeat; 
+    background: {
+    size: 150%;
+    position-x: -13px; 
+    }
+  }
+  .user-name {
+    font-size: 21px;
+    letter-spacing: 6px;
+  }
+  .user-pos {                 
+    padding-left: 20px;          
+    margin-right: 5px;
+    background: url(https://zzsuper.github.io/task5/%E8%93%9D%E8%89%B2%E4%BD%8D%E7%BD%AE%E5%B0%8F%E5%9B%BE%E6%A0%87.png)  
+    no-repeat center;
+    background-size: 12px;
+  }
+
+  $properties: (border);
+  @mixin border($side, $px, $color) {
+    @each $prop in $properties {
+      #{$prop}-#{$side}: $px solid  $color;
+    }
+  }
+  .title {
+    width: 100%;
+    padding: 15px;
+    @include border(bottom, 1px, $gray-color); 
+    font: {
+      size: 16px;
+      weight: 700;
+    }
+    p {
+      display: inline;
+    } 
+  }
+  .line1 {
+    border: 1px solid #5fc0cd;
+    margin-right: 10px;
+  }
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 0 15px;
+    @include border(bottom, 1px, $gray-color);
+    font-size: 18px;
+  }
+  .user-items-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+    color: $gray-color;
+    padding-right: 15px;
+    margin-right: 15px;
+    @include border(right, 1px, $gray-color);       
+  }
+  .icon-star {          
+    height: 16px;
+    padding-left: 20px;
+    margin-right: 4px;
+    background: url(https://zzsuper.github.io/task5/%E4%BA%94%E8%A7%92%E6%98%9F.png) 
+    no-repeat center;
+    background-size: 16px;
+  }
+  .icon-star + p {
+    display: inline-block;
+  }
+  .user-items {
+    margin-left: 115px;
+    font-size: 18px;
+  }
+       
+  .user-price {
+    @extend .user-items;
+    color: $red-color;
+  }
+  .user-introduce {
+    @extend .user-items;    
+    font-size: 16px;
+  }
+
+
+
+footer {
+  $pd5: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%; 
+  padding: 5px;
+  a {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-decoration: none;
+  }  
+}
+@mixin footer-btn($ml, $mr, $color) {
+  display: inline-block;
+  margin-left: $ml;
+  margin-right: $mr;
+  padding: $pd10;
+  border: 2px solid $header-color;
+  border-radius: 5px;
+  color: $color;
+  text-align: $txt-center;
+}
+.btn-left {
+  @include footer-btn(0, 2.5px, $header-color);
+}
+.btn-right {
+  @include footer-btn(2.5px, 0, $footer-color);
+  background-color: $header-color;
+}

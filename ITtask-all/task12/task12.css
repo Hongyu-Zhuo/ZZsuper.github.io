@@ -1,0 +1,153 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none; }
+
+header {
+  position: relative;
+  padding: 10px;
+  color: #fff;
+  background-color: #5fc0cd; }
+  header p {
+    -ms-line-height: 40px;
+    text-align: center; }
+  header img {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    width: 10px; }
+
+main {
+  position: absolute;
+  top: 40px;
+  bottom: 50px;
+  width: 100%;
+  overflow: auto; }
+
+.user {
+  position: absolute;
+  top: 0;
+  z-index: -999999;
+  width: 100%;
+  height: 165px;
+  overflow: hidden; }
+  .user img {
+    width: 100%;
+    min-height: 165px;
+    filter: blur(1.5px);
+    transform: scale(1.1); }
+
+.user-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 165px;
+  color: #fff; }
+
+.user-thumb {
+  width: 85px;
+  padding-bottom: 85px;
+  border-radius: 50%;
+  margin: 15px;
+  background: #fff url(https://zzsuper.github.io/task5/护工头像.png) no-repeat;
+  background-size: 150%;
+  background-position-x: -13px; }
+
+.user-name {
+  font-size: 21px;
+  letter-spacing: 6px; }
+
+.user-pos {
+  padding-left: 20px;
+  margin-right: 5px;
+  background: url(https://zzsuper.github.io/task5/%E8%93%9D%E8%89%B2%E4%BD%8D%E7%BD%AE%E5%B0%8F%E5%9B%BE%E6%A0%87.png) no-repeat center;
+  background-size: 12px; }
+
+.title {
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #9c9c9e;
+  font-size: 16px;
+  font-weight: 700; }
+  .title p {
+    display: inline; }
+
+.line1 {
+  border: 1px solid #5fc0cd;
+  margin-right: 10px; }
+
+li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 0 15px;
+  border-bottom: 1px solid #9c9c9e;
+  font-size: 18px; }
+
+.user-items-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9c9c9e;
+  padding-right: 15px;
+  margin-right: 15px;
+  border-right: 1px solid #9c9c9e; }
+
+.icon-star {
+  height: 16px;
+  padding-left: 20px;
+  margin-right: 4px;
+  background: url(https://zzsuper.github.io/task5/%E4%BA%94%E8%A7%92%E6%98%9F.png) no-repeat center;
+  background-size: 16px; }
+
+.icon-star + p {
+  display: inline-block; }
+
+.user-items, .user-price, .user-introduce {
+  margin-left: 115px;
+  font-size: 18px; }
+
+.user-price {
+  color: #e26163; }
+
+.user-introduce {
+  font-size: 16px; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 5px; }
+  footer a {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-decoration: none; }
+
+.btn-left {
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 2.5px;
+  padding: 10px;
+  border: 2px solid #5fc0cd;
+  border-radius: 5px;
+  color: #5fc0cd;
+  text-align: center; }
+
+.btn-right {
+  display: inline-block;
+  margin-left: 2.5px;
+  margin-right: 0;
+  padding: 10px;
+  border: 2px solid #5fc0cd;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  background-color: #5fc0cd; }
+
+/*# sourceMappingURL=task12.css.map */
