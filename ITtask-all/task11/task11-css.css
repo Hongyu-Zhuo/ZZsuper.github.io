@@ -49,7 +49,8 @@ form span {
   outline: none;
   background: url(https://ZZsuper.github.io/task4/iphone.png) no-repeat;
   background-size: 15px;
-  background-position: 16px 20px; }
+  background-position: 16px 20px;
+  background-color: #fff; }
 
 .user-line {
   top: 20px;
