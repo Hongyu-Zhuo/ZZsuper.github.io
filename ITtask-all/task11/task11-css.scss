@@ -1,0 +1,103 @@
+$header-color: #5fc0cd;
+$body-color: #eff0f4;
+$white-color: #fff;
+$width: 100%;
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  bottom: 0;
+  background-color: $body-color;
+}
+header {
+  width: $width;
+  padding: 10px 15px;
+  background-color: $header-color;
+} 
+header {
+  p {margin: 0;}
+  a {
+    color: $white-color;
+    text-decoration: none;
+  }
+}
+.left{
+    float: left;
+  }
+  .center {
+    text-align: center;
+    color:  $white-color;
+  }
+  .right {
+    float:right;
+  }
+
+main {
+  position:relative;
+}
+form {
+  span {
+    position:absolute;
+    display: inline-block;
+    height: 40px;
+    border: 1px solid #eceaea;
+  }
+}
+.placeholder {
+  font-size: 16px;
+  color: #eceaea;
+}
+@mixin input($height: 60px, $padding-left: 60px) {
+  width: $width;
+  margin-top: 10px; 
+  height: $height;
+  padding-left: $padding-left;
+  border: 0;
+  &::-webkit-input-placeholder {
+    @extend .placeholder
+  };
+  
+  
+  outline: none;
+}
+.user {
+  @include input;
+  background: $white-color url(https://ZZsuper.github.io/task4/iphone.png)
+  no-repeat;
+  background-size: 15px;
+  background-position: 16px 20px;
+  background-color: $white-color;
+}
+.user-line {
+  top: 20px;
+  left: 50px;
+}
+.password {
+  @include input;
+  background: $white-color url(https://ZZsuper.github.io/task4/locked.png)
+  no-repeat;
+  background-size: 15px;
+  background-position: 16px 20px;
+  background-color: $white-color;
+}
+.password-line {
+  top: 90px;
+  left: 50px;
+}
+.submit {
+  @include input(40px, 0);
+  font-size: 16px;
+  color: $white-color;
+  background-color: $header-color;
+  &:hover {cursor: pointer;}
+}
+.forgot {
+  float: right;
+  display: inline-block;
+  padding: 10px 15px; 
+  font-size: 16px;
+  text-decoration: none;
+  color: $header-color;
+  &:hover {text-decoration:underline;}
+}

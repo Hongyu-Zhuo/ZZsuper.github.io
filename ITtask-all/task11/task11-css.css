@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  bottom: 0;
+  background-color: #eff0f4; }
+
+header {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #5fc0cd; }
+
+header p {
+  margin: 0; }
+header a {
+  color: #fff;
+  text-decoration: none; }
+
+.left {
+  float: left; }
+
+.center {
+  text-align: center;
+  color: #fff; }
+
+.right {
+  float: right; }
+
+main {
+  position: relative; }
+
+form span {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  border: 1px solid #eceaea; }
+
+.placeholder, .user::-webkit-input-placeholder, .password::-webkit-input-placeholder, .submit::-webkit-input-placeholder {
+  font-size: 16px;
+  color: #eceaea; }
+
+.user {
+  width: 100%;
+  margin-top: 10px;
+  height: 60px;
+  padding-left: 60px;
+  border: 0;
+  outline: none;
+  background: #fff url(https://ZZsuper.github.io/task4/iphone.png) no-repeat;
+  background-size: 15px;
+  background-position: 16px 20px;
+  background-color: #fff; }
+
+.user-line {
+  top: 20px;
+  left: 50px; }
+
+.password {
+  width: 100%;
+  margin-top: 10px;
+  height: 60px;
+  padding-left: 60px;
+  border: 0;
+  outline: none;
+  background: #fff url(https://ZZsuper.github.io/task4/locked.png) no-repeat;
+  background-size: 15px;
+  background-position: 16px 20px;
+  background-color: #fff; }
+
+.password-line {
+  top: 90px;
+  left: 50px; }
+
+.submit {
+  width: 100%;
+  margin-top: 10px;
+  height: 40px;
+  padding-left: 0;
+  border: 0;
+  outline: none;
+  background-color: #5fc0cd;
+  font-size: 16px;
+  color: #fff; }
+  .submit:hover {
+    cursor: pointer; }
+
+.forgot {
+  float: right;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #5fc0cd; }
+  .forgot:hover {
+    text-decoration: underline; }
+
+/*# sourceMappingURL=task11-css.css.map */
