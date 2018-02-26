@@ -36,8 +36,10 @@ form span {
   height: 40px;
   border: 1px solid #eceaea; }
 
+.font-size, .placeholder, .user::-webkit-input-placeholder, .password::-webkit-input-placeholder, .submit::-webkit-input-placeholder, .submit, .forgot {
+  font-size: 16px; }
+
 .placeholder, .user::-webkit-input-placeholder, .password::-webkit-input-placeholder, .submit::-webkit-input-placeholder {
-  font-size: 16px;
   color: #eceaea; }
 
 .user {
@@ -79,7 +81,6 @@ form span {
   padding-left: 0;
   border: 0;
   outline: none;
-  font-size: 16px;
   color: #fff;
   background-color: #5fc0cd; }
   .submit:hover {
@@ -89,7 +90,6 @@ form span {
   float: right;
   display: inline-block;
   padding: 10px 15px;
-  font-size: 16px;
   text-decoration: none;
   color: #5fc0cd; }
   .forgot:hover {
