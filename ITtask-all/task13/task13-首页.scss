@@ -1,4 +1,4 @@
-@import "task13-base.scss";
+@import "https://ZZsuper.github.io/ITtask-all/task13/task13-base.scss";
 
 body {
     padding: 0;
@@ -113,4 +113,3 @@ main {
     @extend .slide-dot-all;
     background-color: map-get($color, body);
 }
-
