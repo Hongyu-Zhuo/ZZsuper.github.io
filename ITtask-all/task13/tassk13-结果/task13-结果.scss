@@ -1,0 +1,143 @@
+@import "task13-base.scss";
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    @include position(fixed, 0, null, null, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    color: map-get($color, white);
+    background-color: map-get($color, header); 
+}
+.icon-home {
+    @include box(30px, 30px, null, 0, null);
+    margin-left: 10px;
+    @include bg(200px, 0 -275px);
+}
+.icon-information {
+    @include box(25px, 25px, 0, 2px solid map-get($color, white), null);
+    border-radius: 15px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: map-get($color, white);
+    background-color: map-get($color, blue);
+    outline:none;
+}
+main {
+    @include position(absolute, 50px, null, null, 0);
+    @include box(100%, 350px, 0 30px, null, null);
+    border-top: 1px solid map-get($color, dark-gray);
+    background-color: map-get($color, blue);
+    box-sizing: border-box;
+}
+.icon-win {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 125px;
+    margin: {
+        left: auto;
+        right: auto;
+    }
+    @include bg(200px, 0 -20pc);
+}
+.trophy {
+    margin-top: 20px;
+}
+.win-text {
+    margin-top: 9px;
+    font-size: 26px;
+    color: map-get($color, white);
+}
+.eulogy {
+    font-size: 18px;
+    color: map-get($color, text-yellow);
+}
+.game-manning {
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: map-get($color, white);
+}
+
+/*游戏过程*/
+.gameplay {
+    @include position(absolute, 400px, null, null, 0);
+    width: 100%;
+}
+.gameplay-form {
+    width: 100%;
+    padding: {
+        bottom: 15px;
+        left: 30px;
+    }
+    margin: 0;
+    border-bottom: 1px solid #a6a6a6;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 20px;
+    color: #a6a6a6;
+    box-sizing: border-box;
+    list-style: none;
+}
+.days {
+    display: inline-block;
+    margin: {
+        top: 5px;
+        bottom: 10px;
+    }
+    font-size: 20px;
+    color: #000;
+}
+.time-point {
+    position: absolute;
+    right: 30px;
+    display: inline-block;
+    margin: 0;
+    font-size: 12px;;
+}
+footer {
+    @include position(fixed, null, null, 0, 0);
+    display: flex;
+    align-items: center;
+    @include box(100%, 60px, 0 15px, null, null);
+    background-color: rgba(153, 223, 240, .7);
+    box-sizing: border-box;
+}
+%footer-btn {
+    flex: {
+        basis: 0;
+        grow: 1;
+    }
+    @include box(null, 40px, 0, 0, null);
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 20px;
+    outline: none;
+    box-sizing: border-box;
+}
+.btn-rematch {
+    @extend %footer-btn;
+    color: map-get($color, white);
+    background-color: #f66f6f;
+}
+.btn-upload {
+    @extend %footer-btn;
+    color: map-get($color, white);
+    background-color: map-get($color, bright-yellow);
+}

@@ -10,7 +10,9 @@ $color: (
     bright-border: #c1c0c0,
     dark-yellow: #f5c97b,
     bright-yellow: #fbb435,
-    num-bg: #83b09a
+    text-yellow: #ffc865,
+    num-bg: #83b09a,
+    dark-gray: #69c0d6
     );
 @mixin position($position, $top, $right, $bottom, $left) {
   position: $position;
