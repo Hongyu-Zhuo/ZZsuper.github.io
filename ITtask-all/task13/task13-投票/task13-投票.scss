@@ -91,6 +91,7 @@ main {
     display: flex;
     justify-content: space-between;
     @include box(100%, 35vw, 0 30px, null, null);
+    max-height: 260px;
     margin-bottom: 10px;
 }
 .user-operate {
