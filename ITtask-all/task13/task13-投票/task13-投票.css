@@ -65,8 +65,8 @@ header {
 main {
   position: absolute;
   top: 50px;
-  bottom: 95px;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 95px; }
 
 /*发言讨论结束，大家请投票*/
 .player {
@@ -114,7 +114,8 @@ main {
   .user-operate:hover .option {
     display: flex;
     justify-content: space-between;
-    margin-top: 5px; }
+    margin-top: 5px;
+    cursor: pointer; }
 
 .character {
   position: relative;
