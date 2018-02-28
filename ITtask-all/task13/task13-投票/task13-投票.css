@@ -115,6 +115,7 @@ main {
   .user-operate:hover .option {
     display: flex;
     justify-content: space-between;
+    max-width: 200px;
     margin-top: 5px;
     cursor: pointer; }
 
