@@ -12,6 +12,7 @@ body {
 }
 header {
     @include position(fixed, 0, null, null, 0);
+    z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -161,8 +162,10 @@ li {
 }
 
 footer {
-    @include position(fixed, null, null, 30px, 0);
+    @include position(fixed, null, null, 0, 0);
     width: 100%;
+    padding-bottom: 30px;
+    background-color: map-get($color, blue);
 }
 .footer-btn {
     @extend %flex-center;
