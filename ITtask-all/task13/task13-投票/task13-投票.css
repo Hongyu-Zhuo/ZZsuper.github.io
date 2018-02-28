@@ -137,12 +137,6 @@ li:nth-child(1) {
   height: 80%;
   font-size: 16px; }
 
-@media (min-width: 550px) and (max-width: 768px) {
-  li:nth-child(1) {
-    font-size: 20px; }
-
-  .user-number {
-    font-size: 16px; } }
 .user-number {
   position: absolute;
   bottom: 0;
@@ -152,6 +146,12 @@ li:nth-child(1) {
   color: #fff;
   background-color: #83b09a; }
 
+@media (min-width: 550px) and (max-width: 768px) {
+  li:nth-child(1) {
+    font-size: 20px; }
+
+  .user-number {
+    font-size: 16px; } }
 .option {
   display: none; }
 
