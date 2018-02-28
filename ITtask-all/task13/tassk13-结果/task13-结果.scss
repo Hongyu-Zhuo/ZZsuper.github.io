@@ -80,6 +80,7 @@ main {
 .gameplay {
     @include position(absolute, 400px, null, null, 0);
     width: 100%;
+    margin-bottom: 60px;
 }
 .gameplay-form {
     width: 100%;
