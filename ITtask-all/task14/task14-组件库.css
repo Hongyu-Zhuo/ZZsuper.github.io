@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/*按钮*/
+.zj-btn1 {
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: bottom; }
+  .zj-btn1:hover {
+    border-color: #00a0ef;
+    color: #00a0ef; }
+  .zj-btn1:active {
+    background-color: #00a0ef;
+    color: #fff; }
+
+/*人物卡片*/
+.zj-card-wrap {
+  width: 200px;
+  padding: 40px 20px 20px 30px;
+  border: 1px solid #c8c8c8;
+  margin: 20px;
+  border-radius: 5px; }
+  .zj-card-wrap:hover {
+    border: 1px solid transparent !important;
+    box-shadow: 0px 0px 10px #e2e2e2; }
+
+.card-name {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  float: left; }
+
+.card-grade {
+  float: right; }
+
+.card-data {
+  padding: 18px 0;
+  text-align: left;
+  color: #999;
+  clear: both; }
+
+.card-img {
+  position: relative;
+  width: 146px;
+  height: 146px;
+  padding: 5px;
+  border: 1px solid #00a0ef;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-sizing: border-box; }
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; }
+
+.card-name2 {
+  font-size: 16px;
+  font-weight: bold; }
+
+/*小标题简介*/
+.special {
+  padding: 40px 46px 20px 46px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 10px;
+  margin-left: 15px; }
+  .special:hover {
+    border: 1px solid transparent !important;
+    box-shadow: 0px 0px 10px #e2e2e2; }
+  .special p {
+    margin: 0 0 10px;
+    margin-top: 30px;
+    color: #999;
+    font-size: 14px; }
+
+.zj-title {
+  margin: 10px 0;
+  font-size: 16px;
+  text-align: center; }
+
+/*响应式导航栏*/
+.header-nav {
+  width: 100%;
+  color: #fff;
+  background-color: #29b078; }
+
+/*button菜单*/
+.zj-btn {
+  padding: 10px;
+  margin: 10px;
+  background-color: #29b078; }
+
+.zj-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #888;
+  cursor: pointer; }
+  .zj-bar + .zj-bar {
+    margin-top: 4px; }
+
+/*# sourceMappingURL=task14-%E7%BB%84%E4%BB%B6%E5%BA%93.css.map */

@@ -1,0 +1,139 @@
+//组件
+$color: (
+    white: #fff,
+    blue: #00a0ef,
+    gray: #c8c8c8
+    );
+@mixin box($w:null, $h:null, $pd:null, $bd:null, $m:null) {
+    width: $w;
+    height: $h;
+    padding: $pd;
+    border: $bd;
+    margin: $m;
+}
+/*按钮*/
+@mixin zj-btn1 {
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    border: 1px solid map-get($color, gray);
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: bottom;
+    &:hover {
+        border-color: map-get($color, blue);
+        color: map-get($color, blue);
+    }
+    &:active {
+        background-color: map-get($color, blue);
+        color: map-get($color, white);
+    }
+}
+.zj-btn1 {
+    @include zj-btn1; 
+} 
+
+
+/*人物卡片*/
+.zj-card-wrap {
+    @include box(200px, null, 40px 20px 20px 30px, 1px solid map-get($color,gray), 20px);
+    border-radius: 5px;
+    &:hover {
+        border: 1px solid transparent !important;
+        box-shadow: 0px 0px 10px #e2e2e2;
+    }
+}
+.card-name {
+    display: inline-block;
+    font: {
+        size: 16px;
+        weight: bold;
+    }
+    float: left;
+}
+.card-grade {
+    float: right;
+}
+.card-data {
+    padding: 18px 0;
+    text-align: left;
+    color: #999;
+    clear: both;
+}
+.card-img {
+    position: relative;
+    @include box(146px, 146px, 5px, 1px solid map-get($color, blue), 0 auto);
+    border-radius: 50%;
+    box-sizing: border-box;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+}
+.card-name2 {
+    font: {
+        size: 16px;
+        weight: bold;
+    }
+}
+/*小标题简介*/
+.special {
+    padding: 40px 46px 20px 46px;
+    width: 300px;
+    background-color: map-get($color, white);
+    border: 1px solid map-get($color, gray);
+    border-radius: 10px;
+    margin-left: 15px;
+    &:hover {
+        border: 1px solid transparent !important;
+        box-shadow: 0px 0px 10px #e2e2e2;
+    }
+    p {
+        margin: 0 0 10px;
+        margin-top: 30px;
+        color: #999;
+        font-size: 14px;
+    }
+}
+
+.zj-title {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+/*响应式导航栏*/
+
+$nav-color: #29b078;
+$text-color: #fff;
+
+.header-nav {
+    width: 100%;
+    color: $text-color;
+    background-color: $nav-color;
+}
+
+
+/*button菜单*/
+.zj-btn {
+    padding: 10px;
+    margin: 10px;
+    background-color: #29b078;
+}
+.zj-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #888;
+    cursor: pointer;
+    & + .zj-bar {
+        margin-top: 4px;
+    }
+}
