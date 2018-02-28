@@ -46,8 +46,6 @@ header {
 
 /*游戏提示*/
 .game-guide {
-  position: fixed;
-  top: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,15 +58,14 @@ header {
 
 /*倒三角形*/
 .tri-guide {
-  position: fixed;
-  top: 84px; }
+  position: relative;
+  top: -5px; }
 
 main {
   position: absolute;
-  top: 130px;
+  top: 50px;
   bottom: 95px;
-  width: 100%;
-  overflow: auto; }
+  width: 100%; }
 
 /*发言讨论结束，大家请投票*/
 .player {
@@ -110,7 +107,9 @@ main {
 
 .user-operate {
   width: 25vw;
-  height: 100%; }
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px; }
   .user-operate:hover .option {
     display: flex;
     justify-content: space-between;
@@ -121,6 +120,8 @@ main {
   width: 25vw;
   height: 25vw;
   border: 2px solid #fff;
+  max-width: 200px;
+  max-height: 200px;
   text-align: center;
   background-color: #f5c97b; }
 
@@ -137,6 +138,7 @@ li:nth-child(1) {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 20%;
   font-size: 12px;
   color: #fff;
   background-color: #83b09a; }
