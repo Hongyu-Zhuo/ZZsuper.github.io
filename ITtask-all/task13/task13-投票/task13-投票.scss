@@ -140,7 +140,7 @@ li {
     color: map-get($color, white);
     background-color: map-get($color, num-bg);
 }
-@media (min-width: 550px) and (max-width: 768px) {
+@media (min-width: 550px) {
     li {
     &:nth-child(1) {
         
