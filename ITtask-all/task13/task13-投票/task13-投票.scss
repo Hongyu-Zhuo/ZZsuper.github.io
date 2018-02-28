@@ -131,6 +131,17 @@ li {
         @extend %flex-center;
     }
 }
+@media (min-width: 550px) and (max-width: 768px) {
+    li {
+    &:nth-child(1) {
+        
+        font-size: 20px;
+    }
+}
+    .user-number {
+        font-size: 16px;
+    }
+}
 .user-number {
     position: absolute;
     bottom: 0;
