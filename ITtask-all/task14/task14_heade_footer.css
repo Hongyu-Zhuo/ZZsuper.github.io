@@ -243,6 +243,9 @@
         }
         .sm-6 {width: 50%;}
     }
+    .md-4 {
+      width: 768px;
+    }
     @media (min-width: 992px) {
         .wrap {
             width: 970px;
