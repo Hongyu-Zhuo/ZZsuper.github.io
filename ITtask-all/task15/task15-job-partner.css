@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.banner {
+  width: 100%;
+  height: 13vw;
+  background: url(https://ZZsuper.github.io/ITtask-all/sprite/images/战略合作企业-banner_03.jpg) no-repeat;
+  background-size: 100%; }
+
+/*导航-首页>合作企业*/
+.main-nav-homepage a {
+  line-height: 70px;
+  height: 70px;
+  color: #000; }
+  .main-nav-homepage a:hover {
+    color: #29b078; }
+
+/*导航-合作企业-开始*/
+.partner {
+  padding: 0;
+  padding-bottom: 30px;
+  border: 1px solid #dddcdc;
+  border-radius: 5px;
+  text-align: center;
+  color: #29b078;
+  background-color: #fff; }
+  .partner h6 {
+    border-bottom: 1px solid #dddcdc;
+    margin: 0;
+    font-size: 16px;
+    line-height: 60px;
+    color: #000; }
+  .partner li {
+    position: relative;
+    padding-top: 25px;
+    padding-margin-left: calc(50% - 33px);
+    padding-text-align: left; }
+
+.liststyle-circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+  border: 2px solid #f16725;
+  border-radius: 20px; }
+
+.partners a {
+  height: 20px;
+  color: #29b078; }
+.partners li:hover a {
+  color: #f16725; }
+.partners li:hover .liststyle-circle {
+  background-color: #f1a750; }
+.partners li:active a {
+  color: #f16725; }
+.partners li:active .liststyle-circle {
+  background-color: #f1a750; }
+
+/*导航-合作企业-结束*/
+/*网站介绍-开始*/
+article {
+  padding-left: 0;
+  padding-bottom: 130px;
+  margin-bottom: 230px;
+  border: 1px solid #dddcdc;
+  border-radius: 5px;
+  color: #999;
+  background-color: #fff; }
+  article p:nth-of-type(n+1) {
+    padding: 0 30px;
+    margin-top: 30px; }
+
+.logo-tudou-wrap {
+  min-height: 140px;
+  padding: 30px 0;
+  padding-top: 0;
+  border-bottom: 1px solid #dddcdc; }
+
+.logo-tudou {
+  float: left;
+  margin: 0 30px; }
+
+/*# sourceMappingURL=task15-job-partner.css.map */

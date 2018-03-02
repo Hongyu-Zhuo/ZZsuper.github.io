@@ -1,0 +1,99 @@
+@import "task15-base.scss";
+
+// banner开始
+.banner {
+    @include box(100%, 13vw, null, null, null);
+    background: url(https://ZZsuper.github.io/ITtask-all/sprite/images/战略合作企业-banner_03.jpg)
+    no-repeat;
+    background-size: 100%;
+}
+// banner 结束
+
+/*导航-首页>合作企业*/
+.main-nav-homepage a{
+    line-height: 70px;
+    height: 70px;
+    color: #000;
+    &:hover {
+        color: map-get($color, header);
+    }
+}
+
+
+ /*导航-合作企业-开始*/
+ .partner  {
+    padding: 0;
+    padding-bottom: 30px;
+    border: 1px solid #dddcdc;
+    border-radius: 5px;
+    text-align: center;
+    color: map-get($color, header);
+    background-color: map-get($color, white);
+    h6 {
+        border-bottom: 1px solid #dddcdc;
+        margin: 0;
+        font-size: 16px;
+        line-height: 60px;
+        color: #000;
+    }
+    li {
+        position: relative;
+        padding: {
+            top: 25px;
+            margin-left: calc(50% - 33px);
+            text-align: left;
+        }
+    }
+ }
+.liststyle-circle {
+    display: inline-block;
+    @include box(10px, 10px, null, null, null);
+    margin-right: 2px;
+    border: 2px solid #f16725;
+    border-radius: 20px;
+}
+.partners {
+    a {
+        height: 20px;
+        color:  map-get($color, header);
+    }
+    li:hover a {
+        color: #f16725; 
+    }
+    li:hover .liststyle-circle {background-color: #f1a750;}
+    li:active {
+        a {color: #f16725;} 
+        .liststyle-circle {background-color: #f1a750;}
+        
+    }
+}
+/*导航-合作企业-结束*/
+
+
+/*网站介绍-开始*/
+article {
+    padding: {
+        left: 0;
+        bottom: 130px;
+    }
+    margin-bottom: 230px;
+    border: 1px solid #dddcdc;
+    border-radius: 5px;
+    color: map-get($color, gray);
+    background-color: map-get($color, white);
+    p:nth-of-type(n+1) {
+        padding: 0 30px;
+        margin-top: 30px;
+    }
+}
+
+.logo-tudou-wrap {
+    min-height: 140px;
+    padding: 30px 0;
+    padding-top: 0;
+    border-bottom: 1px solid #dddcdc;  
+}
+.logo-tudou {
+    float: left;
+    margin: 0 30px;
+}
