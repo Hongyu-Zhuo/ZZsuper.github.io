@@ -130,7 +130,7 @@ b {
 .float-left {float: left;}
 .float-right {float: right;}
 .text-center {text-align: center;}
-.table-hove {
+.table-hover {
     position: absolute;
     right: -100%;
     @include box($w100, null, 30px, null, null);

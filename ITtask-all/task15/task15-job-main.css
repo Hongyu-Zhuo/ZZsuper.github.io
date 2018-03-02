@@ -136,7 +136,7 @@ b {
 .text-center {
   text-align: center; }
 
-.table-hove {
+.table-hover {
   position: absolute;
   right: -100%;
   width: 100%;
