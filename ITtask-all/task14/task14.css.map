@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,yBAA0B;EACtB,iBAAW;IACP,OAAO,EAAE,IAAI;AAMrB,QAAO;EACH,OAAO,EAAE,MAAM;;AAUnB,KAAM;EAEF,KAAK,EAAE,IAAI;;AAEf,UAAW;EACP,UAAU,EAAE,KAAK",
+"sources": ["task14.scss"],
+"names": [],
+"file": "task14.css"
+}
