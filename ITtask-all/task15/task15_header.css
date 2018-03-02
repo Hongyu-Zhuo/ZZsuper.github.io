@@ -42,13 +42,13 @@
 body {
   background-color: #f5f5f5; }
 
-c {
-  margin: 0; }
+p {
+  margin-bottom: 0; }
 
-headec {
+header {
   width: 100%; }
 
-c {
+a {
   text-decoration: none; }
 
 .tell-word {
@@ -57,7 +57,7 @@ c {
   font-size: 12px;
   color: #29b078;
   line-height: 30px; }
-  .tell-word a:hover {
+  a:hover {
     text-decoration: none;
     color: #fff; }
 
