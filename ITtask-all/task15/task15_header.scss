@@ -201,7 +201,7 @@ a:hover {
     @include position(absolute, null, null, 0, 0);
     display: block;
     width: 68px;
-    border: 1.5px map-get($color, white);
+    border: 1.5px solid map-get($color, white);
 }
 
 /*职位列表页*/
