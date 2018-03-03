@@ -39,9 +39,9 @@
 
   .md-8 {
     width: 66.6666666666%; } }
-@media (max-width: 992px) {
+/*@media (max-width: 992px) {
   .md-4 {
-    width: 100%; } }
+    width: 100%; } }*/
 @media (max-width: 768px) {
   .ft-l, .ft-c {
     padding: 0; } }
