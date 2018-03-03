@@ -14,7 +14,7 @@
     color: #29b078; }
 
 /*导航-合作企业-开始*/
-.partner {
+.partners {
   padding: 0;
   padding-bottom: 30px;
   border: 1px solid #dddcdc;
@@ -22,13 +22,13 @@
   text-align: center;
   color: #29b078;
   background-color: #fff; }
-  .partner h6 {
+  .partners h6 {
     border-bottom: 1px solid #dddcdc;
     margin: 0;
     font-size: 16px;
     line-height: 60px;
     color: #000; }
-  .partner li {
+  .partners li {
     position: relative;
     padding-top: 25px;
     padding-margin-left: calc(50% - 33px);
