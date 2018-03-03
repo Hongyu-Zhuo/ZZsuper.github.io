@@ -1,0 +1,166 @@
+/*导航-首页>职位*/
+    .main-nav-homepage {
+      padding: 0;
+      margin: 0 15px;
+      border-bottom: 1px solid #999;
+    }
+    .main-nav-homepage a{
+      line-height: 80px;
+      height: 80px;
+      color: #000;
+    }
+    .main-nav-homepage a:hover {
+      color: #29b078;
+    }
+
+    .research-area {
+      padding: 0;
+      margin: 0 15px;
+      border-bottom: 1px solid #c8c8c8;
+      align-items: center;
+      color: #999;
+      overflow: hidden;
+    }
+    .research-area p {
+      float: left;
+      padding: 15px;
+    }
+    .research-area a:nth-child(n+2) {
+      float: left;
+      display: inline-block;
+      padding: 0 5px;
+      margin: 15px 15px;
+      color: #000;
+    }
+    .research-area a:nth-child(2) {
+      color: #fff;
+      background-color: #29b078;
+    }
+    .research-area a:hover {
+      color: #fff;
+      background-color: #29b078;
+    }
+
+    b {
+      font-size: 16px;
+      line-height: 80px;
+    }
+
+ 
+    .table {
+      position: relative;
+      border: 1px solid #e6e4e4;
+      border-radius: 5px;
+      margin-top: 60px;
+      color: #999;
+      overflow: hidden;
+      box-shadow: 1px 1px 0px 0 rgba(8, 1, 3, .15);
+      background-color: #fff;
+      overflow: hidden;
+    }
+    .table-title {
+      line-height: 40px;
+    }
+    .table-1{
+      display: flex;
+      padding: 10px;
+    }
+    .table-2 {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      border-top: 1px solid #e6e4e4a3;
+    }
+    .table-2-2 {border-left: 1px  solid #e6e4e4a3;}
+    .table-3 {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      border: 1px solid #e6e4e4a3;
+      border-left: 0;
+      border-right: 0;
+    }
+    .table-3-1 {
+      width: 50%;
+      padding: 10px;
+    }
+    .table-3-2 {
+      width: 50%;
+      padding: 10px;
+      border-left: 1px solid #e6e4e4a3;
+    }
+    .table-4-1 {
+      float: left;
+      width: 30%;
+      padding: 52px 0;
+      border-right: 1px solid #e6e4e4a3;
+      
+    }
+    .table-4-2 {
+      float: left;
+      width: 70%;
+      padding: 10px;
+      border-bottom: 1px solid #e6e4e4a3;
+    }
+    .table-4-4 {border-bottom: 0;}
+    .table-5 {
+      float: left;
+      width: 100%;
+      padding: 10px;
+      border-top: 1px solid #e6e4e4a3;
+      border-bottom: 1px solid #e6e4e4a3;
+    }
+    .table-6 {
+      float: left;
+      padding: 10px;
+    }
+
+    .inline-block {display: inline-block;}
+    .head-img-wrap {
+      display: flex;
+    }
+    .head-img {margin-right: 20px;}
+    .border-none {
+      border: 0;
+    }
+    .padding-none {padding:0;}
+    .border-left {
+      width: 50%;
+      border-left: 0;
+    }
+    .border-right {
+      width: 50%;
+      border-right: 0;
+    }
+    
+    .icon-star {margin-bottom: 3px;}
+    .black-font {color: #000;}
+    .red-font {color: #f13123;}
+    .float-left {float: left;}
+    .float-right {float: right;}
+    .text-center {text-align: center;
+    }
+    .table-hover {
+      position: absolute;
+      right: -100%;
+      width: 100%;
+      padding: 30px;
+      padding-top: 100px;
+      color: #fff;
+      background-color: rgba(0,0,0,.7);
+    }
+    .table-hover-title {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .table-hover-text {
+      text-align: justify;
+    }
+    .table:hover .table-hover {
+      width: 100%;
+      height: 100%;
+      right: 0%;
+      bottom: 0%;
+      padding-top: 100px;
+      transition: all 0.5s ease;
+    }
