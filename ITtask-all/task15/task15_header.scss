@@ -166,11 +166,11 @@ a:hover {
             line-height: 40px;
             color: map-get($color, white) !important;
             z-index: 999999;
-            @extend %g-bgc;
+            @extend %g-bgc !important;
             &:hover {
-                @extend %g-bgc;
+                @extend %g-bgc !important;
             }
-            &:focus {@extend %g-bgc;}
+            &:focus {@extend %g-bgc !important;}
         }
     }
 }
