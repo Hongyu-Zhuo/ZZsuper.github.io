@@ -1,24 +1,25 @@
 @import "task15-base.scss";
 %g-bgc {background-color: map-get($color, header);}
 //栅格
-.xs-12 {
-	width: $w100;
-	padding: 0 15px;
-}
-.xs-12 {
-	float: left;
+%col {
+    position: relative;
     min-height: 1px;
     padding: 0 15px;
     min-height: 1px;
 }
-.sm-2 {@extend .xs-12;}
-.sm-5 {@extend .xs-12;}
-.sm-6 {@extend .xs-12;}
-.md-3 {@extend .xs-12;}
-.md-4 {@extend .xs-12;}
-.md-8 {@extend .xs-12;}
-.md-12 {@extend .xs-12;}
-.md-1c {width: 100%;}
+.xs-12 {
+	width: $w100;
+	@extend %col; 
+}
+
+.sm-2 {@extend %col;}
+.sm-5 {@extend %col;}
+.sm-6 {@extend %col;}
+.md-3 {@extend %col;}
+.md-4 {@extend %col;}
+.md-8 {@extend %col;}
+.md-12 {@extend %col;}
+.md-12 {width: 100%;}
 @media (min-width: 768px) {
         .wrap {
             width: 750px;
@@ -42,16 +43,12 @@
           width: 66.6666666666%;
         }
     }
-    @media (max-width: 992px) {
-      .md-4 {
-        width: 100%;
-      }
-    }
-    @media (max-width: 768px) {
-        .ft-l, .ft-c {
-          padding: 0;
-        }
-    }
+    // @media (max-width: 992px) {
+    //   .md-4 {
+    //     width: 100%;
+    //   }
+    // }
+   
 
 * {
       box-sizing: border-box;
