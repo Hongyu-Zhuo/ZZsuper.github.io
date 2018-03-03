@@ -159,13 +159,14 @@ a:hover {
             border-bottom: 1px solid map-get($color, white);
         }
     }
-    &>.active>li {
+    &>li {
         a {
             @include box(null, 40px, 0, null, 0);
             font-size: 18px;
             line-height: 40px;
             color: map-get($color, white) !important;
             z-index: 999999;
+            @extend %g-bgc;
             &:hover {
                 @extend %g-bgc;
             }
