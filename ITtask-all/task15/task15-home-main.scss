@@ -95,7 +95,7 @@ h6 {
 *使箭头垂直居中
 */
 .learning-steps-wrap {margin-bottom: 60px;}
-.learn-steps {
+.learning-steps {
     position: relative;
     height: 72px;
     padding: {
@@ -129,7 +129,7 @@ h6 {
     word-wrap: break-word;
 }
 .icon-arrow {
-    @include position(absolute, 20px, 1px, null, null);
+    @include position(relative, 20px, 1px, null, null);
     display: inline-block;
     @include box(32px, 32px, null, null, null);
     padding: {

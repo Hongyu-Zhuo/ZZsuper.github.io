@@ -93,12 +93,12 @@ h6 {
 .learning-steps-wrap {
   margin-bottom: 60px; }
 
-.learn-steps {
+.learning-steps {
   position: relative;
   height: 72px;
   padding-left: 80px;
   padding-right: 33px;
-  padding-margin-bottom: 15px;
+  margin-bottom: 15px;
   background: url(https://ZZsuper.github.io/ITtask-all/sprite/圆形.png) no-repeat; }
 
 .learning-title {
@@ -107,7 +107,7 @@ h6 {
   margin-letter-spacing: 1px; }
 
 .study-number {
-  position: relative;
+  position: absolute;
   top: 25px;
   left: 31px;
   font-size: 18px;
@@ -122,7 +122,7 @@ h6 {
   word-wrap: break-word; }
 
 .icon-arrow {
-  position: absolute;
+  position: relative;
   top: 20px;
   right: 1px;
   display: inline-block;
