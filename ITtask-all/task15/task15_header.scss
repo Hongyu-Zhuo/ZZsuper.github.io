@@ -23,7 +23,9 @@
         .wrap {
             width: 750px;
         }
-        .sm-c {width: 50%;}
+        .sm-6 {width: 50%;}
+        .sm-5 {width: 41.66666667%}
+        .sm-2 {width: 16.66666667%}
     }
     
     @media (min-width: 992px) {

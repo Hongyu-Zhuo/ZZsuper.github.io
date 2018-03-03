@@ -2,17 +2,17 @@
 .header-nav, .navbar, .navbar-default {
   background-color: #29b078; }
 
-.xs-12, .sm-6, .md-3, .md-4, .md-8, .md-12 {
+.xs-12, .sm-2, .sm-5, .sm-6, .md-3, .md-4, .md-8, .md-12 {
   width: 100%;
   padding: 0 15px; }
 
-.xs-12, .sm-2, .sm-5, .sm-6, .md-2, .md-3, .md-4, .md-5, .md-8, .md-12 {
+.xs-12, .sm-2, .sm-5, .sm-6, .md-3, .md-4, .md-8, .md-12 {
   float: left;
   min-height: 1px;
   padding: 0 15px;
   min-height: 1px; }
 
-.md-12 {
+.md-1c {
   width: 100%; }
 
 @media (min-width: 768px) {
@@ -20,7 +20,13 @@
     width: 750px; }
 
   .sm-6 {
-    width: 50%; } }
+    width: 50%; }
+
+  .sm-5 {
+    width: 41.66666667%; }
+
+  .sm-2 {
+    width: 16.66666667%; } }
 @media (min-width: 992px) {
   .wrap {
     width: 970px; }
