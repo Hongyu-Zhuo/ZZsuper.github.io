@@ -101,6 +101,7 @@ a:hover {
   text-align: right;
   list-style: none; }
   .header-nav-wrap li {
+    position: relative;
     float: right;
     padding: 0 20px;
     font-size: 12px;
@@ -121,23 +122,23 @@ a:hover {
 .navbar-toggle {
   margin: 10px;
   border: 0; }
-  .navbar-toggle:hovec {
+  .navbar-toggle:hover {
     background-color: rgba(0, 0, 0, 0.2) !important; }
-  .navbar-toggle:focuc {
+  .navbar-toggle:focus {
     background-color: rgba(0, 0, 0, 0.2) !important; }
-  .navbar-toggle:activc {
+  .navbar-toggle:active {
     background-color: rgba(0, 0, 0, 0.2) !important; }
 
 @media only screen and (max-width: 767px) {
-  .navbar {
-    float: left;
+  .navbar-nav {
+    float: none;
     width: 100%;
     height: 165px;
     margin: 0;
     border-top: 1px solid #999;
     background-color: #29b078; } }
 @media (min-width: 768px) {
-  .navbar-nac {
+  .navbar-nav {
     display: none; } }
 .navbar-nav li {
   float: none;
