@@ -26,7 +26,6 @@
     padding-bottom: 30px;
     border: 1px solid #dddcdc;
     border-radius: 5px;
-    text-align: center;
     color: map-get($color, header);
     background-color: map-get($color, white);
     h6 {
@@ -38,11 +37,9 @@
     }
     li {
         position: relative;
-        padding: {
-            top: 25px;
-            margin-left: calc(50% - 33px);
-            text-align: left;
-        }
+        padding-top: 25px;
+        margin-left: calc(50% - 33px);
+        text-align: left;   
     }
  }
 .liststyle-circle {
