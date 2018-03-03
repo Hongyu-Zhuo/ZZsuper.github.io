@@ -259,6 +259,11 @@
           width: 66.6666666666%;
         }
     }
+
+    @media (min-width: 1200px){
+        .wrap {width: 1170px;}
+
+}
     @media (max-width: 992px) {
       .md-4 {
         width: 100%;
