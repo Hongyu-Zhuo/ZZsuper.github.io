@@ -6,7 +6,7 @@
 .banner {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; }
 
 .banner-arrow-left {
@@ -160,7 +160,7 @@ h6 {
 
 .slide-dot {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; }
 
 .slide-dot-1 {
@@ -185,7 +185,7 @@ h6 {
 
 .com-layout {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 180px;
   background-color: #fff;

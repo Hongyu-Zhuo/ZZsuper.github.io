@@ -27,7 +27,7 @@ $w100: 100%;
 }
  @mixin flex-center {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;  
 }
 @mixin bg-icon($pos) {
