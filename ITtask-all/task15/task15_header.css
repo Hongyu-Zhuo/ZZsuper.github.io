@@ -236,16 +236,11 @@ footer {
   line-height: 30px;
   text-align: center; }
 
-.code-text {
+.code-txt {
   font-size: 14px; }
 
-@media (max-width: 768px) {
-  .ft-l, .ft-c {
-    display: block;
-    padding: 0 15px;
-    border: 1px solid transparent; } }
 @media (min-width: 768px) {
-  .code-text {
+  .code-txt {
     text-align: center; }
 
   .bar-code {
