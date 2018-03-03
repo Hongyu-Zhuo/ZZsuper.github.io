@@ -174,7 +174,7 @@
       overflow: hidden;
     }
     .bug {
-      line-height: 19px;
+      padding-top: 20px;
       color: #29b078;
     }
     .wrap {
