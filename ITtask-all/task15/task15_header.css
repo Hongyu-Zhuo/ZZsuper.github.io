@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.hader-nav, .navbar, .navbar-default {
+.header-nav, .navbar, .navbar-default, .navbar-nav > .active > li a:hover, .navbar-nav > .active > li a:focus {
   background-color: #29b078; }
 
 .xs-12, .sm-6, .md-3, .md-4, .md-8, .md-12 {
@@ -89,7 +89,7 @@ a:hover {
 .icon-sina {
   background-position: 4px -25px; }
 
-.hader-nav {
+.header-nav {
   width: 100%;
   height: auto;
   color: #fff; }
@@ -145,7 +145,7 @@ a:hover {
   text-align: center; }
   .navbar-nav li:hover {
     border-bottom: 1px solid #fff; }
-.navbar-nav > li a {
+.navbar-nav > .active > li a {
   height: 40px;
   padding: 0;
   margin: 0;

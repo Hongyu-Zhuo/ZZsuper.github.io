@@ -99,7 +99,7 @@ a:hover {
     @extend %header-icon;
     background-position: 4px -25px;
 }
-.hader-nav {
+.header-nav {
     width: 100%;
     height: auto;
     color: map-get($color, white);
@@ -159,13 +159,17 @@ a:hover {
             border-bottom: 1px solid map-get($color, white);
         }
     }
-    &>li {
+    &>.active>li {
         a {
             @include box(null, 40px, 0, null, 0);
             font-size: 18px;
             line-height: 40px;
             color: map-get($color, white) !important;
             z-index: 999999;
+            &:hover {
+                @extend %g-bgc;
+            }
+            &:focus {@extend %g-bgc;}
         }
     }
 }
