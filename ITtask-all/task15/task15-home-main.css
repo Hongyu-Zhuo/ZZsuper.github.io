@@ -15,6 +15,12 @@
   left: calc(50% - 10px);
   width: 20px; }
 
+.banner-arrow-right {
+  position: absolute;
+  top: calc(50% - 15px);
+  right: calc(50% - 10px);
+  width: 20px; }
+
 ul {
   padding: 0; }
 
