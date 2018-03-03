@@ -5,14 +5,14 @@
     body {background-color: #f5f5f5ab;}
     p {margin-bottom: 0;}
     header {
-      width: 100%;
+    	width: 100%;
     }
     a {text-decoration: none;}
     .tell-word {
       float: left;
       display: inline-block;
-      font-size: 12px;
-      color: #29b078;
+    	font-size: 12px;
+    	color: #29b078;
       line-height: 30px;
     }
     a:hover {
@@ -27,32 +27,32 @@
     }
     .icon-wechat {
       display: inline-block;
-      width: 25px;
-      height: 25px;
-      border: 1px solid #29b078;  
-      border-radius: 30px;
-      margin-right: 5px;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
+    	margin-right: 5px;
       background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
       no-repeat center;
       background-position: 3px 4px; 
     }
     .icon-qq {
       display: inline-block;
-      width: 25px;
-      height: 25px;
-      border: 1px solid #29b078;  
-      border-radius: 30px;
-      margin-right: 5px;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
+    	margin-right: 5px;
       background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
       no-repeat center;
       background-position: 4px -60px;
     }
     .icon-sina {
       display: inline-block;
-      width: 25px;
-      height: 25px;
-      border: 1px solid #29b078;  
-      border-radius: 30px;
+    	width: 25px;
+    	height: 25px;
+    	border: 1px solid #29b078;	
+    	border-radius: 30px;
       margin-right: 5px;
       background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
       no-repeat center;
@@ -173,10 +173,6 @@
       background-color: #29b078;
       overflow: hidden;
     }
-    .bug {
-      line-height: 19px;
-      color: #29b078;
-    }
     .wrap {
       padding: 0 15px;
       margin: 0 auto;
@@ -224,7 +220,6 @@
 
      /*栅格*/
      .row {overflow: hidden;}
-    
     .xs-12 {
       width: 100%;
       padding: 0 15px;
@@ -244,7 +239,6 @@
         }
         .sm-6 {width: 50%;}
     }
-    
     @media (min-width: 992px) {
         .wrap {
             width: 970px;
@@ -256,13 +250,8 @@
           width: 33.3333333333%;
         }
         .md-8 {
-          width: 66.6666666666%;
+          width: 66.6666666666%
         }
-    }
-    @media (max-width: 992px) {
-      .md-4 {
-        width: 100%;
-      }
     }
     @media (max-width: 768px) {
         .ft-l, .ft-c {

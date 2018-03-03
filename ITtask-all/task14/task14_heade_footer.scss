@@ -1,0 +1,91 @@
+$color: (
+    header: #29b078,
+    gray: #999
+    );
+
+    @media (min-width: 992px) {
+        .wrap {
+            width: 970px;
+        }
+        
+    }
+    @media (min-width: 768px) {
+        .wrap {
+            width: 750px;
+        }
+        
+    }
+
+@media (max-width: 768px) {
+    %hidden-xs {
+        display: none;
+    }
+};
+body {margin: 0;}
+
+
+%pd_15 {
+    padding: 0 15px;
+};
+
+%m-center {
+    margin: 0 auto;
+};
+
+
+.contact {
+    @extend %pd_15;
+
+};
+.tell {
+    @extend %hidden-xs;
+    float: left;
+    p {
+        margin: 5px;
+        font-size: 14px;
+    }
+};
+.icon-wrap {
+    text-align: right;
+};
+%header-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #29b078;  
+    border-radius: 30px;
+    margin-top: 3px;
+    margin-right: 5px;
+}
+.icon-wechat {
+    @extend %header-icon;
+    background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+    no-repeat center;
+    background-position: 3px 4px; 
+    }
+.icon-qq {
+    @extend %header-icon;
+    background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+    no-repeat center;
+    background-position: 4px -60px;
+}
+.icon-sina {
+    @extend %header-icon;
+    background: url(https://zzsuper.github.io/ITtask-all/sprite/task8.png)
+    no-repeat center;
+    background-position: 4px -25px;
+}
+.nav {
+    @extend %pd_15;
+    background-color: map-get($color, header);
+}
+.nav-img {
+    margin-top: 4px;
+}
+.header-nav {}
+
+
+
+
+
+
