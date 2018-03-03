@@ -245,7 +245,7 @@ footer {
     padding: 0 15px;
     border: 1px solid transparent; } }
 @media (min-width: 768px) {
-  .code-txc {
+  .code-text {
     text-align: center; }
 
   .bar-code {
