@@ -66,12 +66,12 @@ b {
     padding: 10px;
     @extend %table-border;
 }
-.table-2-2 {@extend %table-border;}
+.table-2-2 {border-left: 1px  solid #e6e4e4a3;}
 .table-3 {
     display: flex;
     align-items: center;
     width: 100%;
-    @extend %table-border;
+    border: 1px solid #e6e4e4a3;
     border: {
         left: 0;
         right: 0;
@@ -83,17 +83,17 @@ b {
 }
 .table-3-2 {
     @extend .table-3-1;
-    @extend %table-border;
+    border-left: 1px solid #e6e4e4a3;
 }
 .table-4-1 {
     float: left;
     @include box(30%, null, 52px 0, null, null);
-    @extend %table-border;
+    border-right: 1px solid #e6e4e4a3;
 }
 .table-4-2 {
     float: left;
     @include box(70%, null, 10px, null, null);
-    @extend %table-border;
+    border-bottom: 1px solid #e6e4e4a3;
 }
 .table-4-4 {border-bottom: 0;}
 .table-5 {

@@ -52,7 +52,7 @@ b {
   display: flex;
   padding: 10px; }
 
-.table-2, .table-2-2, .table-3, .table-3-2, .table-4-1, .table-4-2 {
+.table-2 {
   border-top: 1px solid #e6e4e4; }
 
 .table-2 {
@@ -60,10 +60,14 @@ b {
   width: 50%;
   padding: 10px; }
 
+.table-2-2 {
+  border-left: 1px  solid #e6e4e4a3; }
+
 .table-3 {
   display: flex;
   align-items: center;
   width: 100%;
+  border: 1px solid #e6e4e4a3;
   border-left: 0;
   border-right: 0; }
 
@@ -71,15 +75,20 @@ b {
   width: 50%;
   padding: 10px; }
 
+.table-3-2 {
+  border-left: 1px solid #e6e4e4a3; }
+
 .table-4-1 {
   float: left;
   width: 30%;
-  padding: 52px 0; }
+  padding: 52px 0;
+  border-right: 1px solid #e6e4e4a3; }
 
 .table-4-2 {
   float: left;
   width: 70%;
-  padding: 10px; }
+  padding: 10px;
+  border-bottom: 1px solid #e6e4e4a3; }
 
 .table-4-4 {
   border-bottom: 0; }
