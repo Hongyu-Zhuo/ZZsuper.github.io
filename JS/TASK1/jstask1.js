@@ -1,46 +1,66 @@
-console.log("通");
-start.onclick=function() {
-    document.getElemetById("1-1")
+console.log("JS成功执行进来;")
+console.log("JS是否存在逻辑问题、变量问题、参数问题等等")
+console.log("JS符号是否存在问题")
+var sti;//定义全局变量
+var div=document.getElementsByClassName("box");
+var i=0;
+function Intveral() {
+    clearInterval(sti);
+    start();//点击按钮立即变换颜色，如果不设则点击按钮1s后开始变换颜色；
+    sti = setInterval("start()", 1000);
 }
 
-// var box1 = document.getElementById(Math.floor(Math.random()*10));
-// var box2 = document.getElementById(Math.floor(Math.random()*10));
-    // var box1 = document.getElementById(Math.floor(Math.random()*10));
-    // var box2 = document.getElementById(Math.floor(Math.random()*10));
-    // var box3 = document.getElementById(Math.floor(Math.random()*10));
-   
-// var color = "#" + Math.floor(Math.random()*0xffffff).toString(16);
-// ((box1==0) || (box2==0) || (box3==0))
-function color() {
-        box_color = "#" + (((Math.random()*9)*0xffffff+0.5>>0).toString(16)).slice(-6);
-        return box_color ;
+function stop() {
+    clearInterval(sti);
+
+    for(
+        var i = 0;
+        i < div.length;
+        i++
+        ) {
+        div[i].style.backgroundColor = '#ffa500';
     }
+}
+
+function color() {
+    var box_color = "#" + (((Math.random()*9)*0xffffff>>0).toString(16)).slice(-6);
+
+    if (box_color=="#ffa500") {
+        color();
+    }
+    else {
+        return box_color;
+    }
+}
 
 function start() {
-    
-    var box1 = Math.floor(Math.random()*10);
-    console.log(box1);
-    var box2 = Math.floor(Math.random()*10);
-    console.log(box2);
-    var box3 = Math.floor(Math.random()*10);
-    console.log(box3);
+    var box1 = Math.floor(Math.random()*9);
+    var box2 = Math.floor(Math.random()*9);
+    var box3 = Math.floor(Math.random()*9);
 
-    if (box1!=box2&&box1!=box3&&box2!=box3&&box1!=0&&box2!=0&&box3!=0) {
-        document.getElementById(box1).style.backgroundColor = color();
-        console.log(color());
-        document.getElementById(box2).style.backgroundColor = color();
-        console.log(color());
-        document.getElementById(box3).style.backgroundColor = color();
-        console.log(color());
-    
+    for(
+        var i = 0;
+        i < div.length;
+        i++
+        ) {
+    div[i].style.backgroundColor = '#ffa500';
     }
+
+    if (box1!=box2&&box1!=box3&&box2!=box3) {
+        document.getElementById(box1).style.backgroundColor = color();
+        document.getElementById(box2).style.backgroundColor = color();
+        document.getElementById(box3).style.backgroundColor = color();
+    }
+    
     else {
         start();
     }
+}
+  
 
 
-    
-        
+
+  
     
     // if (box1 = document.getElementById(0)||document.getElementById(0)||document.getElementById(0) ) {
     //     return start;
@@ -55,5 +75,4 @@ function start() {
     
     // document.getElementById(Math.floor(Math.random()*10)).style.backgroundColor = color;
     
-}
- var tt = windows.setIntveral(start, 1000);
+
