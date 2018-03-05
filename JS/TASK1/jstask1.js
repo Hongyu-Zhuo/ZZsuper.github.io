@@ -1,12 +1,16 @@
 console.log("JS成功执行进来;")
 console.log("JS是否存在逻辑问题、变量问题、参数问题等等")
 console.log("JS符号是否存在问题")
+
+
+
+
 var sti;//定义全局变量
 var div=document.getElementsByClassName("box");
 var i=0;
 function Intveral() {
     clearInterval(sti);
-    start();//点击按钮立即变换颜色，如果不设则点击按钮1s后开始变换颜色；
+    // start();//点击按钮立即变换颜色，如果不设则点击按钮1s后开始变换颜色；
     sti = setInterval("start()", 1000);
 }
 
