@@ -95,7 +95,7 @@ main {
   float: right;
   text-align: left; }
 
-@media (min-width: 375px) {
+@media (min-width: 511px) {
   .players-group_r {
     float: none;
     width: 40%;
@@ -109,6 +109,12 @@ main {
     width: 40%;
     padding-right: 30px;
     margin-bottom: 8px;
+    text-align: right; } }
+@media (min-width: 430px) and (max-width: 510px) {
+  .players-group_r, .players-group_l {
+    width: 48%; }
+
+  .players-group_r {
     text-align: right; } }
 .yellow_block {
   background-color: #ee9f1b; }
