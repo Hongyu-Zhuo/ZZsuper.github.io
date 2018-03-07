@@ -1,0 +1,49 @@
+$color: (
+    body: #f0f0f0,
+    white: #fff,
+    blue: #29bde0,
+    header: #29bde0,
+    footer: #29bde0,
+    blue-light: #b9e9f5,
+    dark-border: #9a9999,
+    f-gray: #9a9999,
+    bright-border: #c1c0c0,
+    dark-yellow: #f5c97b,
+    bright-yellow: #fbb435,
+    text-yellow: #ffc865,
+    num-bg: #83b09a,
+    dark-gray: #69c0d6
+    );
+$color_2: (
+  yellow_block: #ee9f1b,
+  blue_block: #29bde0,
+  yellow_btn: #fab344,
+  border_gray: #d2d1d1
+  );
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin box($width, $heigth, $padding, $border, $margin) {
+  width: $width;
+  height: $heigth;
+  padding: $padding;
+  border: $border;
+  margin: $margin;
+}
+@mixin bg($size, $pos, $outline: none) {
+  background: url(https://ZZsuper.github.io/JS/TASK2/icon/JS-TASK2.png) no-repeat;
+  background: {
+    size: $size;
+    position: $pos;
+  }
+  outline: $outline;
+}
+@mixin flex_center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
