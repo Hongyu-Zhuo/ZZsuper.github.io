@@ -72,6 +72,7 @@ main {
   outline: none; }
 
 .circle {
+  display: none;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -82,6 +83,12 @@ main {
   position: relative;
   top: 15px;
   width: 66%; }
+
+.identity {
+  padding-top: 30px;
+  font-size: 20px;
+  color: #29bde0;
+  text-align: center; }
 
 .icon_king {
   display: inline-block;

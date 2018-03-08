@@ -55,6 +55,12 @@ main {
     top: 15px;
     width: 66%;
 }
+.identity {
+    padding-top: 30px;
+    font-size: 30px;
+    color: map-get($color, header);
+    text-align: center;
+}
 .icon_king {
     display: inline-block;
     width:50%;
