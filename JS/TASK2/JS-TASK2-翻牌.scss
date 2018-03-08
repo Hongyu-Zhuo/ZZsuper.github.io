@@ -31,14 +31,29 @@ main {
 }
 .number {
     @include position(absolute, -24px, calc(50% - 20px), null, null);
-    @include box(40px, 40px, null, null, null);
-    border: 3px solid map-get($color, white);
-    border-right: transparent;
-    border-bottom: transparent;
+    @include box(40px, 40px, null, 0, null);
+    // border: 3px solid map-get($color, white);
+    // border-right: transparent;
+    // border-bottom: transparent;
     border-radius: 50%;
-    transform: rotate(45deg);
-    color: map-get($color, num);
+    // transform: rotate(45deg);
+    text-align: center;
+    font-size: 25px;
+    color: map-get($color_3, num);
     outline: none;
+}
+.circle {
+    display: none;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 50px auto 0;
+    background-color: #fbb435;
+}
+.circle img {
+    position: relative;
+    top: 15px;
+    width: 66%;
 }
 .icon_king {
     display: inline-block;
