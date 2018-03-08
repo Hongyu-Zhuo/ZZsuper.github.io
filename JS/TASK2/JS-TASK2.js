@@ -1,3 +1,4 @@
+
 console.log("JS成功执行进来;")
 console.log("JS是否存在逻辑问题、变量问题、参数问题等等")
 console.log("JS符号是否存在问题")
@@ -12,8 +13,15 @@ function people() {
 
 function distribute() {
     var num = document.getElementById('number').value;
-    document.getElementById('killer_num').value = player();
-    document.getElementById('civilian_num').value = num - player();
+    if (player() == undefined) {
+        document.getElementById('killer_num').value = null;
+        document.getElementById('civilian_num').value = null;
+    }
+    else {
+        document.getElementById('killer_num').value = player();
+        document.getElementById('civilian_num').value = num - player();
+    }
+    
 }
 function voluation() {
     var num = document.getElementById('number').value;
@@ -25,7 +33,7 @@ function voluation() {
         i < killerNum.length;
         i++
         ) {
-        killerNum[i] = "杀手";
+        killerNum[i] = "1";//杀手 = 1;
     console.log(killerNum)
     }
     for (
@@ -33,14 +41,27 @@ function voluation() {
         a < civilianNum.length;
         a++
         ) {
-        civilianNum[a] = "平民";
+        civilianNum[a] = "0";//平民 = 0;
     console.log(civilianNum)
     }  
-    civilianNum.push.apply(civilianNum,killerNum);
+    civilianNum.push.apply(civilianNum,killerNum);//合并数组
     console.log(civilianNum);
-
+    return civilianNum;
 }
-// var num = document.getElementById('number').value;
+
+function shuffle() {  //Fisher-Yates Shuffle(从后向前遍历);
+    var _array = voluation();
+    for (var i = _array.length; i--; ) {
+        var j = Math.floor(Math.random() * (i + 1));//j = rand(i);  or  j=(rand(n)/n)*(n-i+1)+i-1; ps: n=_array.length;
+        var temp = _array[i];   //简便写法exchange(_array[i], _array[j]);
+        _array[i] = _array[j];
+        _array[j] = temp;
+    }
+    console.log(_array)
+    return _array;
+}
+
+// var num = document.getElementById('=').value;
 function player() {
     var killer_num1 = 1;
     var killer_num2 = 2;
