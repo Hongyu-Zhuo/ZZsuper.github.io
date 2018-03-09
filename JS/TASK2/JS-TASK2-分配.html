@@ -88,22 +88,34 @@
 
         <div class="set_player_num">
             <p>玩家人数
-                <input id="number" class="player_num" type="text" name="" value="">人
+                <input id="number" class="player_num" type="text" name="" value="4">人
             </p>
 
             <div class="sliding_strip">
                 <span class="icon_minus"></span>
-                <span class="line">
-                    <img class="slider" src="https://ZZsuper.github.io/JS/TASK2/icon/slider.png">
-                </span>
+                <input id="line" class="line" type="range">
+                    <!-- <img id="slider" class="slider" src="https://ZZsuper.github.io/JS/TASK2/icon/slider.png"> -->
+                
 
                 <span class="icon_plus"></span>
             </div>
         </div>
 
-        <button id="go_deal" class="deal" type="" onclick="">去发牌</button>
+        <button id="go_deal" class="deal" type="" onclick="toDeal()">去发牌</button>
     </main>
+    <!-- <script>
+            var change = function($input) {
+                /*内容可自行定义*/
+                console.log("123");
+            }
 
+            $('input').RangeSlider({ min: 0,   max: 100,  step: 1,  callback: change});
+
+        </script> -->
+    
+    <!-- <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
     <script type="text/javascript" src="JS-TASK2.js"></script>
+    <script type="text/javascript" src="RangeSlider.js"></script>
 </body>
 </html>

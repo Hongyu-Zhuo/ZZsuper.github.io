@@ -1,7 +1,7 @@
 main, .players-wrap, .title, .players, .setting, .phrase input {
   box-sizing: border-box; }
 
-.icon_back, .icon_help, .role_num, .players-group_l, .players-group_r, .setting, .pen, .set_text, .icon_minus, .line, .icon_plus {
+.icon_back, .icon_help, .role_num, .players-group_l, .players-group_r, .setting, .pen, .set_text, .icon_minus, .icon_plus {
   display: inline-block; }
 
 .yellow_block, .blue_block {
@@ -214,12 +214,22 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   cursor: pointer; }
 
 .line {
-  position: relative;
+  -webkit-appearance: none;
   width: 70%;
-  height: 3px;
-  margin: 0 10px;
-  border-radius: 1px;
-  background-color: #fab344; }
+  border-radius: 1px; }
+  .line::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    margin-top: -8px;
+    background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
+    background-size: 85%; }
+  .line::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 1px;
+    background-color: #ffe6be; }
+  .line:focus {
+    outline: none; }
 
 .slider {
   position: relative;

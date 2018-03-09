@@ -4,6 +4,7 @@ console.log("JS是否存在逻辑问题、变量问题、参数问题等等")
 console.log("JS符号是否存在问题")
 
 
+
 function toSimple () {
 	window.location.href="https://ZZsuper.github.io/JS/TASK2/JS-TASK2-分配/JS-TASK2-分配.html";
 }
@@ -11,7 +12,22 @@ function people() {
     var num = document.getElementById('number').value;
 }
 
-function distribute() {
+//滑块
+// $(function() {
+//     $("#line").slider({
+//       range: "min",
+//       value: 4,
+//       min: 4,
+//       max: 18,
+//       slide: function(event, ui) {
+//         $("#number").val(ui.value);
+//       }
+//     });
+//     $("#number").val($("#line").slider("value"));
+//   });
+
+
+function distribute() { //玩家配比
     var num = document.getElementById('number').value;
     if (player() == undefined) {
         document.getElementById('killer_num').value = null;
@@ -21,10 +37,12 @@ function distribute() {
         document.getElementById('killer_num').value = player();
         document.getElementById('civilian_num').value = num - player();
     }
-    
 }
+
+//数组乱序
 function voluation() {
     var num = document.getElementById('number').value;
+   
     var killerNum = new Array(player());
     var civilianNum = new Array(num - player());
     var i;
@@ -49,7 +67,9 @@ function voluation() {
     return civilianNum;
 }
 
-function shuffle() {  //Fisher-Yates Shuffle(从后向前遍历);
+
+//Fisher-Yates Shuffle(从后向前遍历);
+function shuffle() {  
     var _array = voluation();
     for (var i = _array.length; i--; ) {
         var j = Math.floor(Math.random() * (i + 1));//j = rand(i);  or  j=(rand(n)/n)*(n-i+1)+i-1; ps: n=_array.length;
@@ -61,7 +81,26 @@ function shuffle() {  //Fisher-Yates Shuffle(从后向前遍历);
     return _array;
 }
 
-// var num = document.getElementById('=').value;
+
+//点击去发牌跳转
+go_deal.addEventListener("click",toDeal);
+function toDeal() {
+
+    var k = document.getElementById('killer_num').value;
+    if (k) {
+        window.location.href="JS-TASK2-翻牌.html";
+
+    }
+    else {
+        alert("请输入正确的玩家数量(4 ~ 18)");
+    }
+    voluation;
+    shuffle;
+};
+var shuffle = JSON.stringify(voluation()); 
+sessionStorage.setItem("deal", shuffle);
+
+// var num = document.getElementById('number').value;
 function player() {
     var killer_num1 = 1;
     var killer_num2 = 2;
@@ -80,11 +119,10 @@ function player() {
         else if (15 < num && num <=18) {
             return killer_num4;
         }
-    else {
-        alert("请输入正确的玩家数量(4 ~ 18)");
-    }
-
-}
+        else {
+            alert("请输入正确的玩家数量(4 ~ 18)");
+        }
+};
 
  
 
