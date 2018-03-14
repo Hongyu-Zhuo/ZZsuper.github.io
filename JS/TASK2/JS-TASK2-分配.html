@@ -24,7 +24,7 @@
             <div class="players">
                 <div class="players-group_l">
                     <span class="yellow_block"></span>
-                    <p>杀&emsp;手 <input id="killer_num" class="role_num" type="text" > 人</p>
+                    <p>杀&emsp;手 <input id="killer_num" class="role_num" type="text" oninput="voluation()"> 人</p>
                 </div>
                 <div class="players-group_r">
                     <span class="yellow_block"></span>
@@ -75,7 +75,7 @@
         
 
             <div class="setting">
-                <P class="set_text" onclick="distribute()">点击设置</P>
+                <P id="set_text" class="set_text" onclick="distribute()">点击设置</P>
                 <span class="pen"></span>
             </div>
         </div>
@@ -88,20 +88,19 @@
 
         <div class="set_player_num">
             <p>玩家人数
-                <input id="number" class="player_num" type="text" name="" value="4">人
+                <input id="number" class="player_num" type="text" name="" value="4" >人
             </p>
 
             <div class="sliding_strip">
-                <span class="icon_minus"></span>
-                <input id="line" class="line" type="range">
+                <span id="icon_minus" class="icon_minus" ></span>
+                <input id="line" class="line" type="range" min="4" max="8" show-input>
                     <!-- <img id="slider" class="slider" src="https://ZZsuper.github.io/JS/TASK2/icon/slider.png"> -->
-                
 
-                <span class="icon_plus"></span>
+                <span id="icon_plus" class="icon_plus"></span>
             </div>
         </div>
 
-        <button id="go_deal" class="deal" type="" onclick="toDeal()">去发牌</button>
+        <button id="go_deal" class="deal" type="" onclick="toDeal">去发牌</button>
     </main>
     <!-- <script>
             var change = function($input) {
@@ -113,9 +112,9 @@
 
         </script> -->
     
-    <!-- <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script> -->
-    <script type="text/javascript" src="JS-TASK2.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js-task2-备份.js"></script>
     <script type="text/javascript" src="RangeSlider.js"></script>
+    <script> $('input[type="range"]').on("change mousemove", function () { var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min')); $(this).css('background-image', '-webkit-gradient(linear, left top, right top, ' + 'color-stop(' + val + ', #2f466b), ' + 'color-stop(' + val + ', #d3d3db)' + ')' ); });</script>
 </body>
 </html>

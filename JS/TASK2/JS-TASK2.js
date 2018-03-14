@@ -25,7 +25,29 @@ function people() {
 //     });
 //     $("#number").val($("#line").slider("value"));
 //   });
-
+function player() {
+    var killer_num1 = 1;
+    var killer_num2 = 2;
+    var killer_num3 = 3;
+    var killer_num4 = 4;
+    var num = $("#number").val(); 
+    
+        if (3 < num && num<=8) {
+            return killer_num1;
+        }
+        else if (8 < num && num <=11) {
+            return killer_num2;
+        }
+        else if (11 < num && num <=15) {
+            return killer_num3;
+        }
+        else if (15 < num && num <=18) {
+            return killer_num4;
+        }
+        else {
+            alert("请输入正确的玩家数量(4 ~ 18)");
+        }
+};
 
 function distribute() { //玩家配比
     var num = document.getElementById('number').value;
@@ -37,12 +59,12 @@ function distribute() { //玩家配比
         document.getElementById('killer_num').value = player();
         document.getElementById('civilian_num').value = num - player();
     }
+
 }
 
-//数组乱序
+
 function voluation() {
-    var num = document.getElementById('number').value;
-   
+    var num = document.getElementById("number").value;
     var killerNum = new Array(player());
     var civilianNum = new Array(num - player());
     var i;
@@ -64,10 +86,11 @@ function voluation() {
     }  
     civilianNum.push.apply(civilianNum,killerNum);//合并数组
     console.log(civilianNum);
+    shuffle;
     return civilianNum;
 }
 
-
+//数组乱序
 //Fisher-Yates Shuffle(从后向前遍历);
 function shuffle() {  
     var _array = voluation();
@@ -76,16 +99,31 @@ function shuffle() {
         var temp = _array[i];   //简便写法exchange(_array[i], _array[j]);
         _array[i] = _array[j];
         _array[j] = temp;
-    }
-    console.log(_array)
+    } 
     return _array;
-}
+};
+console.log(shuffle());
+
+$("#set_text").click(function a() {
+    shuffle;
+    var shuffle = JSON.stringify(shuffle());
+    sessionStorage.setItem("deal", shuffle);
+}); 
+
+
+// var storage;
+// $("#set_text").click(function a(){
+    
+// });
 
 
 //点击去发牌跳转
 go_deal.addEventListener("click",toDeal);
 function toDeal() {
-
+    player;
+    distribute;
+    voluation;
+    shuffle;
     var k = document.getElementById('killer_num').value;
     if (k) {
         window.location.href="JS-TASK2-翻牌.html";
@@ -94,35 +132,16 @@ function toDeal() {
     else {
         alert("请输入正确的玩家数量(4 ~ 18)");
     }
-    voluation;
-    shuffle;
+
 };
-var shuffle = JSON.stringify(voluation()); 
-sessionStorage.setItem("deal", shuffle);
+
+
+
 
 // var num = document.getElementById('number').value;
-function player() {
-    var killer_num1 = 1;
-    var killer_num2 = 2;
-    var killer_num3 = 3;
-    var killer_num4 = 4;
-    var num = document.getElementById('number').value;
-        if (3 < num && num<=8) {
-            return killer_num1;
-        }
-        else if (8 < num && num <=11) {
-            return killer_num2;
-        }
-        else if (11 < num && num <=15) {
-            return killer_num3;
-        }
-        else if (15 < num && num <=18) {
-            return killer_num4;
-        }
-        else {
-            alert("请输入正确的玩家数量(4 ~ 18)");
-        }
-};
+
+
+ 
 
  
 

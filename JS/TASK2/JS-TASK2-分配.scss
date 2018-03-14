@@ -221,12 +221,28 @@ color: #666;
     cursor: pointer;
 }
 .line {
-    position: relative;
-    @extend %inl-blk;
-    @include box(70%, 3px, null, null, 0 10px);
+    -webkit-appearance: none;
+    width: 70%;
     border-radius: 1px;
-    background-color: map-get($color_2, yellow_btn);
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 40px;
+        height: 20px;
+        margin-top: -8px;
+        background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
+        background-size: 85%;
+    }
+    &::-webkit-slider-runnable-track {
+        height: 3px;
+        border-radius: 1px;
+        background-color: #ffe6be;
+    }
+    &:focus {
+        outline: none;
+    }
 }
+
+
 .slider {
     position: relative;
     top: -215%;
