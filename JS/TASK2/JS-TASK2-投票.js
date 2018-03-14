@@ -26,9 +26,9 @@ for (var n = 0;
     n++){
     var x = document.getElementsByClassName("character");
     if (part_value[n] == 0) {
-        x[n].firstChild.innerText = "平民";
+        $(".character").eq(n).children("li").eq(0).html("水民");
     }
     else {
-        x[n].firstChild.innerText = "杀手";
+        $(".character").eq(n).children("li").eq(0).html("杀手");
     }
 }
