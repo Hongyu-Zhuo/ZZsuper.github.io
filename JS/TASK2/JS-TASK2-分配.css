@@ -19,6 +19,7 @@ header {
   left: 0;
   width: 100%;
   padding: 10px;
+  border-bottom: 1px solid #b9e9f5;
   display: flex;
   justify-content: space-between;
   background-color: #29bde0;

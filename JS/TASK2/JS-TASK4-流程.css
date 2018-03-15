@@ -1,0 +1,93 @@
+main {
+  box-sizing: border-box; }
+
+.moon, .sun {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  border: 1px solid #9a9999;
+  border-radius: 50%; }
+
+body {
+  background-color: #f0f0f0; }
+
+main {
+  position: absolute;
+  top: 61px;
+  width: calc(100% - 20px);
+  border: 1px solid #9a9999;
+  margin: 0 10px;
+  margin-bottom: 15px;
+  background-color: #fff; }
+
+.day {
+  border-bottom: 1px solid #9a9999;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  color: #29bde0; }
+
+.arrow_down {
+  position: absolute;
+  top: 17px;
+  right: 10px;
+  cursor: pointer; }
+
+.diary_wrap {
+  position: relative;
+  width: calc(100% - 160px);
+  padding: 40px;
+  padding-left: 60px;
+  border-left: 1.5px solid #9a9999;
+  margin-left: 40px;
+  padding-bottom: 100px; }
+
+.moon {
+  position: absolute;
+  top: 39px;
+  left: -28.5px;
+  z-index: 9999;
+  background: #fff url(https://ZZsuper.github.io/JS/TASK2/icon/moon_sun.png) no-repeat;
+  background-size: 40px;
+  background-position: 13px 8px; }
+
+.sun {
+  position: absolute;
+  top: 204px;
+  left: -28.5px;
+  z-index: 9999;
+  background: #fff url(https://ZZsuper.github.io/JS/TASK2/icon/moon_sun.png) no-repeat;
+  background-size: 40px;
+  background-position: 7px -88px; }
+
+button {
+  display: block;
+  width: 100%;
+  cursor: pointer; }
+
+.kill, .step {
+  position: relative;
+  padding: 15px;
+  border: 0;
+  font-size: 20px;
+  color: #fff;
+  background-color: #29bde0;
+  outline: none; }
+
+.kill {
+  margin-bottom: 100px; }
+
+.step {
+  margin-bottom: 30px; }
+
+.triangle {
+  position: absolute;
+  top: 22px;
+  left: -19px;
+  display: inline-block;
+  border-top: 20px solid #29bde0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  transform: rotate(90deg); }
+
+/*# sourceMappingURL=JS-TASK4-%E6%B5%81%E7%A8%8B.css.map */
