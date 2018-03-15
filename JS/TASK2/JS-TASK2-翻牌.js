@@ -63,7 +63,7 @@ var n = 1;
     });
 
 $("#judge").click(function(){
-    window.location.href="JS-TASK2-投票.html"
+    window.location.href="JS-TASK2-法官查看.html"
 })
 
 
