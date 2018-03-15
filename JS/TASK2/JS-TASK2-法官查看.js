@@ -32,3 +32,7 @@ for (var n = 0;
         $(".character").eq(n).children("li").eq(0).html("杀手");
     }
 }
+
+$(".footer-btn").click(function(){
+    window.location.href="JS-TASK4-流程.html"
+})
