@@ -79,7 +79,7 @@ button {
     margin-bottom: 30px;
 }
 .triangle {
-    @include position(absolute, 22px, null, null, -19px);
+    @include position(absolute, 18px, null, null, -19px);
     display: inline-block;
     border-top: 20px solid map-get($color, header);
     border-left: 15px solid transparent;

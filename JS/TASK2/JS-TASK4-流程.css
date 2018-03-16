@@ -82,7 +82,7 @@ button {
 
 .triangle {
   position: absolute;
-  top: 22px;
+  top: 18px;
   left: -19px;
   display: inline-block;
   border-top: 20px solid #29bde0;
