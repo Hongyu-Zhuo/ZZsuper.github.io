@@ -2,6 +2,7 @@ $header-color: #5fc0cd;
 $body-color: #eff0f4;
 $white-color: #fff;
 $width: 100%;
+$gray: #eceaea;
 * {
   box-sizing: border-box;
 }
@@ -44,9 +45,10 @@ form {
     border: 1px solid #eceaea;
   }
 }
+.font-size {font-size: 16px;}
 .placeholder {
-  font-size: 16px;
-  color: #eceaea;
+  @extend .font-size;
+  color: $gray;
 }
 @mixin input($height: 60px, $padding-left: 60px) {
   width: $width;
@@ -57,17 +59,19 @@ form {
   &::-webkit-input-placeholder {
     @extend .placeholder
   };
-  
-  
   outline: none;
+}
+@mixin bg($size, $pos) {
+  background: {
+    size: $size;
+    position: $pos;
+    color: $white-color;
+  }
 }
 .user {
   @include input;
-  background: $white-color url(https://ZZsuper.github.io/task4/iphone.png)
-  no-repeat;
-  background-size: 15px;
-  background-position: 16px 20px;
-  background-color: $white-color;
+  background: url(https://ZZsuper.github.io/task4/iphone.png) no-repeat;
+  @include bg(15px, 16px 20px);
 }
 .user-line {
   top: 20px;
@@ -75,11 +79,8 @@ form {
 }
 .password {
   @include input;
-  background: $white-color url(https://ZZsuper.github.io/task4/locked.png)
-  no-repeat;
-  background-size: 15px;
-  background-position: 16px 20px;
-  background-color: $white-color;
+  background: url(https://ZZsuper.github.io/task4/locked.png) no-repeat;
+  @include bg(15px, 16px 20px);
 }
 .password-line {
   top: 90px;
@@ -87,7 +88,7 @@ form {
 }
 .submit {
   @include input(40px, 0);
-  font-size: 16px;
+  @extend .font-size;
   color: $white-color;
   background-color: $header-color;
   &:hover {cursor: pointer;}
@@ -96,7 +97,7 @@ form {
   float: right;
   display: inline-block;
   padding: 10px 15px; 
-  font-size: 16px;
+  @extend .font-size;
   text-decoration: none;
   color: $header-color;
   &:hover {text-decoration:underline;}

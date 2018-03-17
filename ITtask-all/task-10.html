@@ -6,60 +6,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
     <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="task10-base.css">
 
     <style type="text/css">
 
-    * {
-    	padding: 0;
-    	margin: 0;
-    }
-    p {margin: 0;}
-    header {
-    	width: 100%;
-    	line-height: 40px;
-    	color: #fff;
-    	background-color: #1d7ad9;
-    }
-
-    .tell-word {float: left;}
-    .signin {text-align: right;}
-    .register {
-    	display: inline-block;
-    	height: 40px;
-    	padding: 0 15px;
-    	text-align: right;
-    	color: #fff;
-    }
-    header a:hover {
-    	text-decoration: none;
-    	color: #000;
-    	background-color: #f9f9f9;
-    }
-    nav {
-    	display: flex;
-    	align-items: center;
-    	width: 100%;
-    	height: 100px;
-    	background-color: #f9f9f9;
-    }
-    nav a {display: inline-block;}
-    .nav {
-    	text-align: right;
-    }
-    .nav-btn {
-    	padding: 10px;
-    	margin-left: 30px;
-    	border-radius: 4px;
-    	line-height: 15px;
-    	color: #000;
-    	box-shadow: 1px 1px 0px 0 rgba(8, 1, 3, .15);
-    	background-color: #fff;
-    }
-    .nav-btn:hover {
-    	color: #fff;
-    	background-color: #1d7ad9;
-    }
-
+    
     /*流程图开始*/
     .flowsheet-wrap {
       padding: 40px 0;
@@ -67,6 +18,10 @@
       text-align: right;      
     }
     .step-wrap{display: inline-block;}
+    .step-wrap-1 {
+      display: inline-block;
+      margin-top: 2px;
+    }
     .line {
       display: inline-block;
       width: 70px;
@@ -75,23 +30,26 @@
       border-radius: 3px;
       background-color: #c5c4c4fa;
     }
-    
+    .line1 {
+      position: relative;
+      z-index: 999999;
+    }
     .circle {
       display: inline-block;
       width: 20px;
       height: 20px;
       padding-top: 1px;
       border-radius: 10px;
-      margin-right: -5px;
+      margin-right: -10px;
       font-size: 12px;
       text-align: center;
       background-color: #c5c4c4fa;
       color: #fff;
     }
     .bigger-circle {
-      width: 23px;
-      height: 23px;
-      padding-top: 3px;
+      width: 21px;
+      height: 21px;
+      padding-top: 2px;
       border-radius: 12px;
     }
     .step {
@@ -104,32 +62,183 @@
     .gray-font {color: #c5c4c4fa;}
     .orange-font {color: #ff7f02;}
     .orange-line {background-color: #ff7f02;}
+    @media screen and (max-width: 768px) {
+      .line-xs {
+        width: 40px !important;
+      }
+      .step {margin: 0;}
+      .flowsheet-wrap {
+        padding-left: 15px;
+        text-align: left;
+      }
+    }
     /*流程图结束*/
     
     /*表单开始*/
+    form {
+      border: 1px solid #e8e8e8;
+      border-radius: 5px;
+      margin-bottom: 100px;
+    }
+    input[type="radio"] + label {
+      display: inline-block;
+      content: "";
+      width: 21px;
+      height: 21px;
+      border: 1px solid #1d7ad9;
+      margin-bottom: 3px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+    input[type="radio"]:checked + label {
+      display: inline-block;
+      box-sizing: content-box;     
+      width: 5px;
+      height: 5px;
+      border: 8px solid #1d7ad9;
+      border-radius: 50%;
+    }
+        
+    input[type="radio"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+    }
+    select {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      width: 110px;
+      height: 38px;
+      padding-left: 10px;
+      border: 1px solid #999;
+      color: #999;
+      background: url(https://ZZsuper.github.io/ITtask-all/task10/imgs/定制箱_03.jpg)
+      no-repeat;
+      background-position: 80px 4px;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+          -ms-appearance: none;
+       -moz-padding-left: 5px!important;
+    }
+    .arrow {
+      display: inline-block;
+      border-top: 5px solid #000;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+    }
+    .mark-word {
+      display: none;
+      font-size: 18px;
+      color: #999;
+    }
     .form-title {
+      margin-bottom: 10px;
       border-left: 2px solid #1d7ad9;
       font-size: 18px;
       text-indent: 4px;
     }
+    .box-type-title {
+      background: #f3f3f3 url(https://ZZsuper.github.io/ITtask-all/task10/imgs/task10-sprite.png)
+      no-repeat;
+      background-position: 13px 22px;
+    }
     .box-type {
-      height: 40px;
+      min-height: 40px;
       padding-left: 40px;
       color: #1d7ad9;
       background-color: #f3f3f3;
+    }
+    .radio-layout {display: inline-block;}
+    .input-wrap {
+      padding: 30px 15px;
+      background-color: #fbfcff;
+    }
+    .input-wrap, .box-size, .box-material {
+      position: relative;
+      padding-right: 120px;
+      border-top: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 16px;
     }
     h5 {
       font-size: 16px;
       line-height: 40px;
       color: #1d7ad9;
     }
-    .input-wrap {
-      height: 90px;
+    .box-size-title {
+      background: #f3f3f3 url(https://ZZsuper.github.io/ITtask-all/task10/imgs/task10-sprite.png)
+      no-repeat;
+      background-position: 12px -52px;
+    }
+    .box-size {
+      min-height: 140px;
+      padding-top: 26.66px;
       background-color: #fbfcff;
     }
+    .input-size {
+      width: 70px;
+      min-height: 30px;
+      margin-bottom: 26.66px;
+      border: 1px solid #e8e8e8;
+    }
+    .input-layout {display: inline-block;}
+    @media (max-width: 768px) {
+      .radio-layout {
+        display: block;
+        padding: 10px 0;
+      }
+      .input-layout {
+        display: block;
+        margin-left: 25px;
+      }
+      .size {
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+      select {
+        top: 35px;
+      }
+    }
+    .box-material-title {
+      background: #f3f3f3 url(https://ZZsuper.github.io/ITtask-all/task10/imgs/task10-sprite.png)
+      no-repeat;
+      background-position: 17px -127px;
+    }
+    .box-material {
+      padding: 50px 15px;
+      padding-right: 130px;
+      background-color: #fbfcff;
+    }
+    .material-wrap {
+      float: left;
+      margin: 10px 0;
+      margin-right: 30px;
+    }
+    .form-submit-wrap {
+      padding-top: 100PX;
+      padding-bottom: 80px;
+      text-align: center;
+    }
+    .form-submit {
+      display: inline-block;
+      width: 150px;
+      height: 46px;
+      border: 0;
+      border-radius: 5px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #e15053;
+      outline: none;
+    }
+    .form-submit:hover {
+      background-color: #b94345; 
+    } 
+
     footer {
     	width: 100%;
-    	height: 200px;
+    	min-height: 200px;
+      padding-top: 30px;
     	background-color: #f9f9f9;
     }
     .brand {font-size: 18px;}
@@ -144,7 +253,6 @@
     	text-decoration: none;
     }   
     .contact {
-    	
     	display: inline-block;
     }
     .contact p {
@@ -156,12 +264,15 @@
         top: -6px;
         vertical-align: top;
       }
-   
+    @media (min-width: 992px) {
+        .contact {float: right;}
+        .qrcode {float: right;}
+    }
 	</style>
 </head>
 
 <body>
-  <header>
+  <!--<header>
   	<div class="container">
   		<div class="row">
   			<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs login">
@@ -196,56 +307,252 @@
   	 </nav>
   	
   </header>
+-->
+  <header>
+    
 
-  <main class="container">
+    <div class="header-nav">
+      <nav class="navbar container">
+        <ul class="header-nav-wrap row">
+
+          <div class="navbar-header">
+            <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs login">
+                <p class="tell-word">客服热线：010-594-78634</p>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 signin">
+                    <a class="register" href="">登陆</a>
+                    <a class="register" href="">注册</a>
+            </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collpase">
+              <span class="sr-only">切换导航</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          
+          <div class="navbar-collpase collapse" id="navbar-collpase">
+            <ul class="nav navbar-nav ">
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8.html">首页</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-职位列表.html">在线定制</a>
+              </li>
+              <li class="active">
+                <a href="https://ZZsuper.github.io/ITtask-all/task8-战略合作企业.html">标准箱</a>
+              </li>
+              <li class="active">
+                <a href="#">品质保障</a>
+              </li>
+            </ul>
+          </div>
+
+        
+        </ul>
+          </div>
+          <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 nav hidden-xs">
+                  <a class="nav-btn" href="">
+                      首页
+                  </a>
+                  <a class="nav-btn" href="">
+                      在线定制
+                  </a>
+                  <a class="nav-btn" href="">
+                      标准箱
+                  </a>
+                  <a class="nav-btn" href="">
+                      品质保障
+                  </a>
+              </div>
+          </div>
+         </div>    
+      </nav> 
+  </header>
+  <main>
     <!--流程图开始-->
+    <div class="container">
   	<div class="row">
       <div class="flowsheet-wrap col-md-12">
         <span class="step-wrap">         
-          <div class="line orange-line"></div>
-          <div class="circle orange-line bigger-circle">1</div>
-          <div class="line orange-line"></div>
+          <div class="line orange-line line-xs"></div>
+          <div class="circle circle-xs orange-line bigger-circle  step-wrap-1">1</div>
+          <div class="line line-xs orange-line line1"></div>
           <br>
           <span class="step orange-font">1.定制纸箱</span>
         </span>
         <span class="step-wrap">         
-          <div class="line "></div>
-          <div class="circle">1</div>
-          <div class="line "></div>
+          <div class="line line-xs"></div>
+          <div class="circle">2</div>
+          <div class="line line-xs line1"></div>
           <br>
           <span class="step gray-font">2.选择数量</span>
         </span>
         <span class="step-wrap">         
-          <div class="line "></div>
-          <div class="circle">1</div>
-          <div class="line "></div>
+          <div class="line line-xs"></div>
+          <div class="circle">3</div>
+          <div class="line line-xs line1"></div>
           <br>
           <span class="step gray-font">3.上传附件</span>
         </span>
         <span class="step-wrap">         
-          <div class="line "></div>
-          <div class="circle">1</div>
-          <div class="line"></div>
+          <div class="line line-xs"></div>
+          <div class="circle">4</div>
+          <div class="line line-xs"></div>
           <br>
           <span class="step gray-font">4.确认下单</span>
         </span>
       </div>   
     </div>
+    </div>
     <!--流程图结束-->
     
     <!--表单开始-->
-    <form>
+    <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-sm-12 col-xs-12">
           <p class="form-title">请您按照以下步骤来定制您的纸箱</p>
         </div>
-        <div class="col-md-12 box-type">
+      </div>
+    </div>
+
+    <form class="container" action="" method="get">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 box-type box-type-title">
           <h5>选择箱型</h5>
         </div>
-        <div class="col-md-12 input-wrap">
-          <input type="radio" name="box-type">对口箱
-          <input type="radio" name="box-type">飞机盒
-          <input type="radio" name="box-type">天地盖
+        <div class="col-md-12 col-sm-12 col-xs-12 input-wrap">
+          <div class="radio-layout">
+            <input id="box1" type="radio" name="box-type" checked>
+            <label for="box1"></label>
+            <span>对口箱&emsp;&emsp;</span>
+          </div>
+          <div class="radio-layout">
+            <input id="box2" type="radio" name="box-type">
+            <label for="box2"></label>
+            <span>飞机盒&emsp;&emsp;</span>
+          </div>
+          <div class="radio-layout">
+            <input id="box3" type="radio" name="box-type">
+            <label for="box3"></label>
+            <span>天地盖&emsp;&emsp;</span>
+          </div>
+          <select>
+            <option class="mark-word"  value="" disabled selected>
+              <span>查看详情</span>
+              <span class="arrow"></span>
+            </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 box-type box-size-title">
+          <h5>确定尺寸</h5>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12 box-size">
+
+          <input id="size1" type="radio" name="box-size" checked="checked">
+          <label for="size1"></label>
+          <span class="size">外径</span>&emsp;
+
+          <div  class="input-layout">
+            长&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div>
+          <div  class="input-layout"> 
+            宽&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div> 
+          <div  class="input-layout">
+            高&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div>
+          <select>
+            <option class="mark-word"  value="" disabled selected>
+              <span>查看详情</span>
+              <span class="arrow"></span>
+            </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <br>
+          <input id="size2" type="radio" name="box-size">
+          <label for="size2"></label>
+          <span class="size">内径</span>&emsp;
+
+            <div class="input-layout">
+            长&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div>
+          <div  class="input-layout"> 
+            宽&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div> 
+          <div  class="input-layout">
+            高&nbsp;<input class="input-size" type="text" name="">&nbsp;mm&emsp;
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class=" col-md-12 col-sm-12 col-xs-12 box-type box-material-title">
+        <h5>选择材质</h5>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 box-material">
+          <div class="material-wrap">
+            <input id="material1" type="radio" name="material" checked="checked">
+            <label for="material1"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div> 
+          <div class="material-wrap">         
+            <input id="material2" type="radio" name="material">
+            <label for="material2"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div>
+          <div class="material-wrap">
+            <input id="material3" type="radio" name="material">
+            <label for="material3"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div>
+          <div class="material-wrap">
+            <input id="material4" type="radio" name="material">
+            <label for="material4"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div>
+          <div class="material-wrap">
+            <input id="material5" type="radio" name="material">
+            <label for="material5"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div>
+          <div class="material-wrap">
+            <input id="material6" type="radio" name="material">
+            <label for="material6"></label>
+            <span>&nbsp;三层A瓦优质&emsp;</span>
+          </div>
+          <select>
+            <option class="mark-word"  value="" disabled selected>
+              <span>查看详情</span>
+              <span class="arrow"></span>
+            </option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 form-submit-wrap">
+          <input class="form-submit" type="submit" value="下一步">
         </div>
       </div>
     </form>

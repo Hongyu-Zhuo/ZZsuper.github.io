@@ -1,0 +1,19 @@
+$header-color: #5fc0cd;
+$body-color:#eff0f4;
+$width: 100%;
+header {
+  width: $width;
+  min-height: 40px;
+  padding: 10px 15px;
+  background-color: $header-color;
+} 
+header {
+  a {
+    text-decoration: none;
+  }
+  .left{
+    float: left;
+  }
+  .center {text-align: center;}
+  .right {float:right;}
+}

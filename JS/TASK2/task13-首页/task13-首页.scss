@@ -1,0 +1,116 @@
+@import "task13-base.scss";
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: map-get($color, body);
+}
+header {
+    @include position(fixed, 0, 0, null, 0);
+    z-index: 9999;
+    @include box(100%, null, 8px 10px, null, null);
+    background-color: map-get($color, header);
+}
+.menu {
+    border: 0;
+    border-radius: 4px;
+    background-color: transparent;
+    outline: none;
+    &:hover {
+        background-color: rgba(0, 0, 0, .2);
+        cursor: pointer;
+    }
+}
+.icon-bar {
+    display: block;
+    @include box(25px, null, 1px 0 , null, 5px 0);
+    background: map-get($color, white);
+}
+
+main {
+    @include position(absolute, 47px, null, null, null);
+    @include box(100%, null, 0 20px, null, null);
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+.f16 {font-size: 16px;}
+.lastgame {
+    position: relative;
+    @include box(100%, null, 20px, 1px solid map-get($color, dark-border), 15px 0);
+    background-color: map-get($color, white);
+    @extend .f16;
+    color: map-get($color, dark-border);
+    &:hover {
+        cursor: pointer;
+    }
+}
+.icon-aheard {
+    @include position(absolute, 21.5px, 15px, null, null);
+    @include box(15px, 15px, null, 3px solid map-get($color, bright-border), null);
+    border: {
+        left: transparent;
+        bottom: transparent;
+    }
+    transform: rotate(45deg);
+}
+.gamechoice {
+    @include position(relative, null, null, null, null);
+    border: 1px solid map-get($color, bright-border);
+    background-color: map-get($color, white);
+}
+.gamechoice-title {
+    @include box(100%, null, 12px, null, null);
+    border-bottom: 1px solid map-get($color, bright-yellow);
+    box-sizing: border-box;
+    @extend .f16;
+    color: map-get($color, bright-yellow);
+}
+.gamevision-wrap {
+    padding: 15px 30px;
+    &>p {
+        padding: 5px;
+       text-align: center;
+       color: map-get($color, f-gray) ;
+    }
+}
+.gamevision {
+    @include box(100%, null, 35px, 0, null);
+    @extend .f16;
+    background-color: map-get($color, blue);
+    color: map-get($color, white);
+    outline: none;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.triangle {
+    @include position(absolute, calc(50% - 15px), 5px, null, null);
+    border: {
+        left: 15px solid map-get($color, bright-yellow);
+        top: 15px solid transparent;
+        bottom: 15px solid transparent;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+.slide-dot {
+    display: flex;
+    justify-content: center;
+}
+.slide-dot-all {
+    @include box(10px, 10px, null, null, 5px);
+    border-radius: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.slide-dot-1 {
+    @extend .slide-dot-all;
+    background-color: map-get($color, blue);
+}
+.slide-dot-2 {
+    @extend .slide-dot-all;
+    background-color: map-get($color, body);
+}
+

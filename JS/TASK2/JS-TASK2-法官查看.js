@@ -33,6 +33,6 @@ for (var n = 0;
     }
 }
 
-$("#startGame").click(function(){
+$(".startGame").click(function(){
     window.location.href="JS-TASK4-流程.html"
 })

@@ -1,3 +1,4 @@
+@import "JS-TASK2-base.scss";
 %border_box {
     box-sizing: border-box;
 }
@@ -5,10 +6,11 @@
 
 header {
     @include position(fixed, 0, null, null, 0);
-    width: 100%;
-    padding: 10px;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #b9e9f5;
     background-color: map-get($color, header);
     box-sizing: border-box;
     p {
