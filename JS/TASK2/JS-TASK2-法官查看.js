@@ -11,7 +11,7 @@ for (i = 18;
     i--) {
     $(".user-operate").eq(i).remove();
 }
-
+//清除“玩家”wrap div的高度
 for (a = 0;
     a < 6;
     a++) {
@@ -21,6 +21,7 @@ for (a = 0;
     }
 }
 
+//遍历使显示“水民”或“杀手”
 for (var n = 0;
     n < part_value.length;
     n++){
@@ -34,5 +35,6 @@ for (var n = 0;
 }
 
 $(".startGame").click(function(){
-    window.location.href="JS-TASK4-流程.html"
+    window.location.href="JS-TASK4-流程.html";
+    sessionStorage.removeItem("die");
 })

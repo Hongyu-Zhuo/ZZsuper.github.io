@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>杀手杀人</title>
+    <title>全民投票</title>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=yes">
     <link rel="stylesheet" type="text/css" href="https://ZZsuper.github.io/ITtask-all/reset.css">
@@ -24,21 +24,21 @@
   <header>
       <span class="icon-menu"></span><!--未设置图片链接-->
       <p>法官日记</p>
-      <button class="icon-×" onclick="location.href=''"></button>
+      <button class="icon-×" onclick="location.href='task13-首页.html'"></button>
   </header>
 
   <main>
   <!-- <audio src="https://ZZsuper.github.io/task-all/财富自由.mp3" autoplay="autoplay"></audio> -->
   
   <div class="game-guide">
-    <p>杀手请睁眼，请选择要杀的对象</p>
+    <p>发言讨论结束，大家请投票</p>
     <div class="player">
       <div class="player-tri"></div>
     </div>
   </div>
   <div class="tri-guide">
     <span class="triangle"></span>
-    <p class="guide">选择下方玩家头像，对要杀的玩家进行标记</p>
+    <p class="guide">点击得票数最多人的头像</p>
   </div>
 
 
@@ -282,22 +282,20 @@
         <span class="confirm">确认</span>
         <span class="concel">取消</span>
       </div>
-    <div id="hidebg"></div>
+      <div id="hidebg"></div>
   </main>
 
-
+  
   <footer>
-    <button id="confirm" class="footer-btn">确定</button>
+    <button id="confirm" class="footer-btn">投死</button>
   </footer>
 
-  <!-- <footer>
-    <button class="btn-rematch" onclick="location.href='https://ZZsuper.github.io/ITtask-all/task13/task13-首页/task13-首页.html'">再来一局</button>
-    <button class="btn-upload" onclick="location.href=''">上传并分享</button>
-  </footer> -->
 
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/javascript-state-machine/2.0.0/state-machine.min.js"></script>
   <script src="JS-TASK2-法官查看.js"></script>
   <script src="JS-TASK4-状态改变.js"></script>
+  <script src="JS-TASK4-全民投票.js"></script>
 </body>
+
 </html>

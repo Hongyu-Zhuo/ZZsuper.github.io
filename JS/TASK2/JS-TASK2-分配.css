@@ -19,7 +19,6 @@ header {
   left: 0;
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid #b9e9f5;
   display: flex;
   justify-content: space-between;
   background-color: #29bde0;
@@ -217,7 +216,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .line {
   -webkit-appearance: none;
   width: 70%;
-  border-radius: 1px; }
+  border-radius: 1px;
+  cursor: pointer; }
   .line::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 40px;

@@ -12,12 +12,14 @@ body {
 }
 main {
     @include position(absolute, 61px, null, null, null);
+    z-index: 9;
     @include box(calc(100% - 20px), null, null, 1px solid map-get($color, dark-border), 0 10px);
     margin-bottom: 15px;
     background-color: #fff;
     @extend %bd-sizing;
 }
 .day {
+    position: relative;
     border-bottom: 1px solid map-get($color, dark-border);
     font-size: 30px;
     line-height: 50px;
@@ -73,6 +75,10 @@ button {
 .kill {
     @extend %kill;
     margin-bottom: 100px;
+}
+.diary_1 {
+    @include position(absolute,56px, null, null, 0);
+    font-size: 14px;
 }
 .step {
     @extend %kill;

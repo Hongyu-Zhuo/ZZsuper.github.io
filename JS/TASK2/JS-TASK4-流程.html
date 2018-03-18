@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://ZZsuper.github.io/ITtask-all/reset.css">
     <link rel="stylesheet" type="text/css" href="JS-TASK2-header.css">
     <link rel="stylesheet" href="JS-TASK4-流程.css">
+    <link rel="stylesheet" href="弹框.css">
 </head>
 <body>
     <header>
@@ -16,8 +17,10 @@
     </header>
     
     <main>
-        <p class="day">第一天</p>
-        <img class="arrow_down" src="https://ZZsuper.github.io/JS/TASK2/icon/arrow_down.png">
+        <p class="day">第一天
+            <img class="arrow_down" src="https://ZZsuper.github.io/JS/TASK2/icon/arrow_down.png">
+        </p>
+
         <div class="diary_wrap">
             <span class="moon">
                 <!-- <img src="https://ZZsuper.github.io/JS/TASK2/icon/moon.png">  -->
@@ -29,7 +32,9 @@
             <button id="kill" class="kill">
                 <p>杀手杀人</p>
                 <div class="triangle"></div>
+                <p class="diary_1">111</p>
             </button>
+
 
             <button id="last_words" class="step">
                 <p>亡灵发表遗言</p>
@@ -46,8 +51,17 @@
                 <div class="triangle"></div>
             </button>
         </div>
+
+    <div id="alert" class="alert">
+        <p id="prompt"></p>
+        <span class="confirm">确认</span>
+        <span class="concel">取消</span>
+    </div>
+    <div id="hidebg"></div>
     </main>
+    
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="JS-TASK4-流程.js"></script>
 </body>
+
 </html>

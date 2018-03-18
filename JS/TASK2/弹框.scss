@@ -1,0 +1,65 @@
+@import "JS-TASK2-base.scss";
+
+#hidebg { 
+    display:none;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:9999;
+    width:100%;
+    height: 100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    filter:alpha(opacity=60);  /*设置透明度为60%*/
+    opacity:0.6;  /*非IE浏览器下设置透明度为60%*/
+    background-color:#000; 
+    
+}
+.alert {
+    display: none;
+    @include position(absolute, 0, 0, 0, 0);
+    z-index: 999999;
+    @include box(230px, 150px, 0 10px, 1px solid map-get($color, body), auto);
+
+    border-radius: 10px;
+    background-color: #fff;
+    p {
+        position: absolute;
+        top: 20%;
+        width: 210px;
+        font-size: 18px;
+        text-align: center;
+        color: #0d1f86;
+    }
+}
+.confirm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 1px);
+    padding: 10px;
+    border-top: 1px solid map-get($color, body);
+    border-right: 1px solid map-get($color, body);
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    &:hover {
+        color: map-get($color, header);
+    }
+}
+.concel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    padding: 10px;
+    border-top: 1px solid map-get($color, body);
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    &:hover {
+        color: map-get($color, header);
+    }
+}
