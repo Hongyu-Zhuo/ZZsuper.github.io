@@ -2,7 +2,7 @@
 
 #hidebg { 
     display:none;
-    position:absolute;
+    position:fixed;
     left:0px;
     top:0px;
     z-index:9999;
@@ -15,7 +15,7 @@
 }
 .alert {
     display: none;
-    @include position(absolute, 0, 0, 0, 0);
+    @include position(fixed, 0, 0, 0, 0);
     z-index: 999999;
     @include box(230px, 150px, 0 10px, 1px solid map-get($color, body), auto);
 

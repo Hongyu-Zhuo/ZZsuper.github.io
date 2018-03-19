@@ -12,7 +12,7 @@ body {
   background-color: #f0f0f0; }
 
 main {
-  position: absolute;
+  position: relative;
   top: 61px;
   z-index: 9;
   width: calc(100% - 20px);
@@ -24,6 +24,7 @@ main {
 .day {
   position: relative;
   border-bottom: 1px solid #9a9999;
+  margin-top: 10px;
   font-size: 30px;
   line-height: 50px;
   text-align: center;
@@ -79,11 +80,12 @@ button {
 .kill {
   margin-bottom: 100px; }
 
-.diary_1 {
+.diary_1, .diary_2 {
   position: absolute;
   top: 56px;
   left: 0;
-  font-size: 14px; }
+  font-size: 14px;
+  color: #999; }
 
 .step {
   margin-bottom: 30px; }

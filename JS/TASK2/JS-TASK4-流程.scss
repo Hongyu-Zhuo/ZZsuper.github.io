@@ -11,7 +11,7 @@ body {
     background-color: map-get($color, body);
 }
 main {
-    @include position(absolute, 61px, null, null, null);
+    @include position(relative, 61px, null, null, null);
     z-index: 9;
     @include box(calc(100% - 20px), null, null, 1px solid map-get($color, dark-border), 0 10px);
     margin-bottom: 15px;
@@ -21,6 +21,7 @@ main {
 .day {
     position: relative;
     border-bottom: 1px solid map-get($color, dark-border);
+    margin-top: 10px;
     font-size: 30px;
     line-height: 50px;
     text-align: center;
@@ -79,6 +80,10 @@ button {
 .diary_1 {
     @include position(absolute,56px, null, null, 0);
     font-size: 14px;
+    color: #999;
+}
+.diary_2{
+    @extend .diary_1;
 }
 .step {
     @extend %kill;

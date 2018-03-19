@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #hidebg {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
   z-index: 9999;
@@ -16,7 +16,7 @@
 
 .alert {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
