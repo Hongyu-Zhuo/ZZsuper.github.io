@@ -7,6 +7,7 @@ var defunct=[];//储存被投死玩家
 var died;//已经死亡玩家JSON数据
 var voteKill=[]; //被投死玩家
 var click = 0;//投票按钮点击次数
+
 //玩家身份数据
 var part_value = sessionStorage.getItem("deal");
 part_value = JSON.parse(part_value);
@@ -17,10 +18,45 @@ var live;
 sessionStorage.getItem("die");
 def = JSON.parse(sessionStorage.getItem("die"));
 
-// 被玩家投死玩家数据//玩家index
-sessionStorage.getItem("vote");
+sessionStorage.getItem("voteKill");
 vot = JSON.parse(sessionStorage.getItem("vote"));
 
+
+//判断是投票页还是杀人页
+sessionStorage.getItem("st");
+step = JSON.parse(sessionStorage.getItem("st"));
+
+// 被玩家投死玩家数据，数组//玩家indexd
+if (vot) {
+    sessionStorage.getItem("vote");
+    voteKill = JSON.parse(sessionStorage.getItem("vote"));
+}
+
+if (def) {
+    var die = sessionStorage.getItem("die");//被杀死玩家
+    defunct = JSON.parse(die);//将die 替换 为defunct
+}
+    
+
+
+//深拷贝玩家身份数组
+var copyPart_value = part_value.slice(0);
+console.log(copyPart_value)
+
+
+//合并杀人和投票数组
+var died = [];
+if (voteKill) {
+    died = defunct.concat(voteKill);
+}
+
+//根据死亡玩家索引号，删除玩家身份数组中对应的数据
+for(var i = 0;
+    i < died.length;
+    i++) {
+    delete copyPart_value[died[i]];
+    console.log(copyPart_value);
+}
 
 //利用已经取得的玩家index，删除对应在part_value[]中的数据;
 
@@ -37,13 +73,13 @@ $(document).ready(function(){
         i < def.length;
         i++) {
         $(".character").eq(def[i]).css("background-color","#83b09a");
-        $(".character").eq(def[i]).children("img").hide();
+        $(".character").eq(def[i]).parent().find("img").hide();
     }
     for (var i = 0;
         i < vot.length;
         i++) {
         $(".character").eq(vot[i]).css("background-color","#83b09a");
-        $(".character").eq(vot[i]).children("img").hide();
+        $(".character").eq(vot[i]).parent().find("img").hide();
     }
 })
 //弹出对话框
@@ -62,22 +98,34 @@ function alert(content) {
 //杀手标记玩家
 $(".option").children("img").click(function(){
     _index = $(".character").index($(this).parents(".user-operate").children(".character"));
-    if(part_value[_index] == 1){
-        alert("请选择一个平民")
-        $(".confirm").on("click",function(){
-            $("#alert").css("display","none");
-            $("#hidebg").css("display","none");
-        })
+    if (step == 1) {
+
+        if(part_value[_index] == 1){
+            alert("请选择一个平民")
+            $(".confirm").on("click",function(){
+                $("#alert").css("display","none");
+                $("#hidebg").css("display","none");
+            })
+        }
+        else {
+            $(".character").css("box-shadow", "none");
+            $(this).parents(".user-operate").children(".character").css("box-shadow", "0 0 100px 10px #83b09a inset");
+            killMark = $(this);
+            _index = $(".character").index($(this).parents(".user-operate").children(".character"));
+            console.log(_index);
+        }
+
     }
     else {
         $(".character").css("box-shadow", "none");
-        $(this).parents(".user-operate").children(".character").css("box-shadow", "0 0 100px 10px #83b09a inset");
-        killMark = $(this);
-        _index = $(".character").index($(this).parents(".user-operate").children(".character"));
-        console.log(_index);
-    } 
+            $(this).parents(".user-operate").children(".character").css("box-shadow", "0 0 100px 10px #83b09a inset");
+            killMark = $(this);
+            _index = $(".character").index($(this).parents(".user-operate").children(".character"));
+            console.log(_index);
+    }  
 });
-//杀死玩家
+
+//确定杀死玩家
 $("#confirm").on("click",function(){
     var _this = $(this);
     if (!killMark) {
@@ -92,13 +140,17 @@ $("#confirm").on("click",function(){
         $(".confirm").on("click",function(){
             $("#alert").css("display","none");
             killMark.parents(".user-operate").children(".character").css("background-color","#83b09a");
-            setTimeout(function(){
+
+
+            end();//判断是否结束游戏
+            // setTimeout(function(){
                 window.location.href = "JS-TASK4-流程.html";
-            }, 500);
+            // }, 500);
 
             defunct.push(_index);
             var diedPeople = sessionStorage.setItem("die",JSON.stringify(defunct));
             console.log(defunct);
+            
             
         })   
     }
@@ -119,9 +171,14 @@ $("#vote").on("click",function(){
         $(".confirm").on("click",function(){
             $("#alert").css("display","none");
             killMark.parents(".user-operate").children(".character").css("background-color","#83b09a");
-            setTimeout(function(){
+
+
+            end();//判断是否结束游戏
+
+            // setTimeout(function(){
                 window.location.href = "JS-TASK4-流程.html";
-            }, 500)
+            // }, 500)
+
             voteKill.push(_index);
             sessionStorage.setItem("vote",JSON.stringify(voteKill));
             console.log(voteKill);
@@ -135,6 +192,48 @@ $("#vote").on("click",function(){
     }
 })
 
+function end() {
+    var killer = 0;
+    var civilian = 0;
 
+    var copyPart_value = part_value.slice(0);
+    console.log(copyPart_value)
+
+
+//合并杀人和投票数组
+    var died = [];
+    if (voteKill) {
+        died = defunct.concat(voteKill);
+    }
+
+//根据死亡玩家索引号，删除玩家身份数组中对应的数据
+    for(var i = 0;
+        i < died.length;
+        i++) {
+        delete copyPart_value[died[i]];
+        console.log(copyPart_value);
+    }
+    for(var i = 0;
+        i < copyPart_value.length;
+        i++){
+        if (copyPart_value[i] == 0) {
+            civilian += 1;
+        }
+        else if(copyPart_value[i] == 1) {
+            killer += 1;
+        }
+    }
+
+    if (killer >= civilian){
+        var victory = 1;
+        alert("杀手胜利");
+        sessionStorage.setItem("end",v);
+    }
+    else if(killer = 0) {
+        var victory = 0;
+        alert("水民胜利");
+        sessionStorage.setItem("end",v);
+    }
+}
 
 

@@ -37,4 +37,8 @@ for (var n = 0;
 $(".startGame").click(function(){
     window.location.href="JS-TASK4-流程.html";
     sessionStorage.removeItem("die");
+    sessionStorage.removeItem("vote");
+    sessionStorage.removeItem("st");
+    sessionStorage.removeItem("c");
+    sessionStorage.removeItem("end");
 })

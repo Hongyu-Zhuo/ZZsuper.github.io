@@ -1,0 +1,23 @@
+@charset "UTF-8";
+body {
+  background: url(行云流水.png) no-repeat;
+  background-size: 100%; }
+
+main {
+  width: 100%;
+  height: 100%; }
+
+.wrap {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 50%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  opacity: .4; }
+
+/*# sourceMappingURL=%E8%A1%8C%E4%BA%91%E6%B5%81%E6%B0%B4.css.map */
