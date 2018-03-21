@@ -1,1 +1,1 @@
-var victory = JSON.parse(sessionStorage.getItem("end"));if (victory == 0) {    $(".win-text").text("水民胜利");    $(".eulogy").text("太棒了！你知道么？在杀人游戏中只有20%的平民取得游戏最终的胜利哦！")}else {    $(".win-text").text("杀手胜利");}for (var i = .length - 1; i >= 0; i--) {	}
+var victory = JSON.parse(sessionStorage.getItem("end"));if (victory == 0) {    $(".win-text").text("水民胜利");    $(".eulogy").text("太棒了！你知道么？在杀人游戏中只有20%的平民取得游戏最终的胜利哦！")}else {    $(".win-text").text("杀手胜利");}
