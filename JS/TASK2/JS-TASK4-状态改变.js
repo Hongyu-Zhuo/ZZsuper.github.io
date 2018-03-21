@@ -38,7 +38,6 @@ if (def) {
 }
     
 
-
 //深拷贝玩家身份数组
 var copyPart_value = part_value.slice(0);
 console.log(copyPart_value)
@@ -57,15 +56,6 @@ for(var i = 0;
     delete copyPart_value[died[i]];
     console.log(copyPart_value);
 }
-
-//利用已经取得的玩家index，删除对应在part_value[]中的数据;
-
-// for (var i=0;
-//     i < defunct.length;
-//     i++) {
-
-// }
-
 
 //获取已被杀死玩家
 $(document).ready(function(){
@@ -141,17 +131,11 @@ $("#confirm").on("click",function(){
             $("#alert").css("display","none");
             killMark.parents(".user-operate").children(".character").css("background-color","#83b09a");
 
-
-            end();//判断是否结束游戏
-            // setTimeout(function(){
-                window.location.href = "JS-TASK4-流程.html";
-            // }, 500);
-
             defunct.push(_index);
             var diedPeople = sessionStorage.setItem("die",JSON.stringify(defunct));
             console.log(defunct);
-            
-            
+
+            end();//判断是否结束游戏
         })   
     }
 })
@@ -173,12 +157,6 @@ $("#vote").on("click",function(){
             killMark.parents(".user-operate").children(".character").css("background-color","#83b09a");
 
 
-            end();//判断是否结束游戏
-
-            // setTimeout(function(){
-                window.location.href = "JS-TASK4-流程.html";
-            // }, 500)
-
             voteKill.push(_index);
             sessionStorage.setItem("vote",JSON.stringify(voteKill));
             console.log(voteKill);
@@ -187,7 +165,7 @@ $("#vote").on("click",function(){
             sessionStorage.setItem("c",JSON.stringify(click));
             console.log("点击" + click + "次");
 
-            
+            end();//判断是否结束游戏
         })   
     }
 })
@@ -226,13 +204,20 @@ function end() {
 
     if (killer >= civilian){
         var victory = 1;
-        alert("杀手胜利");
-        sessionStorage.setItem("end",v);
+        window.location.href = "JS-TASK4-游戏结果.html";
+        sessionStorage.setItem("end",victory);
+        return;
     }
-    else if(killer = 0) {
+    else if(killer == 0) {
         var victory = 0;
-        alert("水民胜利");
-        sessionStorage.setItem("end",v);
+        // alert("水民胜利");
+        window.location.href = "JS-TASK4-游戏结果.html";
+        sessionStorage.setItem("end",victory);
+        
+        return;
+    }
+    else {
+        window.location.href = "JS-TASK4-流程.html";
     }
 }
 

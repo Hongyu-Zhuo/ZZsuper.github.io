@@ -6,6 +6,7 @@
 
 header {
     @include position(fixed, 0, null, null, 0);
+    z-index: 999999;
     display: flex;
     justify-content: space-between;
     width: 100%;

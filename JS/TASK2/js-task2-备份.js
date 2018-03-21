@@ -6,7 +6,7 @@ console.log("JS符号是否存在问题")
 
 
 function toSimple () {
-    window.location.href="https://ZZsuper.github.io/JS/TASK2/JS-TASK2-分配/JS-TASK2-分配.html";
+    window.location.href="JS-TASK2-分配.html";
 }
 function people() {
     var num = document.getElementById('number').value;

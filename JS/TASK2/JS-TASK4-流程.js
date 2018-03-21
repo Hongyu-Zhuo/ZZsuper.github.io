@@ -183,8 +183,10 @@ function alert(content) {
 
 //x号玩家被杀手杀死，真实身份是x
 $(document).ready(function() {
-    a = die[die.length - 1] + 1;
-    $(".diary_1").text("夜晚：" + a + "号玩家被杀手杀死，真实身份是平民");
+    if (step == 1) {
+        a = die[die.length - 1] + 1;
+        $(".diary_1").text("夜晚：" + a + "号玩家被杀手杀死，真实身份是平民");
+    } 
 });
 //x号玩家被玩家投死，真实身份是x
 
