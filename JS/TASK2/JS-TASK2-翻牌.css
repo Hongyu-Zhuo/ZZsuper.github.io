@@ -69,7 +69,7 @@ main {
   right: calc(50% - 20px);
   width: 40px;
   height: 40px;
-  border: 0;
+  border: 3px solid #ffedc5;
   border-radius: 50%;
   text-align: center;
   font-size: 25px;

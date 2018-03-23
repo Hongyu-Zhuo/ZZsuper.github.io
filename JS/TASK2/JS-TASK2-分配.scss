@@ -185,7 +185,7 @@ color: #d2d1d1;
 }   
 input:-moz-placeholder, textarea:-moz-placeholder { 
 /* Mozilla Firefox 4 to 18 */ 
-color: #666; 
+color: #d2d1d1; 
 } 
 input::-moz-placeholder, textarea::-moz-placeholder { 
  /* Mozilla Firefox 19+ */ 
@@ -223,10 +223,11 @@ color: #666;
 }
 .line {
     -webkit-appearance: none;
+    -moz-appearance:none;
     width: 70%;
     border-radius: 1px;
     cursor: pointer;
-    &::-webkit-slider-thumb {
+    &::-webkit-slider-thumb {//滑块
         -webkit-appearance: none;
         width: 40px;
         height: 20px;
@@ -234,7 +235,20 @@ color: #666;
         background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
         background-size: 85%;
     }
-    &::-webkit-slider-runnable-track {
+    &::-moz-slider-thumb {
+        -moz-appearance: none;
+        width: 40px;
+        height: 20px;
+        margin-top: -8px;
+        background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
+        background-size: 85%;
+    }
+    &::-webkit-slider-runnable-track {//轨道
+        height: 3px;
+        border-radius: 1px;
+        background-color: #ffe6be;
+    }
+    &::-moz-slider-runnable-track {
         height: 3px;
         border-radius: 1px;
         background-color: #ffe6be;

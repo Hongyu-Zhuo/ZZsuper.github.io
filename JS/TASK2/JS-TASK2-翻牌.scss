@@ -32,7 +32,7 @@ main {
 }
 .number {
     @include position(absolute, -24px, calc(50% - 20px), null, null);
-    @include box(40px, 40px, null, 0, null);
+    @include box(40px, 40px, null, 3px solid map-get($color_3, _pink), null);
     // border: 3px solid map-get($color, white);
     // border-right: transparent;
     // border-bottom: transparent;

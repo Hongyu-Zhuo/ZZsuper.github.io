@@ -86,14 +86,14 @@ main {
   color: #fff; }
 
 /*游戏过程*/
-.gameplay {
+.diary {
   position: absolute;
   top: 400px;
   left: 0;
   width: 100%;
   margin-bottom: 60px; }
 
-.gameplay-form {
+.diary_form {
   width: 100%;
   padding-bottom: 15px;
   padding-left: 30px;

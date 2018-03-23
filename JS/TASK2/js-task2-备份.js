@@ -3,7 +3,9 @@ console.log("JS成功执行进来;")
 console.log("JS是否存在逻辑问题、变量问题、参数问题等等")
 console.log("JS符号是否存在问题")
 
-
+function back() {
+    window.location.href="JS-TASK4-gameHome.html";
+}
 
 function toSimple () {
     window.location.href="JS-TASK2-分配.html";
@@ -12,19 +14,7 @@ function people() {
     var num = document.getElementById('number').value;
 }
 
-//滑块
-// $(function() {
-//     $("#line").slider({
-//       range: "min",
-//       value: 4,
-//       min: 4,
-//       max: 18,
-//       slide: function(event, ui) {
-//         $("#number").val(ui.value);
-//       }
-//     });
-//     $("#number").val($("#line").slider("value"));
-//   });
+
 var sliderData = document.getElementById("line");
 var playerData = document.getElementById("number");
 function player() {

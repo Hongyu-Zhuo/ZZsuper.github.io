@@ -2,7 +2,7 @@
 header {
     padding: 25px 0;
 }
-main {transition: all .5s ease-in-out .2s;}
+main {transition: all .5s ease-in-out .1s;}
 input[type="checkbox"] {display: none;}
 .menu {
     position: absolute;
@@ -27,7 +27,7 @@ input[type="checkbox"] {display: none;}
     height: 100%;
     background-color: #fff;
     box-shadow: 0 -2px 10px inset;
-    transition: all .5s ease-in-out .2s;
+    transition: all .5s ease-in-out .1s;
 }
 .nav a {text-decoration: none;}
 .nav>ul li {

@@ -6,6 +6,10 @@ console.log(part_value);
 var userNumber = document.getElementsByClassName("user-operate");
 var i;
 var a;
+
+$(".icon_back").click(function () {
+    window.location.href = "JS-TASK2-分配.html"
+})
 for (i = 18;
     i > part_value.length - 1;
     i--) {

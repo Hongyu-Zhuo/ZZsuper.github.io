@@ -2,26 +2,9 @@ var part_value = sessionStorage.getItem("deal");
 part_value = JSON.parse(part_value);
 console.log(part_value);
 
-//改变图片
-// check.addEventListener("click",change);
-// function change() {
-//     var iden = document.getElementById("identity");
-    
-//     var i = 0;
-//     var n = 2;
-//     if (part_value[i] == 0) {
-//         iden.innerText = "平民";
-//     }
-//     else {
-//         iden.innerText = "杀手";
-//     }
-//     document.getElementById("wow").style.setProperty("display","block");
-//     block.style.setProperty("background-image","none");
-//     check.value = "隐藏并传递给" + n + "号";
-    
-//     i += 1;
-//     n += 1;
-// }
+$(".icon_back").click(function () {
+    window.location.href = "JS-TASK2-分配.html"
+})
 $(document).ready($("#transmit").hide());
 $(document).ready($("#judge").hide());
 var i = 0;

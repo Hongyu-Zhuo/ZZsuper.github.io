@@ -18,7 +18,6 @@ header {
     align-items: center;
     width: $w100;
     padding: 10px;
-    border-bottom: 1px solid #b9e9f5; 
     font-size: 20px;
     color: map-get($color, white);
     background-color: map-get($color, blue);
@@ -34,7 +33,7 @@ header {
     background-size: 25px;
     background-position: 2px -99px;
     outline: none;
-    cursor: pointer;
+    cursor: pointer; 
 }
 .icon-× {
     @include box(30px, 30px, null, 0, null);

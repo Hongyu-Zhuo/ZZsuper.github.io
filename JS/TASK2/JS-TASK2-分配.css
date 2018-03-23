@@ -172,7 +172,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 input:-moz-placeholder, textarea:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #666; }
+  color: #d2d1d1; }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
   /* Mozilla Firefox 19+ */
@@ -216,6 +216,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .line {
   -webkit-appearance: none;
+  -moz-appearance: none;
   width: 70%;
   border-radius: 1px;
   cursor: pointer; }
@@ -226,7 +227,18 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     margin-top: -8px;
     background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
     background-size: 85%; }
+  .line::-moz-slider-thumb {
+    -moz-appearance: none;
+    width: 40px;
+    height: 20px;
+    margin-top: -8px;
+    background: url(https://ZZsuper.github.io/JS/TASK2/icon/slider.png) no-repeat;
+    background-size: 85%; }
   .line::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 1px;
+    background-color: #ffe6be; }
+  .line::-moz-slider-runnable-track {
     height: 3px;
     border-radius: 1px;
     background-color: #ffe6be; }

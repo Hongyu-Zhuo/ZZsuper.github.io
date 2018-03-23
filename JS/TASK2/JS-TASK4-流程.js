@@ -4,23 +4,25 @@ var judgeBtn = die;
 console.log(die);
 
 //被投死的玩家
-sessionStorage.getItem("vote");
-voteKill = JSON.parse(sessionStorage.getItem("vote"));
+// sessionStorage.getItem("vote");
+var voteKill = JSON.parse(sessionStorage.getItem("vote"));
 
 //玩家身份数据
-var part_value = sessionStorage.getItem("deal");
-part_value = JSON.parse(part_value);
-
-
-
-
-
+var part_value = JSON.parse(sessionStorage.getItem("deal"));
+// part_value = JSON.parse(part_value);
 
 //判断是否按顺序点击按钮，
 var step;
 step = JSON.parse(sessionStorage.getItem("st"));
 
-//弹出框
+//退出游戏
+$(".icon_quit").click(function (){
+    alert("确定退出游戏吗？")
+    $(".confirm").on("click",function(){
+        window.location.href="JS-TASK4-gameHome.html";
+    })
+})
+//弹出框,使按钮变成灰色
 function alertConfirm(here) {
     $(".confirm").on("click",function(){
         $("#alert").css("display","none");
@@ -36,7 +38,7 @@ function alertConfirm(here) {
 
 //弹出对话框
 function alert(content) {
-    var _this = $(this);
+    // var _this = $(this);
     $("#hidebg").css("display","block");
     $("#alert").css("display","flex");
     $("#prompt").text(content);
@@ -46,13 +48,14 @@ function alert(content) {
     })
 }
 
-
 //点击杀人按钮
 $("#kill").on("click",function(){
     step = 1;
     sessionStorage.setItem("st",JSON.stringify(step));
     window.location.href="JS-TASK4-状态改变.html";
 })
+
+//亡灵发表遗言
 $("#last_words").on("click",function(){
     if (step == 1) {
         var _this = $(this);
@@ -68,6 +71,8 @@ $("#last_words").on("click",function(){
         });
     }
 });
+
+//玩家发言讨论
 $("#speak").on("click",function(){
     if (step == 2) {
         var _this = $(this);
@@ -90,12 +95,8 @@ $("#speak").on("click",function(){
         });
     }
 });
-// $("#speak").on("click", function(){
-//     var _this = $(this);
-//     alert("玩家依次讨论发言");
-//     alertConfirm($(this));
-// })
 
+///投票
 $("#vote").click(function(){
     if (step == 3) {
         window.location.href="JS-TASK4-全民投票.html";
@@ -110,26 +111,23 @@ $("#vote").click(function(){
     sessionStorage.removeItem("st"); 
 });
 
-// $("#vote").on("click",function(){
-//     window.location.href="JS-TASK4-全民投票.html";
-// })
-
-
 //投票按钮点击次数
 click = sessionStorage.getItem("c");
 click = JSON.parse(click);
 
-    for (
-        var i = 1;
-        i < click + 1;
-        i++){
+//x号玩家被玩家投死，真实身份是x
+//前一台 
+for (
+    var i = 1;
+    i < click + 1;
+    i++){
         
         if (click) {
-            
+            var a = die[i-1] + 1;
             var n = i + 1;
-            var x = voteKill[voteKill.length - i] + 1;
+            var x = voteKill[i - 1] + 1;
             var status = [];
-            if (part_value[x] == 1) {
+            if (part_value[x-1] == 1) {
                 status = "杀手";
                 console.log(part_value[x])
             }
@@ -146,7 +144,7 @@ click = JSON.parse(click);
                     '<span class="sun"></span>' +
                     '<button class="kill">\n' + 
                     '<p>杀手杀人</p>\n' +
-                    '<p class="diary_1">' + "夜晚：" + die[i-1] + "号玩家被杀手杀死，真实身份是水民" + '</p>\n' +
+                    '<p class="diary_1">' + "夜晚：" + a + "号玩家被杀手杀死，真实身份是水民" + '</p>\n' +
                     '</button>\n'+
                     '<button class="step">\n' +
                     '<p>亡灵发表遗言</p>\n' +
@@ -161,16 +159,14 @@ click = JSON.parse(click);
                 '</div>' +
             '</main>\n' 
             )
-        
         $("main").eq(i-1).children(".diary_wrap").hide();
         $(".day").eq(i).text("第"+n+"天");
-        
-        }
-        
-    };
+    } 
+};
+
 //弹出对话框
 function alert(content) {
-    var _this = $(this);
+    // var _this = $(this);
     $("#hidebg").css("display","block");
     $("#alert").css("display","flex");
     $("#prompt").text(content);
@@ -180,7 +176,6 @@ function alert(content) {
     })
 }
 
-
 //x号玩家被杀手杀死，真实身份是x
 $(document).ready(function() {
     if (step == 1) {
@@ -188,7 +183,7 @@ $(document).ready(function() {
         $(".diary_1").text("夜晚：" + a + "号玩家被杀手杀死，真实身份是平民");
     } 
 });
-//x号玩家被玩家投死，真实身份是x
+
 
 
 //隐藏显示天数详情
