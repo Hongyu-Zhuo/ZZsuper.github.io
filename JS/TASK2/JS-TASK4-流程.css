@@ -24,7 +24,6 @@ main {
 .day {
   position: relative;
   border-bottom: 1px solid #9a9999;
-  margin-top: 10px;
   font-size: 30px;
   line-height: 50px;
   text-align: center;
@@ -41,9 +40,9 @@ main {
   width: calc(100% - 160px);
   padding: 40px;
   padding-left: 60px;
+  padding-bottom: 0;
   border-left: 1.5px solid #9a9999;
-  margin-left: 40px;
-  padding-bottom: 100px; }
+  margin-left: 40px; }
 
 .moon {
   position: absolute;
@@ -56,7 +55,7 @@ main {
 
 .sun {
   position: absolute;
-  top: 204px;
+  top: 125px;
   left: -28.5px;
   z-index: 9999;
   background: #fff url(https://ZZsuper.github.io/JS/TASK2/icon/moon_sun.png) no-repeat;
@@ -78,7 +77,7 @@ button {
   outline: none; }
 
 .kill {
-  margin-bottom: 100px; }
+  margin-bottom: 30px; }
 
 .diary_1, .diary_2 {
   position: absolute;
@@ -99,5 +98,39 @@ button {
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   transform: rotate(90deg); }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+  background-color: rgba(153, 223, 240, 0.7);
+  box-sizing: border-box; }
+
+.btn_quit, .btn_diary {
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  font-size: 20px;
+  outline: none;
+  box-sizing: border-box; }
+
+.btn_quit {
+  margin-right: 7.5px;
+  color: #fff;
+  background-color: #f66f6f; }
+
+.btn_diary {
+  margin-left: 7.5px;
+  color: #fff;
+  background-color: #fbb435; }
 
 /*# sourceMappingURL=JS-TASK4-%E6%B5%81%E7%A8%8B.css.map */

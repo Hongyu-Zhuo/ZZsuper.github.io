@@ -1,0 +1,62 @@
+body {
+  padding: 0;
+  background-color: #29bde0; }
+
+main {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+  padding: 40px;
+  max-width: 768px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center; }
+
+.diary {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  border: 3px solid #fff;
+  margin: 0 auto;
+  min-width: 234px;
+  max-width: 348px;
+  background-color: #ffedc5; }
+
+.diary_form {
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #a6a6a6;
+  font-size: 15px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  color: #a6a6a6;
+  box-sizing: border-box;
+  list-style: none; }
+
+.days {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #000; }
+
+.time-point {
+  display: none; }
+
+.continue {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  margin: 90px 0 20px;
+  min-width: 234px;
+  max-width: 348px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #fab344;
+  outline: none;
+  cursor: pointer; }
+
+/*# sourceMappingURL=judge_diary.css.map */

@@ -23,7 +23,7 @@ $(".icon_quit").click(function (){
     })
 })
 //弹出框,使按钮变成灰色
-function alertConfirm(here) {
+function alertConfirm(here, n) {
     $(".confirm").on("click",function(){
         $("#alert").css("display","none");
         here.attr("disabled","disabled");
@@ -33,6 +33,8 @@ function alertConfirm(here) {
         });
         here.children(".triangle").css("border-top-color","#b5b3b3");
         $("#hidebg").css("display","none");
+        step = n;
+        sessionStorage.setItem("st",JSON.stringify(step));
     })
 }
 
@@ -60,8 +62,8 @@ $("#last_words").on("click",function(){
     if (step == 1) {
         var _this = $(this);
         alert("请死者亮明身份并发表遗言");
-        alertConfirm($(this));
-        step = 2;
+        alertConfirm($(this), 2);
+        // step = 2;
     }
     else {
         alert("请先杀人");
@@ -77,8 +79,8 @@ $("#speak").on("click",function(){
     if (step == 2) {
         var _this = $(this);
         alert("玩家依次讨论发言");
-        alertConfirm($(this));
-        step = 3;
+        alertConfirm($(this), 3);
+        // step = 3;
     }
     else if(step == 1) {
         alert("请先让死者发表遗言");
@@ -94,6 +96,7 @@ $("#speak").on("click",function(){
             $("#hidebg").css("display","none");
         });
     }
+    sessionStorage.setItem("st",JSON.stringify(step));
 });
 
 ///投票
@@ -108,7 +111,7 @@ $("#vote").click(function(){
             $("#hidebg").css("display","none");
         });
     }
-    sessionStorage.removeItem("st"); 
+    // sessionStorage.removeItem("st"); 
 });
 
 //投票按钮点击次数
@@ -116,7 +119,7 @@ click = sessionStorage.getItem("c");
 click = JSON.parse(click);
 
 //x号玩家被玩家投死，真实身份是x
-//前一台 
+//前一天
 for (
     var i = 1;
     i < click + 1;
@@ -184,8 +187,6 @@ $(document).ready(function() {
     } 
 });
 
-
-
 //隐藏显示天数详情
 $(".arrow_down").click(function(){
     $(this).parents("main").children(".diary_wrap").slideToggle();
@@ -198,12 +199,12 @@ $(document).ready(
             if(judgeBtn){
                 $("#kill").attr("disabled","disabled");
 
-            $("#kill").css({
-                color:"#999",
-                background:"#b5b3b3"
-            });
-            $("#kill").children(".triangle").css("border-top-color","#b5b3b3");
-            $("#kill").attr("disabled","disabled");
+                $("#kill").css({
+                    color:"#999",
+                    background:"#b5b3b3"
+                });
+                $("#kill").children(".triangle").css("border-top-color","#b5b3b3");
+                $("#kill").attr("disabled","disabled");
             }
         }
         else if (judgeBtn.length+1 > voteKill.length+1) {//judgeBtn = die(被杀死玩家);
@@ -218,8 +219,44 @@ $(document).ready(
         }
     }
 );
+//判断亡灵发言按钮状态
+$(document).ready(
+    function() {
+        if (step == 3) {
+            $("#speak").attr("disabled","disabled");
+            $("#last_words").attr("disabled","disabled");
 
+            $("#speak").css({
+                color:"#999",
+                background:"#b5b3b3"
+            });
+            $("#last_words").css({
+                color:"#999",
+                background:"#b5b3b3"
+            });
+            $("#speak").children(".triangle").css("border-top-color","#b5b3b3");
+            $("#last_words").children(".triangle").css("border-top-color","#b5b3b3");
+        }
+        else if(step == 2) {
+            $("#last_words").attr("disabled","disabled");
+            $("#last_words").css({
+                color:"#999",
+                background:"#b5b3b3"
+            });
+            $("#last_words").children(".triangle").css("border-top-color","#b5b3b3");
+        }
+    }
 
+)
+$(".btn_quit").click(function(){
+    alert("结束游戏？");
+    $(".confirm").on("click", function(){
+        window.location.href="JS-TASK4-gameHome.html"
+    })
+});
+$(".btn_diary").click(function(){
+    window.location.href="judge_diary.html"
+})
 
 
 

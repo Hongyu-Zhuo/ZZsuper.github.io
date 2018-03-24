@@ -15,6 +15,9 @@ for(var i =0;
     $(".character").eq(die[i]*1).parent().find("img").hide();
 }
 
+$("#vote").click(function(){
+	sessionStorage.removeItem("st");
+})
 //选择并储存
 
 

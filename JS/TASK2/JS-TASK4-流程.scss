@@ -21,7 +21,6 @@ main {
 .day {
     position: relative;
     border-bottom: 1px solid map-get($color, dark-border);
-    margin-top: 10px;
     font-size: 30px;
     line-height: 50px;
     text-align: center;
@@ -35,9 +34,9 @@ main {
     position: relative;
     @include box(calc(100% - 160px), null, 40px, null, null);
     padding-left: 60px;
+    padding-bottom: 0;
     border-left: 1.5px solid map-get($color, dark-border);
     margin-left: 40px;
-    padding-bottom: 100px;
 }
 .moon {
     @include position(absolute, 39px, null, null, -28.5px);
@@ -50,7 +49,7 @@ main {
     }
 }
 .sun {
-    @include position(absolute, 204px, null, null, -28.5px);
+    @include position(absolute, 125px, null, null, -28.5px);
     z-index: 9999;
     @extend %circle;
     background: #fff url(https://ZZsuper.github.io/JS/TASK2/icon/moon_sun.png) no-repeat;
@@ -75,7 +74,7 @@ button {
 }
 .kill {
     @extend %kill;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 .diary_1 {
     @include position(absolute,56px, null, null, 0);
@@ -96,4 +95,34 @@ button {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     transform: rotate(90deg);
+}
+footer {
+    @include position(fixed, null, null, 0, 0);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    @include box(100%, 60px, 0 15px, null, null);
+    background-color: rgba(153, 223, 240, 0.7);
+    box-sizing: border-box;
+}
+%btn {
+    flex-basis: 0;
+    flex-grow: 1;
+    @include box(null, 40px, 0, 0, null);
+    border-radius: 6px;
+    font-size: 20px;
+    outline: none;
+    box-sizing: border-box;
+}
+.btn_quit {
+    @extend %btn;
+    margin-right: 7.5px;
+    color: #fff;
+    background-color: #f66f6f;
+}
+.btn_diary {
+    @extend %btn;
+    margin-left: 7.5px;
+    color: #fff;
+    background-color: #fbb435;
 }
