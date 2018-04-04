@@ -1,0 +1,44 @@
+.list_wrap {
+	padding: 10px;
+	background-color: #fafafa;
+}
+
+.search {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #999;
+	/*background-color: #999;*/
+}
+.select {
+	padding-top: 10px;
+}
+.title {
+	padding: 10px;
+	border: 1px solid #999;
+}
+.title-manage {
+	display: inline-block;
+}
+.article {
+	width: auto;
+}
+.btn_save_sort {
+	width: 70px;
+	padding: 7px;
+	border: 0;
+	border-radius:  5px;
+	outline:  none;
+	background-color: #F44336;
+}
+.btn_new {
+	width: 70px;
+	padding: 7px;
+	border: 0;
+	border-radius:  5px;
+	outline:  none;
+	background-color:  #009802;
+}
+.article-detail {
+	padding: 10px 15px;
+	border: 1px solid #999;
+}

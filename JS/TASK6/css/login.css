@@ -5,7 +5,7 @@ body {
     background:  url("../IMG/bg.png") no-repeat;
     background-size: cover;
 }
-main {
+.login_bg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,29 +34,28 @@ main {
 input::-webkit-input-placeholder{
             color:#999;
         }
-input[type="text"] {
+.login_name {
     width: 60%;
     height: 30px;
     padding-left:40px;
     font-size: 16px;
-    background: #fff url("../IMG/user.png") no-repeat;
+    background: #fff url("../html/IMG/user.png") no-repeat;
     background-position: 7px 7px;
     border: 0;
-
 }
 .line {
     width: 2px;
     height: 20px;
-    margin-top: -26px;
-    margin-left: -152px;
+    margin-top: -25px;
+    margin-left: -90px;
     background-color: #999;
 }
-input[type="password"] {
+.login_pwd {
     width: 60%;
     height: 30px;
     padding-left:40px;
     font-size: 16px;
-    background: #fff url("../IMG/password.png") no-repeat;
+    background: #fff url("../html/IMG/password.png") no-repeat;
     background-position: 8px 7px;
     border: 0;
 }
@@ -73,4 +72,9 @@ input[type="button"] {
     background-color: #03a9f4;
     outline: none;
 
+}
+
+li {
+    font-size: 20px;
+    color: #fff;
 }

@@ -1,17 +1,40 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
-    <title>后台</title>
+    <title></title>
     <meta charset="utf-8">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/bgp.css">
-</head>
-<header>
-	<div class="img"></div>
-</header>
-<body>
-    <ul class="nav">
-    	
-    </ul>
-</body>
+</head> --> 
+
+<!-- <body> -->
+    <header>
+        <li class="nav_title">萝卜多后台管理系统</li>
+        <li id="account" class="account">
+            <span class="">管理员</span>
+            <img class="account_img" src="../img/account.png">
+            <span>admin</span>
+            <span>|</span>
+            <span ng-click="logout()">退出</span>
+        </li>
+    </header>
+
+    <div class="bgp_wrap">
+        
+        <div class="detail_wrap">
+            <div class="detail" ui-view="">
+                Welcome!
+            </div>
+        </div>
+        <ul class="nav">
+    	    <li ng-click="list()">列表</li>
+            <li>2222</li>
+            <li>3333</li>
+            <li>4444</li>
+        </ul>
+        
+    </div>
+    
+<!-- </body>
 </html>
