@@ -28,11 +28,11 @@ angular.module("carrots",['ui.router','ngMessages'])
     //     $delegate.history = false;
     //     return $delegate;
     // });
-    $locationProvider.html5Mode(true).hashPrefix('!');
-    $urlRouterProvider.otherwise('/login');
+    // $locationProvider.html5Mode(true).hashPrefix('!');
+    // $urlRouterProvider.otherwise('/login');
     // $urlMatcherFactoryProvider.caseInsensitive(true);
 //······································································································
-    // $urlRouterProvider.when('','/login');
+    $urlRouterProvider.when('','/login');
     
     $stateProvider
     .state('login',{
