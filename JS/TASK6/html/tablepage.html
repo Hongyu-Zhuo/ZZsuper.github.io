@@ -1,0 +1,44 @@
+<table class="table table-striped ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>标题</th>
+                            <th>类型</th>
+                            <th>创建者</th>
+                            <th>创建时间</th>
+                            <th>修改时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "x in article">
+
+                            <td ng-bind="$index+1"></td>
+                            
+                            <td ng-bind="x.title"></td>
+                            <td ng-bind="x.type | typeFilter"></td>
+                            <td ng-bind="x.author"></td>
+                            <td>
+                                <div ng-bind="x.createAt | date: 'yyyy-MM-dd'"></div>
+                                <div ng-bind="x.createAt | date: 'HH:mm:ss'"></div>
+                            </td>
+                            <td>
+                                <div ng-bind="x.updateAt | date: 'yyyy-MM-dd'"></div>
+                                <div ng-bind="x.updateAt | date: 'HH:mm:ss'"></div>
+                            </td>
+                            <td ng-bind="x.status | statusFilter"></td>
+                            <td>
+                                <button type="button" class="btn btn-xs btn-success" 
+                                        ng-disabled="{true:true}[x.status == 2]" 
+                                        ng-click="upLine(x.id)">上线</button>
+                                        
+                                <button type="button" class="btn btn-xs btn-info" 
+                                        ng-click="edit(x.id)" 
+                                        ng-model="edit_article">编辑</button>
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="delete(x.id)">删除</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>

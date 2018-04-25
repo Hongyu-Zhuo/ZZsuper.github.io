@@ -1,51 +1,188 @@
 
     <div class="list_wrap">
+        <!-- 搜索输入开始 -->
     	<div class="search">
-            <div class="">
-                标&emsp;&emsp;题 <input type="search" name="title">&emsp;&emsp;
-                创建者<input type="search" name="author">&emsp;&emsp;
-                创建时间<input type="date" name="">&emsp;-&emsp;<input type="date" name="">
-            </div>
-    		<div class="select">
-                状&emsp;&emsp;态
-                <select>
-                    <option>全部</option>
-                    <option>草稿</option>
-                    <option>上线</option>
-                </select>&emsp;&emsp;
-                类&emsp;&emsp;型
-                <select>
-                    <option>全部</option>
-                    <option>首页</option>
-                    <option>找职位</option>
-                    <option>找精英</option>
-                    <option>行业大图</option>
-                </select>
-            </div>
-    		
-    	</div>
+            <div class="row">
+                <div class="col">
+                    <input type="search" class="form-control" placeholder="标&emsp;&emsp;题" ng-model="seek.title">
+                </div>
+                 
+                 
+                <div class="col">
+                    <input type="search" class="form-control" placeholder="创建者" ng-model="seek.author">
+                </div>
 
-        <div class="container article">
-            <div class="row title ">
-                <h6 class="col-md-10 title-manage">article管理</h6>
-                <span class="col-md-1">
-                    <button class="btn_save_sort" type="button">保存排序</button>
-                </span>
-                <span class="col-md-1">
-                    <button class="btn_new" type="button" ng-click="new()">+新增</button>
-                </span>
+                <div class="col">
+                    <input type="date" class="form-control pull-right"  ng-model="lookfor.start">
+                </div> ___
+                <div class="col">
+                   <!--  <input type="search" class="form-control" placeholder="创建时间-止"> -->
+                    <input type="date" class="form-control"  ng-model="lookfor.end">
+                </div>
             </div>
-            <div class="row article-detail ">
-                <span class="col-md-1">序号</span>
-                <span class="col-md-1">图片</span>
-                <span class="col-md-1">标题</span>
-                <span class="col-md-1">类型</span>
-                <span class="col-md-1">创建者</span>
-                <span class="col-md-1">创建时间</span>
-                <span class="col-md-1">修改时间</span>
-                <span class="col-md-1">状态</span>
-                <span class="col-md-1">操作</span>
+            
+            <div class="row" style="margin-top:10px">
+                
+                    <!-- <span class="col">
+                        <font>
+                            状&emsp;&emsp;态
+                        </font>
+                        
+                    </span> -->
+                    <span class="col">
+                        <select class="form-control" 
+                                ng-model="lookfor.status" 
+                                ng-options="x.value as x.text for x in select_status"
+                                >
+                            
+                            <!-- <option selected="selected" disabled="disabled">状态</option> -->
+                           <!--  <option>草稿</option>
+                            <option>上线</option> -->
+                        </select>
+                    </span>
+                    
+                    <span class="col">
+                        <select class="form-control" 
+                                ng-model="lookfor.type" 
+                                ng-options="y.value as y.text for y in select_types"
+                                >
+                        </select>
+                    </span>
+                
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+
+               
+            </div>
+            <div class="row">
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+
+                <div class="col">
+                    <button class="btn btn-outline-danger" type="button" ng-click="clear()">清空</button> 
+                    <button class="btn btn-outline-success" type="button" ng-click="search(status,type,startAt,endAt)">搜索</button>
+                </div>
+            </div>
+        </div>
+        <!-- 搜索输入结束 -->
+
+        <!-- article管理开始 -->
+        <div class="article_wrap">
+            
+            <div class="article_title">
+                <strong>article管理</strong>
+                <button class="btn btn-xs pull-right btn-outline-success " ng-click="new()">+新增</button>
+                <button class="btn btn-xs pull-right btn-outline-danger margin-left-10" type="button">保存排序</button>
+            </div>
+
+            <div class="pd10">
+            <div class="table-responsive" style="border: 1px solid #ddd" ui-view="">
+                <table class="table table-striped ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>标题</th>
+                            <th>类型</th>
+                            <th>创建者</th>
+                            <th>创建时间</th>
+                            <th>修改时间</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat = "x in article">
+
+                            <td ng-bind="$index+1"></td>
+                            
+                            <td ng-bind="x.title"></td>
+                            <td ng-bind="x.type | typeFilter"></td>
+                            <td ng-bind="x.author"></td>
+                            <td>
+                                <div ng-bind="x.createAt | date: 'yyyy-MM-dd'"></div>
+                                <div ng-bind="x.createAt | date: 'HH:mm:ss'"></div>
+                            </td>
+                            <td>
+                                <div ng-bind="x.updateAt | date: 'yyyy-MM-dd'"></div>
+                                <div ng-bind="x.updateAt | date: 'HH:mm:ss'"></div>
+                            </td>
+                            <td ng-bind="x.status | statusFilter"></td>
+                            <td>
+                                <button type="button" class="btn btn-xs btn-success" 
+                                        ng-disabled="{true:true}[x.status == 2]" 
+                                        ng-click="upLine(x.id)">上线</button>
+                                        
+                                <button type="button" class="btn btn-xs btn-info" 
+                                        ng-click="edit(x.id)" 
+                                        ng-model="edit_article">编辑</button>
+                                <button type="button" class="btn btn-xs btn-danger" ng-click="delete(x.id)">删除</button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        
+            <z-page pageid="pageid" 
+                    totalpages="totalPages" 
+                    paging="$stateParams.page" 
+                    size="size"
+                    statego="selectPage(pageid,reload,size)">
+            </z-page>
 
             </div>
         </div>
     </div>
+
+    <!-- 分页 -->
+
+    <!-- <div class="row" aria-label="Page navigation">
+        
+        <ul class="pagination col"  >
+            
+            <li>
+                <a ng-click="firstPage()">首页</a>
+            </li>
+            <li ng-click="lastPage(pageid - 1)">
+                <a aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <li ng-repeat="num in paging" ng-class="{true:'active'}[pageid == num]">
+                <a ng-bind = "num" ng-click = "selected(num)"></a>
+            </li>
+            
+
+            <li ng-click="nextPage(pageid + 1)">
+                <a aria-label="Next" >
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li>
+                <a ng-click="endPage()">末页</a>
+            </li>
+        </ul>
+        <div class="col pagination">
+                <li class="float_l">
+                    每页显示
+                    <input class="page_num" type="number" ng-model="size">
+                    条
+                </li>
+                <span class="float_l">&nbsp;</span>
+                <li ng-model="totalPages" class="float_l">
+                    去第<input class="page_num" type="number" ng-model="gopage">/{{totalPages}}页
+                </li>
+                <li>
+                    <a ng-click="goPage(gopage)">确定</a>
+                </li>
+            </div>
+    </div> -->
+
+

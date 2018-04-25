@@ -1,27 +1,21 @@
-.list_wrap {
-	padding: 10px;
-	background-color: #fafafa;
-}
 
+/*列表详情*/
+.list_wrap {
+	 padding: 10px;
+	 /* background-color: #fafafa; */
+}
 .search {
 	padding: 10px;
 	margin-bottom: 10px;
-	border: 1px solid #999;
+	border: 1px solid #ddd;
 	/*background-color: #999;*/
 }
+
+/*下拉框*/
 .select {
 	padding-top: 10px;
 }
-.title {
-	padding: 10px;
-	border: 1px solid #999;
-}
-.title-manage {
-	display: inline-block;
-}
-.article {
-	width: auto;
-}
+
 .btn_save_sort {
 	width: 70px;
 	padding: 7px;
@@ -30,6 +24,7 @@
 	outline:  none;
 	background-color: #F44336;
 }
+
 .btn_new {
 	width: 70px;
 	padding: 7px;
@@ -38,7 +33,57 @@
 	outline:  none;
 	background-color:  #009802;
 }
+.article_wrap{
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.article_title {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+.pd10 {
+	padding: 10px;
+}
 .article-detail {
 	padding: 10px 15px;
 	border: 1px solid #999;
 }
+
+/*覆盖bootstrap默认样式vertical-align: top;*/
+td {
+	/* vertical-align: bottom; */
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+/*input[type=date]::-webkit-datetime-edit { padding: 1px; background: url(../selection.gif); } 
+input[type=date]::-webkit-datetime-edit-fields-wrapper { background-color: #eee; } */
+input[type=date]::-webkit-datetime-edit-text { color: #4D90FE; padding: 0 .3em; } 
+input[type=date]::-webkit-datetime-edit-year-field { color: purple; } 
+input[type=date]::-webkit-datetime-edit-month-field { color: blue; } 
+input[type=date]::-webkit-datetime-edit-day-field { color: green; } 
+input[type=date]::-webkit-inner-spin-button { visibility: hidden; } 
+input[type=date]::-webkit-calendar-picker-indicator { 
+	border: 1px solid #ccc; 
+	border-radius: 2px; 
+	box-shadow: inset 0 1px #fff, 0 1px #eee; 
+	background-color: #eee; 
+	background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6); 
+	color: #666; 
+}
+
+input[type=number] {
+	-webkit-appearance: none;
+	width: 40px;
+}
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none;}
+
+.page_num {
+	height: 34px;
+	padding: 0;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+.float_l {float: left;}
+.float_r {float: right;} 
+.mg_l {margin-left: 0;}

@@ -1,8 +1,7 @@
 /*#03a9f4*/
 body {
-    height: 100vh;
     padding: 0;
-    background:  url("../IMG/bg.png") no-repeat;
+    /* background:  url("../IMG/bg.png") no-repeat; */
     background-size: cover;
 }
 .login_bg {
@@ -10,10 +9,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .3);
-    
-
+    height: 100vh;
+    box-shadow: 99999px 0 0px rgba(0, 0, 0, .3) inset;
+    /* background-color: rgba(0, 0, 0, .3); */
+    background: url(../IMG/bg.png) no-repeat;
+    background-size: cover;
 }
 .signIn_wrap {
     position: relative;
@@ -75,6 +75,6 @@ input[type="button"] {
 }
 
 li {
-    font-size: 20px;
-    color: #fff;
+    /* font-size: 20px; */
+    /* color: #fff; */
 }

@@ -22,14 +22,41 @@
 .commit {
 	padding: 10px;
 	margin-top: 50px;
-	text-align: center;
+	/* text-align: center; */
 }
-.upload,
-.save_to_manuscript,
-.cancle {
-	width: 75px;
-	padding: 8px;
-	border: 0;
-	border-radius:  5px;
-	outline:  none;
+.progress {
+	width: 70px;
+	/* height: 20px; */
+}
+#preview {
+	position: absolute;
+	left: 15px;
+	width: 200px; 
+	height: 200px; 
+}
+#preview[src=""] {
+	opacity: 0;
+}
+.select_img {
+	/* position: absolute; */
+	/*z-index: -1;*/
+	min-width: 200px;
+	/* height: 200px; */
+	border: 1px dotted #ddd;
+	border-radius: 4px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 200px;
+	color: #ddd;
+	cursor: pointer;
+}
+.select_img:hover {
+	/*background-color: #ddd;*/
+	background: url(../img/c.gif) no-repeat
+}
+.edit {
+	width: calc(100% + 20px);
+	height: 100% !important;
+	margin: 0 -10px;
+	padding: 0 15px;
 }

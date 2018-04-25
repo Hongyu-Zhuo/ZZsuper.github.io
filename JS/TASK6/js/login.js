@@ -2,7 +2,11 @@
 angular.module('carrots')
 
 .controller('loginCtrl',function($scope,$http,$state){
-	
+	$scope.keydown =  function($event){
+		if($event.keyCode == 13){
+			$scope.login();
+		}
+	};
 	$scope.login = function() {
 		console.log($scope.user);
 
@@ -42,3 +46,4 @@ angular.module('carrots')
 
 });
 
+console.log('login.js加载完毕');

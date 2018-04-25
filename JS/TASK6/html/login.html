@@ -11,6 +11,7 @@
                     required
                     ng-required="true" 
 					placeholder="用户名"
+					ng-keydown="keydown($event)"
 			>
 
             <span class="line"></span>
@@ -23,11 +24,12 @@
                     required 
                     ng-required="true"
 			 		placeholder="密码"
+			 		ng-keydown="keydown($event)"
             >
             <span class="line"></span>
             <br/>
             <p class="hint"></p>
-			<input  type="button"  value="登录" ng-click="login()">
+			<input  type="button"  value="登录" ng-click="login()" ng-keydown="keydown($event)">
 		</div>
 	</div>
 	<!-- <script src="jquery-3.3.1.min.js"></script>

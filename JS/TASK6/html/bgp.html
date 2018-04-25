@@ -28,10 +28,24 @@
             </div>
         </div>
         <ul class="nav">
-    	    <li ng-click="list()">列表</li>
-            <li>2222</li>
-            <li>3333</li>
-            <li>4444</li>
+            <li ng-repeat="x in menu track by $index">
+                <div class="menu_title" ng-click="list_show(x.id)">
+                    <span class="glyphicon glyphicon-pencil pencil"></span>&emsp;
+                    <span ng-bind = "x.name"></span>&emsp;
+                    <span class="glyphicon glyphicon-menu-left" 
+                          ng-class="{'glyphicon-menu-down':x.id == menuId}">
+                    </span>
+                </div>
+                <ul ng-if="{true:true}[x.id == menuId]">
+                    <li ng-repeat="subItem in x.sub">
+                        <a  ui-sref="{{subItem.url}}" 
+                            ng-class="{a_active:subItem.id == itemId}" 
+                            ng-bind="subItem.name"
+                            ng-click="active(subItem.id)">
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
         
     </div>

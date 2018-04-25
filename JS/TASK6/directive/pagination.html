@@ -1,0 +1,39 @@
+<div class="row mg_l" aria-label="Page navigation">
+    <ul class="pagination col"  >    
+        <li>
+            <a ng-click="firstPage()">首页</a>
+        </li>
+        <li ng-click="lastPage(pageid - 1)">
+            <a aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+
+        <li ng-repeat="num in paging" ng-class="{true:'active'}[pageid == num]">
+            <a ng-bind = "num" ng-click = "selected(num,false,size)"></a>
+        </li>
+            
+        <li ng-click="nextPage(pageid + 1,false)">
+            <a aria-label="Next" >
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <li>
+            <a ng-click="endPage()">末页</a>
+        </li>
+    </ul>
+    <div class="col pagination">
+        <li class="float_l">
+            每页显示
+            <input class="page_num" type="number" ng-model="size">
+            条
+        </li>
+        <span class="float_l">&nbsp;</span>
+        <li ng-model="totalPages" class="float_l">
+            去第<input class="page_num" type="number" ng-model="gopage">/{{totalpages}}页
+        </li>
+        <li>
+            <a ng-click="goPage(gopage,size)">确定</a>
+        </li>
+    </div>
+</div>

@@ -2,51 +2,140 @@
     <div class="row new-title">
         <h6 class="col-md-12 ">新增/编辑</h6>
     </div>
+
+    <form name="article_form" novalidate>
     <div class="row new-type">
         <div class="col-md-2 col-sm-2 ">
             <p class="right">类型</p>
         </div>
-        <div class="col-md-10 col-sm-10">
-            <select>
-                <option>首页Banner</option>
-                <option>首页Banner</option>
-                <option>首页Banner</option>
-                <option>首页Banner</option>
+        <div class="col-md-4 col-sm-4">
+            <select class="form-control" 
+                    ng-model="article.type" 
+                    ng-options="y.value as y.text for y in select_types"
+                >
+            </select>
+        </div>
+        <div class="col-md-2 col-sm-2" ng-if="{true:true}[article.type == 3]">
+            <p class="right">行业</p>
+        </div>
+        <div class="col-md-4 col-sm-4" ng-if="{true:true}[article.type == 3]">
+            <select class="form-control" 
+                    ng-model="article.industry" 
+                    ng-options="y.value as y.text for y in select_industry"
+                >
             </select>
         </div>
     </div>
+
     <div class="row new-add_title">
         <div class="col-md-2 col-sm-2">
-            <p class="right">标题名称</p>
+            <p class="right">标题名称<span style="color:red">*</span></p>
+            
         </div>
-        <div class="col-md-10 col-sm-10">
-            <input type="text" name="">
+        <div class="col-md-10 col-sm-10 form-group">
+            <input name="title" class="form-control" type="text"
+                    placeholder="4-15个字"
+                    ng-class="{'has-error':article.title.$invalid && !article.title.$pristine}" 
+                    required 
+                    ng-required="true"
+                    ng-minlength="2"
+                    ng-maxlength="15"
+                    ng-model="article.title">
+            <span style="color:red" ng-messages="article_form.title.$error" ng-show="article_form.title.$touched">     
+              <span ng-message="required">&emsp;标题不能为空</span>
+              <span
+            </span>
         </div>
     </div>
     <div class="row new-link">
         <div class="col-md-2 col-sm-2">
-            <p class="right">跳转链接</p>
+            <p class="right">跳转链接<span style="color:red">*</span></p>
+            
         </div>
-        <div class="col-md-10 col-sm-10">
-            <input type="text" name="">
+        <div class="col-md-10 col-sm-10 ">
+            <input name="url" class="form-control" type="url" required  ng-model="article.url">
+
         </div>
-        
+    </div>
+    <div class="row new-link">
+        <div class="col-md-2 col-sm-2">
+            <p class="right">说明</p>
+        </div>
+
+        <div class="col-md-10 col-sm-10 ">
+            <div id="editor" ng-model="article.content">
+                <!-- <textarea class="edit" ng-model="article.explain"></textarea> -->
+            </div>
+        </div>
     </div>
     <div class="row new-img">
         <div class="col-md-2 col-sm-2">
-            <p class="right">配图</p>
+            <p class="right">配图<span style="color:red">*</span></p>
+
         </div>
         <div class="col-md-10 col-sm-10">
-            <input type="file" name="">
+            <input id="upload" type="file"
+                style="display: none;" 
+                accept=".jpg,.png,.bmp,.jpeg,.gif"
+                onchange="angular.element('#upload').scope().getimg(this.files)">
+            <!-- <div id="img_wrap" class="col-md-10"> -->
+            <label for="upload" class="select_img">
+                选择图片
+                <img ng-src="{{src}}" id="preview">
+            </label>
+            <!-- </div> -->
         </div>
         
     </div>
+    <div class="row">
+    <div class="col-md-7 col-md-offset-2">
+        <table class="table table-striped table-bordered text-center">
+            <thead class="thead-dark text-center">
+                <tr>
+                    <th>图片名称</th>
+                    <th>文件大小</th>
+                    <th>进度</th>
+                    <th>操作</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody ng-if="info_show">
+                <tr>
+                    <td ng-bind="file.name"></td>
+                    <td ng-bind="size"></td>
+                    <td >
+                        <progress id="img_pro" class="progress" value={{value}} max="{{max}}" ></progress>
+                    </td>
+                    <td >
+                        <span class="glyphicon glyphicon-ok" ng-if="success"></span>
+                        <span class="glyphicon glyphicon-remove" ng-if="failed"></span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-xs btn-success" ng-click="up()">
+                            <span class="glyphicon glyphicon-upload"></span>
+                            上传
+                        </button>
+                        <button type="button" class="btn btn-xs btn-danger" ng-click="del()">
+                            <span class="glyphicon glyphicon-remove-sign"></span>
+                            删除
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
     <div class="row commit">
-        <button class="upload" type="button">立即上线</button>
-        <button class="save_to_manuscript" type="button">存为草稿</button>
-        <button class="cancle" type="button">取消</button>
-
+        <div class="col-md-6 col-md-offset-2">
+            <button class="btn btn-success" type="button" 
+                    ng-click="upload_article(2)"
+                    ng-disabled="article.$invalid">立即上线</button>
+            <button class="btn btn-warning" type="button" 
+                    ng-click="upload_article(1)"
+                    ng-disabled="article.$invalid">存为草稿</button>
+            <button class="btn btn-danger" type="button" ng-click="cancle()">取消</button>
+        </div>
     </div>
     <div class="row"></div>
-
+    <!-- </form> -->
 </div>
